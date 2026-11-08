@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#060814">
-<meta name="description" content="Happy Diwali! An interactive festival of lights experience with realistic crackers, authentic sounds, animated kid lighting, and cosmic solar-system diyas.">
+<meta name="description" content="Happy Diwali! An interactive celebration with realistic crackers, authentic sounds, animated kid lighting, and cosmic solar-system diyas by Vikrant Mulankar.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="🪔 Happy Diwali — Realistic Fireworks & Celebration">
-<meta property="og:description" content="Watch realistic Anar fountains, sky rockets, sparklers, and bombs ignited by an animated kid with authentic sounds!">
+<meta property="og:title" content="🪔 Happy Diwali — by Vikrant Mulankar">
+<meta property="og:description" content="Experience realistic Anar volcanos, sky rockets, sparklers, and bombs ignited by an animated kid with authentic sounds!">
 <meta property="og:image" content="og-preview.png">
-<title>Happy Diwali 🪔 Realistic Fireworks & Celebration</title>
+<title>Happy Diwali 🪔 Vikrant Mulankar</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -90,7 +90,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   z-index: 2;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 22px;
 }
 
 /* Top App Header */
@@ -104,17 +104,17 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
 .brand-box {
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 10px;
 }
 .brand-diya-badge {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 12px;
   background: linear-gradient(135deg, rgba(255, 214, 122, 0.22), rgba(245, 159, 40, 0.1));
   border: 1px solid rgba(255, 214, 122, 0.4);
   display: grid;
   place-items: center;
-  font-size: 20px;
+  font-size: 22px;
   box-shadow: 0 0 18px rgba(255, 180, 50, 0.35);
   animation: diyaPulse 2.8s ease-in-out infinite;
 }
@@ -124,7 +124,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
 }
 .brand-name {
   font-family: var(--font-heading);
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 800;
   letter-spacing: 0.04em;
   background: linear-gradient(120deg, #fff3d1, #ffd478 55%, #f6a132);
@@ -135,33 +135,24 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
 }
 .brand-sub {
   font-size: 9px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.15em;
   color: #e5b974;
   text-transform: uppercase;
 }
+
+/* Sound button is hidden per user request */
 .sound-toggle-btn {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 214, 122, 0.32);
-  color: #ffe6b0;
-  border-radius: 20px;
-  height: 36px;
-  padding: 0 12px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 11.5px;
-  font-weight: 700;
-  transition: all 0.2s;
+  display: none !important;
 }
 
-/* Hero Section */
+/* Hero Section with Vikrant Mulankar's Name & Festive Content */
 .hero-card {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 11px;
 }
 .festive-pill {
   display: inline-flex;
@@ -170,7 +161,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   background: linear-gradient(90deg, rgba(255, 214, 122, 0.15), rgba(245, 159, 40, 0.08));
   border: 1px solid rgba(255, 214, 122, 0.35);
   border-radius: 99px;
-  padding: 5px 12px;
+  padding: 5px 14px;
   color: #ffdf98;
   font-size: 11.5px;
   font-weight: 700;
@@ -189,8 +180,8 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
 .main-title {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: 32px;
-  font-weight: 800;
+  font-size: 34px;
+  font-weight: 900;
   line-height: 1.15;
   background: linear-gradient(110deg, #fff3d1 0%, #ffcf71 40%, #ff9e3b 80%, #ff6e26 100%);
   -webkit-background-clip: text;
@@ -198,10 +189,24 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   color: transparent;
   filter: drop-shadow(0 2px 14px rgba(255, 158, 59, 0.35));
 }
-.lead-msg {
-  margin: 0;
+.author-heading-tag {
   font-size: 13.5px;
-  line-height: 1.6;
+  font-weight: 700;
+  color: #ffd88a;
+  letter-spacing: 0.03em;
+  background: rgba(255, 214, 122, 0.1);
+  border: 1px solid rgba(255, 214, 122, 0.28);
+  border-radius: 99px;
+  padding: 4px 14px;
+}
+.author-heading-tag strong {
+  color: #ffffff;
+  font-weight: 800;
+}
+.lead-msg {
+  margin: 2px 0 0;
+  font-size: 13.8px;
+  line-height: 1.68;
   color: var(--sub);
   padding: 0 2px;
 }
@@ -265,7 +270,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   to { transform: rotate(360deg); }
 }
 
-/* Orbiting Planetary Diyas (Like Earth revolving around the Sun) */
+/* Orbiting Planetary Diyas */
 .orbiting-diya-wrap {
   position: absolute;
   top: -13px;
@@ -373,6 +378,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   color: #ffffff;
   padding: 0 15px;
   font-size: 14.5px;
+  text-transform: capitalize;
   transition: all 0.2s;
 }
 .name-input:focus {
@@ -381,7 +387,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   box-shadow: 0 0 0 3px rgba(255, 214, 122, 0.2);
   outline: none;
 }
-.name-input::placeholder { color: rgba(255, 255, 255, 0.4); }
+.name-input::placeholder { color: rgba(255, 255, 255, 0.4); text-transform: none; }
 
 .btn-primary {
   width: 100%;
@@ -406,7 +412,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   background: linear-gradient(145deg, rgba(28, 22, 48, 0.97), rgba(15, 18, 38, 0.99));
   border: 1.5px solid rgba(255, 214, 122, 0.45);
   border-radius: 18px;
-  padding: 20px 16px;
+  padding: 22px 18px;
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5), 0 0 35px rgba(255, 180, 50, 0.2);
   animation: cardFade 0.6s cubic-bezier(0.18, 0.9, 0.2, 1) both;
 }
@@ -417,7 +423,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
 .card-title {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: 25px;
+  font-size: 26px;
   font-weight: 800;
   line-height: 1.2;
   background: linear-gradient(110deg, #fff3d1, #ffd478, #ff9e3b);
@@ -426,16 +432,98 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   color: transparent;
 }
 .card-user {
-  font-size: 17.5px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--teal);
-  margin: 8px 0 6px;
+  margin: 8px 0 8px;
+  text-transform: capitalize;
 }
 .card-body-text {
-  font-size: 13.5px;
-  line-height: 1.65;
+  font-size: 13.8px;
+  line-height: 1.7;
   color: #f7ede0;
+  margin: 0 0 14px;
+}
+.card-signature {
+  font-size: 12px;
+  color: #ffd88a;
+  border-top: 1px dashed rgba(255, 214, 122, 0.25);
+  padding-top: 10px;
+}
+.card-signature strong {
+  color: #ffffff;
+  font-size: 13px;
+}
+
+/* ====================================================
+   DIWALI CRACKERS BUTTONS (2 ROWS FOR MOBILE - NO SCROLLING)
+   ==================================================== */
+.crackers-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.crackers-heading-box {
+  text-align: center;
+}
+.crackers-main-heading {
   margin: 0;
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 800;
+  background: linear-gradient(110deg, #fff3d1, #ffd478 50%, #ff893b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.crackers-subheading {
+  margin: 3px 0 0;
+  font-size: 11.5px;
+  color: var(--muted);
+}
+
+/* 2-Row Compact Mobile Grid (5 Columns x 2 Rows = 10 Crackers) */
+.crackers-2row-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  width: 100%;
+}
+.cracker-tile-btn {
+  background: linear-gradient(145deg, rgba(23, 29, 58, 0.95), rgba(12, 16, 36, 0.98));
+  border: 1px solid rgba(255, 214, 122, 0.28);
+  border-radius: 12px;
+  padding: 9px 2px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  text-align: center;
+  min-height: 56px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: all 0.15s cubic-bezier(0.18, 0.9, 0.2, 1);
+}
+.cracker-tile-btn:active, .cracker-tile-btn.active-firing {
+  transform: scale(0.94);
+  border-color: #ffd478;
+  background: linear-gradient(145deg, rgba(65, 38, 22, 0.95), rgba(35, 22, 15, 0.98));
+  box-shadow: 0 0 16px rgba(255, 140, 20, 0.55);
+}
+.cracker-tile-icon {
+  font-size: 21px;
+  line-height: 1;
+  filter: drop-shadow(0 0 6px rgba(255, 170, 50, 0.4));
+}
+.cracker-tile-name {
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff4dc;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 /* ====================================================
@@ -579,84 +667,6 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   border: 1px dashed rgba(255, 214, 122, 0.25);
 }
 
-/* ====================================================
-   TOP 10 CRACKERS IN EXACTLY 2 ROWS (NO SCROLLING)
-   5 buttons per row x 2 rows = 10 buttons total
-   ==================================================== */
-.crackers-section {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.crackers-heading-box {
-  text-align: center;
-}
-.crackers-main-heading {
-  margin: 0;
-  font-family: var(--font-heading);
-  font-size: 21px;
-  font-weight: 800;
-  background: linear-gradient(110deg, #fff3d1, #ffd478 50%, #ff893b);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-.crackers-subheading {
-  margin: 3px 0 0;
-  font-size: 11.5px;
-  color: var(--muted);
-}
-
-/* 2-Row Compact Mobile Grid (5 Columns x 2 Rows) */
-.crackers-2row-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 6px;
-  width: 100%;
-}
-.cracker-tile-btn {
-  background: linear-gradient(145deg, rgba(23, 29, 58, 0.95), rgba(12, 16, 36, 0.98));
-  border: 1px solid rgba(255, 214, 122, 0.28);
-  border-radius: 12px;
-  padding: 8px 2px 7px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 3px;
-  text-align: center;
-  min-height: 58px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  transition: all 0.15s cubic-bezier(0.18, 0.9, 0.2, 1);
-}
-.cracker-tile-btn:active, .cracker-tile-btn.active-firing {
-  transform: scale(0.94);
-  border-color: #ffd478;
-  background: linear-gradient(145deg, rgba(65, 38, 22, 0.95), rgba(35, 22, 15, 0.98));
-  box-shadow: 0 0 16px rgba(255, 140, 20, 0.55);
-}
-.cracker-tile-icon {
-  font-size: 20px;
-  line-height: 1;
-  filter: drop-shadow(0 0 6px rgba(255, 170, 50, 0.4));
-}
-.cracker-tile-name {
-  font-size: 9.5px;
-  font-weight: 700;
-  color: #fff4dc;
-  letter-spacing: -0.02em;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
-}
-.cracker-tile-num {
-  font-size: 7.5px;
-  color: #ffb84d;
-  font-weight: 800;
-  line-height: 1;
-}
-
 /* Toast Bar */
 .toast-bar {
   position: fixed;
@@ -683,19 +693,26 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
 }
 
 /* ====================================================
-   FOOTER (Vikrant Mulankar · Software Developer)
+   CLEAN & SEPARATED FOOTER (Vikrant Mulankar)
    ==================================================== */
 .app-footer {
-  border-top: 1px solid rgba(255, 214, 122, 0.18);
-  padding-top: 18px;
-  text-align: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  width: 100%;
+}
+.footer-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
+  gap: 7px;
+  padding: 16px 14px;
+  background: linear-gradient(145deg, rgba(23, 29, 56, 0.6), rgba(12, 16, 34, 0.7));
+  border: 1px solid rgba(255, 214, 122, 0.2);
+  border-radius: 16px;
+  text-align: center;
 }
 .footer-author {
-  font-size: 13px;
+  font-size: 13.5px;
   color: #e4e9f8;
 }
 .footer-author strong {
@@ -715,10 +732,16 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
+.footer-blessing {
+  font-size: 11.5px;
+  color: #c5cde0;
+  line-height: 1.5;
+  margin-top: 2px;
+}
 .footer-note {
-  font-size: 11px;
+  font-size: 10.5px;
   color: var(--muted);
-  margin-top: 3px;
+  margin-top: 2px;
 }
 </style>
 </head>
@@ -737,21 +760,20 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
         <div class="brand-sub">FESTIVAL OF LIGHTS · 2026</div>
       </div>
     </div>
-    <button class="sound-toggle-btn" id="soundBtn" type="button" aria-pressed="true">
-      <span id="soundIcon">🔊</span>
-      <span id="soundLabel">Sound ON</span>
-    </button>
   </header>
 
-  <!-- Hero Greeting Section -->
+  <!-- Hero Greeting Section with Vikrant Mulankar's Name -->
   <section class="hero-card">
     <div class="festive-pill">
       <span class="dot"></span>
-      <span>Auspicious Festival of Lights ✨</span>
+      <span>Auspicious Festival of Lights · 2026</span>
     </div>
     <h1 class="main-title">Happy Diwali!</h1>
+    <div class="author-heading-tag">
+      Warmest Greetings from <strong>Vikrant Mulankar</strong>
+    </div>
     <p class="lead-msg">
-      May the divine light illuminate your home with <strong>joy, prosperity, vibrant health, and eternal peace</strong>.
+      As the sacred diyas illuminate every corner with golden radiance, may this auspicious festival bestow upon you and your loved ones <strong>abundant prosperity, vibrant health, peace, and eternal happiness</strong>. May every spark ignite new joy in your life!
     </p>
   </section>
 
@@ -879,7 +901,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   </section>
   <div class="diya-caption">✨ Planetary Diyas Orbiting the Sun Diya ✨</div>
 
-  <!-- Name Input Form -->
+  <!-- Name Input Form (With Auto Capitalize & Celebrate Diwali Button) -->
   <section class="input-card" id="inputBox">
     <label class="input-label" for="userName">
       <i>✦</i> Enter your name
@@ -889,24 +911,90 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
         type="text" 
         id="userName" 
         class="name-input" 
-        placeholder="Type your name (e.g. Rahul, Priya, Alex...)" 
+        placeholder="Enter your name (e.g. Rahul, Priya, Alex...)" 
         maxlength="35"
         autocomplete="given-name"
       >
       <button class="btn-primary" id="runScriptBtn" type="button">
-        <span>🪔</span> Run Script
+        <span>✨</span> Celebrate Diwali
       </button>
     </div>
   </section>
 
-  <!-- Generated Greeting Card -->
+  <!-- Generated Festive Card with Deep Meaningful Blessings -->
   <section class="festive-greeting-card" id="greetingCard">
     <h2 class="card-title" id="cardTitle">Happy Diwali! 🪔</h2>
     <div class="card-user" id="cardUser">Dear Friend,</div>
     <p class="card-body-text" id="cardBody">
-      May Goddess Lakshmi and Lord Ganesha shower your life with happiness, prosperity, wisdom, and good health. 
-      May your days shine brighter than a thousand diyas and every venture bring glorious success.
+      May Goddess Lakshmi bless your home with boundless wealth, harmony, and eternal joy, and may Lord Ganesha remove every obstacle from your journey. May the sacred flame of every diya illuminate your highest aspirations, bring warm laughter to your family, and usher in unshakeable peace, prosperity, and radiant health. Wishing you and your loved ones a magical and blessed Diwali!
     </p>
+    <div class="card-signature">
+      With warm festive blessings,<br>
+      <strong>Vikrant Mulankar</strong>
+    </div>
+  </section>
+
+  <!-- DIWALI CRACKERS SECTION (2 ROWS FOR MOBILE - NO SCROLLING) -->
+  <section class="crackers-section">
+    <div class="crackers-heading-box">
+      <h2 class="crackers-main-heading">🎇 Diwali Crackers</h2>
+      <p class="crackers-subheading">Tap any cracker below to watch the live demonstration!</p>
+    </div>
+
+    <!-- 10 Buttons in 2 Rows (5 buttons per row) -->
+    <div class="crackers-2row-grid" id="crackersGrid">
+      <!-- ROW 1 (Crackers 1-5) -->
+      <button class="cracker-tile-btn" data-cracker="anar" type="button" title="Anar Flowerpot">
+        <span class="cracker-tile-icon">🌋</span>
+        <span class="cracker-tile-name">Anar</span>
+      </button>
+
+      <button class="cracker-tile-btn" data-cracker="sparkler" type="button" title="Golden Sparkler">
+        <span class="cracker-tile-icon">✨</span>
+        <span class="cracker-tile-name">Fuljari</span>
+      </button>
+
+      <button class="cracker-tile-btn" data-cracker="rocket" type="button" title="Sky Rocket">
+        <span class="cracker-tile-icon">🚀</span>
+        <span class="cracker-tile-name">Rocket</span>
+      </button>
+
+      <button class="cracker-tile-btn" data-cracker="atomBomb" type="button" title="Green Atom Bomb">
+        <span class="cracker-tile-icon">💣</span>
+        <span class="cracker-tile-name">Bomb</span>
+      </button>
+
+      <button class="cracker-tile-btn" data-cracker="charkhi" type="button" title="Ground Charkhi">
+        <span class="cracker-tile-icon">🌀</span>
+        <span class="cracker-tile-name">Charkhi</span>
+      </button>
+
+      <!-- ROW 2 (Crackers 6-10) -->
+      <button class="cracker-tile-btn" data-cracker="ladi" type="button" title="1000 Wala Red Ladi">
+        <span class="cracker-tile-icon">🧨</span>
+        <span class="cracker-tile-name">Ladi</span>
+      </button>
+
+      <button class="cracker-tile-btn" data-cracker="sutliBomb" type="button" title="Sutli Bomb">
+        <span class="cracker-tile-icon">💥</span>
+        <span class="cracker-tile-name">Sutli</span>
+      </button>
+
+      <button class="cracker-tile-btn" data-cracker="snake" type="button" title="Magic Snake Tablet">
+        <span class="cracker-tile-icon">🐍</span>
+        <span class="cracker-tile-name">Snake</span>
+      </button>
+
+      <button class="cracker-tile-btn" data-cracker="skyShot" type="button" title="7-Colour Sky Shot">
+        <span class="cracker-tile-icon">🎆</span>
+        <span class="cracker-tile-name">SkyShot</span>
+      </button>
+
+      <button class="cracker-tile-btn" data-cracker="popSnapper" type="button" title="Pop-Pop Snappers">
+        <span class="cracker-tile-icon">⚡</span>
+        <span class="cracker-tile-name">Snapper</span>
+      </button>
+    </div>
   </section>
 
   <!-- Interactive Real-Life Fireworks Arena with Animated Kid -->
@@ -922,16 +1010,12 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
       <!-- Cracker Object on the Ground with Realistic Vector Graphics -->
       <div class="arena-cracker-target" id="arenaCrackerTarget">
         <div id="crackerModelContainer" style="width:100%;height:100%;">
-          <!-- Default: Realistic Anar Flowerpot -->
+          <!-- Realistic Anar Flowerpot -->
           <svg class="realistic-cracker-svg" viewBox="0 0 100 120" id="svgCrackerModel">
-            <!-- Terracotta Base Cone -->
             <polygon points="50,15 18,105 82,105" fill="#c0392b" stroke="#f1c40f" stroke-width="2.5"/>
-            <!-- Ornate Golden Bands -->
             <polygon points="50,15 32,58 68,58" fill="#e67e22"/>
             <polygon points="50,15 40,36 60,36" fill="#f39c12"/>
-            <!-- Clay Rim Base -->
             <ellipse cx="50" cy="105" rx="34" ry="9" fill="#7f1d1d" stroke="#f1c40f" stroke-width="1.5"/>
-            <!-- Fuse at Top -->
             <line x1="50" y1="15" x2="52" y2="4" stroke="#dcdde1" stroke-width="3" stroke-linecap="round"/>
           </svg>
         </div>
@@ -978,86 +1062,18 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     </div>
   </section>
 
-  <!-- Top 10 Grand Diwali Crackers Section (ONLY 2 ROWS FOR MOBILE - NO SCROLLING) -->
-  <section class="crackers-section">
-    <div class="crackers-heading-box">
-      <h2 class="crackers-main-heading">🎇 Top 10 Grand Diwali Crackers</h2>
-      <p class="crackers-subheading">Tap any cracker to ignite!</p>
-    </div>
-
-    <!-- 10 Buttons in 2 Rows (5 buttons per row) -->
-    <div class="crackers-2row-grid" id="crackersGrid">
-      <!-- ROW 1 (Crackers 1-5) -->
-      <button class="cracker-tile-btn" data-cracker="anar" type="button" title="Anar Flowerpot">
-        <span class="cracker-tile-num">#1</span>
-        <span class="cracker-tile-icon">🌋</span>
-        <span class="cracker-tile-name">Anar</span>
-      </button>
-
-      <button class="cracker-tile-btn" data-cracker="sparkler" type="button" title="Golden Sparkler">
-        <span class="cracker-tile-num">#2</span>
-        <span class="cracker-tile-icon">✨</span>
-        <span class="cracker-tile-name">Fuljari</span>
-      </button>
-
-      <button class="cracker-tile-btn" data-cracker="rocket" type="button" title="Sky Rocket">
-        <span class="cracker-tile-num">#3</span>
-        <span class="cracker-tile-icon">🚀</span>
-        <span class="cracker-tile-name">Rocket</span>
-      </button>
-
-      <button class="cracker-tile-btn" data-cracker="atomBomb" type="button" title="Green Atom Bomb">
-        <span class="cracker-tile-num">#4</span>
-        <span class="cracker-tile-icon">💣</span>
-        <span class="cracker-tile-name">Bomb</span>
-      </button>
-
-      <button class="cracker-tile-btn" data-cracker="charkhi" type="button" title="Ground Charkhi">
-        <span class="cracker-tile-num">#5</span>
-        <span class="cracker-tile-icon">🌀</span>
-        <span class="cracker-tile-name">Charkhi</span>
-      </button>
-
-      <!-- ROW 2 (Crackers 6-10) -->
-      <button class="cracker-tile-btn" data-cracker="ladi" type="button" title="1000 Wala Red Ladi">
-        <span class="cracker-tile-num">#6</span>
-        <span class="cracker-tile-icon">🧨</span>
-        <span class="cracker-tile-name">Ladi</span>
-      </button>
-
-      <button class="cracker-tile-btn" data-cracker="sutliBomb" type="button" title="Sutli Bomb">
-        <span class="cracker-tile-num">#7</span>
-        <span class="cracker-tile-icon">💥</span>
-        <span class="cracker-tile-name">Sutli</span>
-      </button>
-
-      <button class="cracker-tile-btn" data-cracker="snake" type="button" title="Magic Snake Tablet">
-        <span class="cracker-tile-num">#8</span>
-        <span class="cracker-tile-icon">🐍</span>
-        <span class="cracker-tile-name">Snake</span>
-      </button>
-
-      <button class="cracker-tile-btn" data-cracker="skyShot" type="button" title="7-Colour Sky Shot">
-        <span class="cracker-tile-num">#9</span>
-        <span class="cracker-tile-icon">🎆</span>
-        <span class="cracker-tile-name">SkyShot</span>
-      </button>
-
-      <button class="cracker-tile-btn" data-cracker="popSnapper" type="button" title="Pop-Pop Snappers">
-        <span class="cracker-tile-num">#10</span>
-        <span class="cracker-tile-icon">⚡</span>
-        <span class="cracker-tile-name">Snapper</span>
-      </button>
-    </div>
-  </section>
-
-  <!-- App Footer with Name & Software Developer -->
+  <!-- Clean, Beautifully Separated Footer -->
   <footer class="app-footer">
-    <div class="footer-author">
-      Crafted with <span style="color:#ff6e6e;">♥</span> by <strong>Vikrant Mulankar</strong>
+    <div class="footer-card">
+      <div class="footer-author">
+        Crafted with <span style="color:#ff6e6e;">♥</span> by <strong>Vikrant Mulankar</strong>
+      </div>
+      <div class="footer-role">Software Developer</div>
+      <div class="footer-blessing">
+        May the divine light of Diwali illuminate your life with health, wealth, and boundless joy ✨
+      </div>
+      <div class="footer-note">© 2026 Vikrant Mulankar · Safe, Peaceful &amp; Joyous Celebration</div>
     </div>
-    <div class="footer-role">Software Developer</div>
-    <div class="footer-note">Happy Diwali 2026 · Safe &amp; Joyful Celebration ✨</div>
   </footer>
 </div>
 
@@ -1094,16 +1110,43 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   const stageStatus = $('stageStatus');
   const stageBanner = $('stageBanner');
 
+  // Helper function to capitalize 1st letter of every word
+  function formatToTitleCase(str) {
+    if (!str) return '';
+    return str
+      .trim()
+      .replace(/\s+/g, ' ')
+      .toLowerCase()
+      .split(' ')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ')
+      .slice(0, 35);
+  }
+
+  // Capitalize dynamically as user types
+  nameInput.addEventListener('input', () => {
+    const val = nameInput.value;
+    // Capitalize first letter of each word
+    const words = val.split(' ');
+    const formatted = words.map(w => w ? (w.charAt(0).toUpperCase() + w.slice(1)) : '').join(' ');
+    if (val !== formatted) {
+      const cursor = nameInput.selectionStart;
+      nameInput.value = formatted;
+      nameInput.setSelectionRange(cursor, cursor);
+    }
+  });
+
   // URL query prefill (?to=Rahul)
   const query = new URLSearchParams(location.search);
-  const preset = (query.get('to') || '').trim().slice(0, 35);
-  if (preset) nameInput.value = preset;
+  const rawPreset = (query.get('to') || '').trim();
+  if (rawPreset) {
+    nameInput.value = formatToTitleCase(rawPreset);
+  }
 
   // ====================================================
   // PROCEDURAL SOUND SYNTHESIS FOR ALL 10 CRACKERS
   // ====================================================
   let audioCtx = null;
-  let soundEnabled = true;
   let sharedNoise = null;
 
   function getAudio() {
@@ -1131,7 +1174,6 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
 
   // 1. Sky Rocket Sound (Ascension Whistle + Huge Sky Burst)
   function soundRocket() {
-    if (!soundEnabled) return;
     const ctx = getAudio();
     if (!ctx) return;
     const now = ctx.currentTime;
@@ -1168,13 +1210,12 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
 
   // 2. Fuljari (Sparkler) Sound (Intense Granular Sizzle)
   function soundSparkler(durationMs = 3200) {
-    if (!soundEnabled) return;
     const ctx = getAudio();
     if (!ctx) return;
 
     const start = Date.now();
     const timer = setInterval(() => {
-      if (!soundEnabled || Date.now() - start > durationMs) {
+      if (Date.now() - start > durationMs) {
         clearInterval(timer);
         return;
       }
@@ -1196,7 +1237,6 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
 
   // 3. Ground Charkhi Sound (Whirring centrifugal acceleration + swoosh)
   function soundCharkhi(durationMs = 3600) {
-    if (!soundEnabled) return;
     const ctx = getAudio();
     if (!ctx) return;
     const now = ctx.currentTime;
@@ -1219,7 +1259,6 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
 
   // 4. Anar Volcano Sound (Roaring volcanic fountain + sparkling hiss)
   function soundAnar(durationMs = 4000) {
-    if (!soundEnabled) return;
     const ctx = getAudio();
     if (!ctx) return;
     const now = ctx.currentTime;
@@ -1246,7 +1285,6 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
 
   // 5. 1000 Wala Ladi Sound (Machine-gun rapid pops)
   function soundLadi(count = 18) {
-    if (!soundEnabled) return;
     for (let i = 0; i < count; i++) {
       setTimeout(() => {
         soundExplosion(0.24, 280, 50, false, 0.12);
@@ -1271,7 +1309,6 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
 
   // 9. 7-Colour Sky Shot Sound
   function soundSkyShot() {
-    if (!soundEnabled) return;
     soundExplosion(0.25, 190, 40, false, 0.15);
     for (let i = 0; i < 3; i++) {
       setTimeout(() => {
@@ -1286,7 +1323,6 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   }
 
   function soundExplosion(vol = 0.4, startFreq = 160, endFreq = 30, echo = false, dur = 0.45) {
-    if (!soundEnabled) return;
     const ctx = getAudio();
     if (!ctx) return;
     const now = ctx.currentTime;
@@ -1320,7 +1356,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     if (echo) {
       for (let k = 0; k < 4; k++) {
         setTimeout(() => {
-          if (!soundEnabled || !ctx) return;
+          if (!ctx) return;
           const pt = ctx.currentTime;
           const p = ctx.createBufferSource();
           p.buffer = getNoiseBuffer();
@@ -1341,7 +1377,6 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
 
   // ====================================================
   // FULLSCREEN 2D CANVAS PHYSICS & REALISTIC ANIMATIONS
-  // Real Anar Fountains, Rockets, Shockwaves, and Sparks
   // ====================================================
   const canvas = $('fx');
   const ctx = canvas.getContext('2d');
@@ -1445,26 +1480,22 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   function loop() {
     ctx.clearRect(0, 0, width, height);
 
-    // Shockwaves
     shockwaves = shockwaves.filter(s => !s.dead);
     for (const s of shockwaves) {
       s.update();
       s.draw(ctx);
     }
 
-    // Flying rockets
     flyingRockets = flyingRockets.filter(r => !r.dead);
     for (const r of flyingRockets) {
       r.update();
       r.draw(ctx);
     }
 
-    // Special effects (Towering Anar fountain, Spinning Charkhi, Sizzling Fuljari)
     if (specialEffect) {
       specialEffect.update();
     }
 
-    // Particles
     particles = particles.filter(p => p.life > 0);
     for (const p of particles) {
       p.update();
@@ -1478,7 +1509,6 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     }
   }
 
-  // Get exact ground coordinate of cracker on screen
   function getCrackerGroundPoint() {
     const r = arenaCrackerTarget.getBoundingClientRect();
     return {
@@ -1490,7 +1520,6 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
 
   // ====================================================
   // HYPER-REALISTIC CRACKER ANIMATIONS
-  // Real Anar Volcano Fountain, Rocket Launch, Bomb Shockwave
   // ====================================================
   const realisticAnimations = {
     // 1. ANAR (FLOWERPOT): Towering 10-foot Volcano Fountain
@@ -1508,12 +1537,10 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
             return;
           }
           const progress = (now - startTime) / 3800;
-          // Fountain height rises to majestic climax, then tapers off
           const power = progress < 0.25 ? (progress / 0.25) : progress < 0.75 ? 1 : (1 - (progress - 0.75) / 0.25);
           const count = Math.floor(6 + power * 12);
 
           for (let k = 0; k < count; k++) {
-            // Shoots upward like a real pressurized volcano fountain
             const angle = -Math.PI / 2 + (Math.random() * 0.5 - 0.25);
             const speed = (4.5 + Math.random() * 8.5) * (0.6 + power * 0.7);
             const palette = ['#ffffff', '#fff5b8', '#ffd700', '#ff9900', '#ff4500'];
@@ -1527,7 +1554,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
               Math.sin(angle) * speed,
               1,
               0.016 + Math.random() * 0.015,
-              0.22, // Realistic downward gravity shower
+              0.22,
               1.8 + Math.random() * 2
             ));
           }
@@ -1549,7 +1576,6 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
             return;
           }
           for (let k = 0; k < 8; k++) {
-            // 360-degree needle spray
             const angle = Math.random() * Math.PI * 2;
             const spd = 2 + Math.random() * 6.5;
             const c = Math.random() > 0.3 ? '#ffffff' : '#ffd700';
@@ -1571,10 +1597,8 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
       const rocketObj = {
         dead: false,
         update() {
-          // Accelerates upwards with violent thrust
           vy -= 0.65;
           ry += vy;
-          // Thruster fire & smoke trail
           for (let i = 0; i < 3; i++) {
             particles.push(new Particle(rx + (Math.random() * 4 - 2), ry + 10, '#ff7700', (Math.random() - 0.5) * 1.5, 3 + Math.random() * 2, 0.5, 0.06, 0.02, 2.5));
           }
@@ -1707,40 +1731,30 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     `,
     rocket: `
       <svg class="realistic-cracker-svg" viewBox="0 0 100 120">
-        <!-- Bamboo Stick in Bottle -->
         <line x1="50" y1="30" x2="50" y2="116" stroke="#c8a065" stroke-width="3" stroke-linecap="round"/>
-        <!-- Rocket Body -->
         <rect x="42" y="32" width="16" height="46" rx="3" fill="#e74c3c" stroke="#f1c40f" stroke-width="2"/>
-        <!-- Nose Cone -->
         <polygon points="50,14 38,32 62,32" fill="#f39c12" stroke="#f1c40f" stroke-width="1.5"/>
-        <!-- Fuse -->
         <line x1="50" y1="78" x2="44" y2="92" stroke="#dcdde1" stroke-width="2.5" stroke-linecap="round"/>
       </svg>
     `,
     sparkler: `
       <svg class="realistic-cracker-svg" viewBox="0 0 100 120">
-        <!-- Wire Stick -->
         <line x1="50" y1="12" x2="50" y2="112" stroke="#bdc3c7" stroke-width="3.5" stroke-linecap="round"/>
-        <!-- Chemical Coating -->
         <rect x="45" y="16" width="10" height="60" rx="4" fill="#7f8c8d" stroke="#f39c12" stroke-width="1.5"/>
         <circle cx="50" cy="14" r="3.5" fill="#ffffff" filter="drop-shadow(0 0 4px #ffd700)"/>
       </svg>
     `,
     atomBomb: `
       <svg class="realistic-cracker-svg" viewBox="0 0 100 120">
-        <!-- Green Twine Body -->
         <rect x="25" y="45" width="50" height="58" rx="8" fill="#27ae60" stroke="#f1c40f" stroke-width="2.5"/>
         <line x1="25" y1="64" x2="75" y2="64" stroke="#e67e22" stroke-width="2"/>
         <line x1="25" y1="84" x2="75" y2="84" stroke="#e67e22" stroke-width="2"/>
-        <!-- Red Label -->
         <circle cx="50" cy="74" r="12" fill="#c0392b"/>
-        <!-- Fuse -->
         <path d="M50 45 Q56 25 64 22" fill="none" stroke="#dcdde1" stroke-width="3.5" stroke-linecap="round"/>
       </svg>
     `,
     sutliBomb: `
       <svg class="realistic-cracker-svg" viewBox="0 0 100 120">
-        <!-- Jute Jari Texture -->
         <polygon points="50,38 82,62 70,102 30,102 18,62" fill="#b9770e" stroke="#f39c12" stroke-width="2.5"/>
         <line x1="30" y1="50" x2="70" y2="90" stroke="#d68910" stroke-width="2"/>
         <line x1="70" y1="50" x2="30" y2="90" stroke="#d68910" stroke-width="2"/>
@@ -1752,14 +1766,12 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
         <circle cx="50" cy="75" r="32" fill="#d35400" stroke="#f1c40f" stroke-width="2.5"/>
         <circle cx="50" cy="75" r="22" fill="#e67e22"/>
         <circle cx="50" cy="75" r="10" fill="#f39c12"/>
-        <!-- Tangential Jet Nozzles -->
         <rect x="76" y="70" width="8" height="6" fill="#f1c40f"/>
         <rect x="16" y="74" width="8" height="6" fill="#f1c40f"/>
       </svg>
     `,
     ladi: `
       <svg class="realistic-cracker-svg" viewBox="0 0 100 120">
-        <!-- Garland of Red Crackers -->
         <line x1="50" y1="20" x2="50" y2="105" stroke="#dcdde1" stroke-width="2"/>
         <rect x="36" y="25" width="28" height="8" rx="2" fill="#c0392b" stroke="#f1c40f" stroke-width="1"/>
         <rect x="36" y="40" width="28" height="8" rx="2" fill="#c0392b" stroke="#f1c40f" stroke-width="1"/>
@@ -1813,7 +1825,6 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     isLightingInProgress = true;
     getAudio();
 
-    // 1. Swap in the realistic vector model on the ground
     if (crackerSVGs[crackerKey]) {
       crackerModelContainer.innerHTML = crackerSVGs[crackerKey];
     }
@@ -1824,19 +1835,15 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
       b.classList.toggle('active-firing', b.dataset.cracker === crackerKey);
     });
 
-    // Step 1: Kid walks forward
     arenaKid.className = 'arena-kid approaching lighting';
     
-    // Step 2: Fuse ignites
     setTimeout(() => {
       fuseSpark.style.display = 'block';
       stageBanner.textContent = `🔥 Fuse is lit! Watch out!`;
 
-      // Step 3: Kid runs back covering ears
       setTimeout(() => {
         arenaKid.className = 'arena-kid running-back';
 
-        // Step 4: Cracker explodes / erupts with real physics
         setTimeout(() => {
           fuseSpark.style.display = 'none';
           arenaKid.className = 'arena-kid cheering';
@@ -1844,12 +1851,10 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
           stageBanner.textContent = `🎉 Kid is cheering! Watch the ${crackerNames[crackerKey]} in action!`;
           showToast(`💥 ${crackerNames[crackerKey]} Activated!`);
 
-          // Execute realistic cracker effect & audio
           if (realisticAnimations[crackerKey]) {
             realisticAnimations[crackerKey]();
           }
 
-          // Reset kid after celebration
           setTimeout(() => {
             arenaKid.className = 'arena-kid';
             stageStatus.textContent = 'Ready to Light';
@@ -1864,24 +1869,24 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   }
 
   // ====================================================
-  // GREETING GENERATION (RUN SCRIPT)
+  // GREETING GENERATION (CELEBRATE DIWALI)
   // ====================================================
   function generateGreeting() {
     getAudio();
-    const name = nameInput.value.trim().replace(/\s+/g, ' ').slice(0, 35);
+    const formattedName = formatToTitleCase(nameInput.value);
     
-    cardUser.textContent = name ? `Dear ${name},` : 'Dear Friend,';
-    cardTitle.textContent = name ? `Happy Diwali, ${name}! 🪔` : 'Happy Diwali! 🪔';
+    cardUser.textContent = formattedName ? `Dear ${formattedName},` : 'Dear Friend,';
+    cardTitle.textContent = formattedName ? `Happy Diwali, ${formattedName}! 🪔` : 'Happy Diwali! 🪔';
     
-    if (name) {
-      cardBody.textContent = `May the festival of lights illuminate your path with boundless happiness, good health, and success, ${name}. May Goddess Lakshmi bless you and your family with eternal prosperity!`;
+    if (formattedName) {
+      cardBody.textContent = `May Goddess Lakshmi bless your home with boundless wealth, harmony, and eternal joy, ${formattedName}, and may Lord Ganesha remove every obstacle from your journey. May the sacred flame of every diya illuminate your highest aspirations, bring warm laughter to your family, and usher in unshakeable peace, prosperity, and radiant health. Wishing you and your loved ones a magical and blessed Diwali!`;
     }
 
     inputBox.style.display = 'none';
     greetingCard.style.display = 'block';
 
     triggerKidCrackerLighting('anar');
-    showToast(name ? `✨ Greeting created for ${name}!` : '✨ Happy Diwali Greeting Created!');
+    showToast(formattedName ? `✨ Greeting created for ${formattedName}!` : '✨ Happy Diwali Greeting Created!');
   }
 
   // Toast Helper
@@ -1897,25 +1902,6 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   $('runScriptBtn').addEventListener('click', generateGreeting);
   nameInput.addEventListener('keydown', e => {
     if (e.key === 'Enter') generateGreeting();
-  });
-
-  // Sound Toggle
-  $('soundBtn').addEventListener('click', () => {
-    soundEnabled = !soundEnabled;
-    const btn = $('soundBtn');
-    const icon = $('soundIcon');
-    const label = $('soundLabel');
-    btn.setAttribute('aria-pressed', String(soundEnabled));
-    if (soundEnabled) {
-      icon.textContent = '🔊';
-      label.textContent = 'Sound ON';
-      getAudio();
-      showToast('🔊 Sound Enabled');
-    } else {
-      icon.textContent = '🔇';
-      label.textContent = 'Sound OFF';
-      showToast('🔇 Sound Muted');
-    }
   });
 
   // Cracker 2-Row Grid Buttons
@@ -1935,7 +1921,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
 
   // Auto-run if preset
   setTimeout(() => {
-    if (preset) generateGreeting();
+    if (rawPreset) generateGreeting();
   }, 1000);
 
 })();
