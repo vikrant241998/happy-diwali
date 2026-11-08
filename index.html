@@ -53,6 +53,23 @@ button, input { font: inherit; }
 button { cursor: pointer; user-select: none; }
 button:active { transform: scale(0.96); }
 
+/* AGGRESSIVELY HIDE & SUPPRESS ALL NETLIFY BADGES, DRAWERS & IFRAMES */
+[class*="netlify"], [id*="netlify"], iframe[src*="netlify"], 
+.netlify-badge, #netlify-badge, .netlify-drawer, #netlify-drawer,
+[data-netlify-drawer], [data-netlify-deploy-id], [class*="feedback"],
+div[data-netlify], [aria-label*="Netlify"], a[href*="netlify.com"],
+div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+  z-index: -9999 !important;
+}
+
 /* Fullscreen Canvas for Fireworks, Rockets & Particle Physics */
 #fx {
   position: fixed;
@@ -193,21 +210,21 @@ button:active { transform: scale(0.96); }
 }
 
 /* ====================================================
-   SOLAR-SYSTEM DIYA SHOWCASE (Mobile Screen Centered)
-   Central Sun Diya + Orbiting Planetary Diyas
+   SOLAR-SYSTEM DIYA SHOWCASE WITH ORBITING CRACKERS!
+   Central Sun Diya + Orbiting Planetary Diyas & Live Crackers
    ==================================================== */
 .diya-solar-section {
   position: relative;
   width: 100%;
-  height: 270px;
+  height: 290px;
   display: grid;
   place-items: center;
-  margin: 2px 0;
+  margin: 4px 0;
 }
 .solar-ambient-aura {
   position: absolute;
-  width: 210px;
-  height: 210px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(255, 170, 50, 0.4) 0%, rgba(255, 110, 38, 0.15) 50%, transparent 72%);
   filter: blur(25px);
@@ -227,21 +244,21 @@ button:active { transform: scale(0.96); }
   pointer-events: none;
 }
 .orbit-path.inner {
-  width: 150px;
-  height: 150px;
-  animation: spinOrbit 12s linear infinite;
+  width: 156px;
+  height: 156px;
+  animation: spinOrbit 13s linear infinite;
 }
 .orbit-path.middle {
-  width: 210px;
-  height: 210px;
+  width: 218px;
+  height: 218px;
   border-color: rgba(255, 170, 50, 0.28);
-  animation: spinOrbit 18s linear infinite reverse;
+  animation: spinOrbit 19s linear infinite reverse;
 }
 .orbit-path.outer {
-  width: 268px;
-  height: 268px;
+  width: 278px;
+  height: 278px;
   border-color: rgba(255, 214, 122, 0.18);
-  animation: spinOrbit 26s linear infinite;
+  animation: spinOrbit 27s linear infinite;
 }
 @keyframes spinOrbit {
   from { transform: rotate(0deg); }
@@ -254,6 +271,7 @@ button:active { transform: scale(0.96); }
   top: -13px;
   left: 50%;
   transform: translateX(-50%);
+  pointer-events: auto;
 }
 .orbiting-diya-wrap.opposite {
   top: auto;
@@ -265,13 +283,84 @@ button:active { transform: scale(0.96); }
   width: 30px;
   height: 30px;
   filter: drop-shadow(0 0 9px rgba(255, 180, 50, 0.85));
-  animation: keepUpright 12s linear infinite reverse;
+  animation: keepUpright 13s linear infinite reverse;
 }
-.orbit-path.middle .mini-orbit-diya { animation: keepUpright 18s linear infinite; }
-.orbit-path.outer .mini-orbit-diya { animation: keepUpright 26s linear infinite reverse; }
+.orbit-path.middle .mini-orbit-diya { animation: keepUpright 19s linear infinite; }
+.orbit-path.outer .mini-orbit-diya { animation: keepUpright 27s linear infinite reverse; }
 @keyframes keepUpright {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+/* ORBITING INTERACTIVE CRACKERS AROUND THE DIYA! */
+.orbit-cracker-btn {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(32, 24, 52, 0.95), rgba(18, 14, 34, 0.98));
+  border: 1.5px solid rgba(255, 214, 122, 0.55);
+  display: grid;
+  place-items: center;
+  font-size: 17px;
+  box-shadow: 0 0 12px rgba(255, 180, 50, 0.6);
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 15;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.orbit-cracker-btn:hover, .orbit-cracker-btn:active {
+  transform: scale(1.25) !important;
+  border-color: #ffd478;
+  box-shadow: 0 0 20px rgba(255, 140, 20, 0.85);
+}
+
+/* Positions of Crackers on Orbit Tracks */
+/* Orbit 1 Inner: Rocket at bottom */
+.orbit-path.inner .orbit-cracker-btn.pos-bottom {
+  bottom: -17px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: keepUpright 13s linear infinite reverse;
+}
+
+/* Orbit 2 Middle: Fuljari at right, Anar at left */
+.orbit-path.middle .orbit-cracker-btn.pos-right {
+  right: -17px;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: keepUpright 19s linear infinite;
+}
+.orbit-path.middle .orbit-cracker-btn.pos-left {
+  left: -17px;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: keepUpright 19s linear infinite;
+}
+
+/* Orbit 3 Outer: Atom Bomb at bottom-right, Charkhi at bottom-left */
+.orbit-path.outer .orbit-cracker-btn.pos-bottom-right {
+  bottom: 0px;
+  right: 18px;
+  animation: keepUpright 27s linear infinite reverse;
+}
+.orbit-path.outer .orbit-cracker-btn.pos-bottom-left {
+  bottom: 0px;
+  left: 18px;
+  animation: keepUpright 27s linear infinite reverse;
+}
+
+/* Animated Burning Fuse Spark for Orbiting Crackers */
+.orbit-fuse-spark {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 8px #ffea00, 0 0 14px #ff3300;
+  animation: fuseHiss 0.12s infinite alternate;
 }
 
 /* Central Main Burning Diya (Sun) */
@@ -311,13 +400,18 @@ button:active { transform: scale(0.96); }
   0% { transform: scale(0.9, 1.08) rotate(-2deg); }
   100% { transform: scale(1.08, 0.92) rotate(2deg); }
 }
-.diya-caption {
+
+.diya-caption-badge {
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   color: #ffdda1;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   text-align: center;
-  margin-top: -6px;
+  background: rgba(255, 214, 122, 0.08);
+  border: 1px solid rgba(255, 214, 122, 0.25);
+  border-radius: 99px;
+  padding: 5px 14px;
+  margin-top: -4px;
 }
 
 /* ====================================================
@@ -383,7 +477,7 @@ button:active { transform: scale(0.96); }
   box-shadow: 0 8px 22px rgba(252, 164, 52, 0.4);
 }
 
-/* Generated Festive Card (Cleaned without badge, copy, or new name) */
+/* Generated Festive Card (Clean without badge, copy button, or new name button) */
 .festive-greeting-card {
   display: none;
   background: linear-gradient(145deg, rgba(28, 22, 48, 0.97), rgba(15, 18, 38, 0.99));
@@ -730,12 +824,13 @@ button:active { transform: scale(0.96); }
     </p>
   </section>
 
-  <!-- Solar System Diya Showcase: Live Burning Sun Diya + Orbiting Planetary Diyas -->
-  <section class="diya-solar-section" aria-label="Cosmic burning diya with orbiting miniature planetary diyas">
+  <!-- Solar System Diya Showcase: Sun Diya + Orbiting Planetary Diyas & Live Crackers -->
+  <section class="diya-solar-section" aria-label="Cosmic burning diya with orbiting miniature planetary diyas and crackers">
     <div class="solar-ambient-aura"></div>
 
-    <!-- Orbit Track 1 (Inner) -->
+    <!-- Orbit Track 1 (Inner, 156px) - Diya + Rocket -->
     <div class="orbit-path inner">
+      <!-- Mini Diya 1 -->
       <div class="orbiting-diya-wrap">
         <svg class="mini-orbit-diya" viewBox="0 0 100 100">
           <ellipse cx="50" cy="65" rx="36" ry="16" fill="#e67e22" stroke="#ffcb74" stroke-width="2"/>
@@ -746,10 +841,17 @@ button:active { transform: scale(0.96); }
           </g>
         </svg>
       </div>
+
+      <!-- Live Orbiting Rocket (Bottom) -->
+      <button class="orbit-cracker-btn pos-bottom" data-cracker="rocket" type="button" title="Tap to launch Rocket!">
+        <span>🚀</span>
+        <span class="orbit-fuse-spark"></span>
+      </button>
     </div>
 
-    <!-- Orbit Track 2 (Middle) with 2 Planetary Diyas -->
+    <!-- Orbit Track 2 (Middle, 218px) - Diyas + Fuljari (Sparkler) + Anar -->
     <div class="orbit-path middle">
+      <!-- Mini Diya 2 (Top) -->
       <div class="orbiting-diya-wrap">
         <svg class="mini-orbit-diya" viewBox="0 0 100 100">
           <ellipse cx="50" cy="65" rx="36" ry="16" fill="#d35400" stroke="#ffd97a" stroke-width="2"/>
@@ -760,20 +862,23 @@ button:active { transform: scale(0.96); }
           </g>
         </svg>
       </div>
-      <div class="orbiting-diya-wrap opposite">
-        <svg class="mini-orbit-diya" viewBox="0 0 100 100">
-          <ellipse cx="50" cy="65" rx="36" ry="16" fill="#e67e22" stroke="#ffcb74" stroke-width="2"/>
-          <ellipse cx="50" cy="62" rx="30" ry="9" fill="#963c1a"/>
-          <g class="mini-flame">
-            <ellipse cx="50" cy="42" rx="14" ry="24" fill="#ffb347" filter="drop-shadow(0 0 7px #ff9500)"/>
-            <ellipse cx="50" cy="44" rx="8" ry="16" fill="#fff7b2"/>
-          </g>
-        </svg>
-      </div>
+
+      <!-- Live Orbiting Fuljari / Sparkler (Right) -->
+      <button class="orbit-cracker-btn pos-right" data-cracker="sparkler" type="button" title="Tap to light Fuljari!">
+        <span>✨</span>
+        <span class="orbit-fuse-spark"></span>
+      </button>
+
+      <!-- Live Orbiting Anar / Flowerpot (Left) -->
+      <button class="orbit-cracker-btn pos-left" data-cracker="anar" type="button" title="Tap to ignite Anar!">
+        <span>🌋</span>
+        <span class="orbit-fuse-spark"></span>
+      </button>
     </div>
 
-    <!-- Orbit Track 3 (Outer) -->
+    <!-- Orbit Track 3 (Outer, 278px) - Diya + Atom Bomb + Charkhi -->
     <div class="orbit-path outer">
+      <!-- Mini Diya 3 (Top) -->
       <div class="orbiting-diya-wrap">
         <svg class="mini-orbit-diya" viewBox="0 0 100 100">
           <ellipse cx="50" cy="65" rx="36" ry="16" fill="#f39c12" stroke="#ffeaa7" stroke-width="2"/>
@@ -784,6 +889,18 @@ button:active { transform: scale(0.96); }
           </g>
         </svg>
       </div>
+
+      <!-- Live Orbiting Atom Bomb (Bottom-Right) -->
+      <button class="orbit-cracker-btn pos-bottom-right" data-cracker="atomBomb" type="button" title="Tap to burst Bomb!">
+        <span>💣</span>
+        <span class="orbit-fuse-spark"></span>
+      </button>
+
+      <!-- Live Orbiting Ground Charkhi (Bottom-Left) -->
+      <button class="orbit-cracker-btn pos-bottom-left" data-cracker="charkhi" type="button" title="Tap to spin Charkhi!">
+        <span>🌀</span>
+        <span class="orbit-fuse-spark"></span>
+      </button>
     </div>
 
     <!-- Central Sun Diya with Continuous Live Burning Flame -->
@@ -852,7 +969,7 @@ button:active { transform: scale(0.96); }
       </svg>
     </div>
   </section>
-  <div class="diya-caption">✨ Planetary Diyas Orbiting the Sun Diya ✨</div>
+  <div class="diya-caption-badge">✨ Tap the Diya or any Orbiting Cracker (🚀 ✨ 🌋 💣 🌀) to Ignite! ✨</div>
 
   <!-- Name Input Form -->
   <section class="input-card" id="inputBox">
@@ -874,7 +991,7 @@ button:active { transform: scale(0.96); }
     </div>
   </section>
 
-  <!-- Generated Greeting Card (Without badge, copy button, or new name button) -->
+  <!-- Generated Greeting Card (Clean without badge, copy button, or new name button) -->
   <section class="festive-greeting-card" id="greetingCard">
     <h2 class="card-title" id="cardTitle">Happy Diwali! 🪔</h2>
     <div class="card-user" id="cardUser">Dear Friend,</div>
@@ -935,7 +1052,7 @@ button:active { transform: scale(0.96); }
     </div>
 
     <div class="stage-action-banner" id="stageBanner">
-      👆 Tap any of the 10 crackers below to watch the kid light it!
+      👆 Tap any cracker to watch the kid light it!
     </div>
   </section>
 
@@ -958,7 +1075,7 @@ button:active { transform: scale(0.96); }
       <button class="cracker-tile-btn" data-cracker="sparkler" type="button" title="Golden Sparkler">
         <span class="cracker-tile-num">#2</span>
         <span class="cracker-tile-icon">✨</span>
-        <span class="cracker-tile-name">Sparkler</span>
+        <span class="cracker-tile-name">Fuljari</span>
       </button>
 
       <button class="cracker-tile-btn" data-cracker="charkhi" type="button" title="Ground Charkhi">
@@ -983,7 +1100,7 @@ button:active { transform: scale(0.96); }
       <button class="cracker-tile-btn" data-cracker="atomBomb" type="button" title="Green Atom Bomb">
         <span class="cracker-tile-num">#6</span>
         <span class="cracker-tile-icon">💣</span>
-        <span class="cracker-tile-name">Atom</span>
+        <span class="cracker-tile-name">Bomb</span>
       </button>
 
       <button class="cracker-tile-btn" data-cracker="sutliBomb" type="button" title="Sutli Bomb">
@@ -1028,6 +1145,16 @@ button:active { transform: scale(0.96); }
 <script>
 (() => {
   'use strict';
+
+  // 1. Aggressively remove Netlify badge or drawer if injected into DOM
+  const purgeNetlify = () => {
+    document.querySelectorAll('[class*="netlify"], [id*="netlify"], iframe[src*="netlify"], a[href*="netlify"]').forEach(el => el.remove());
+  };
+  purgeNetlify();
+  if (window.MutationObserver) {
+    const observer = new MutationObserver(purgeNetlify);
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+  }
 
   const $ = id => document.getElementById(id);
   const nameInput = $('userName');
@@ -1116,7 +1243,7 @@ button:active { transform: scale(0.96); }
     setTimeout(() => soundExplosion(0.38, 140, 24, true), 650);
   }
 
-  // 2. Sparkler Sound
+  // 2. Sparkler / Fuljari Sound
   function soundSparkler(durationMs = 2800) {
     if (!soundEnabled) return;
     const ctx = getAudio();
@@ -1559,7 +1686,7 @@ button:active { transform: scale(0.96); }
 
   const crackerNames = {
     rocket: 'Sky Rocket',
-    sparkler: 'Golden Sparkler',
+    sparkler: 'Fuljari (Sparkler)',
     charkhi: 'Ground Charkhi',
     anar: 'Anar Flowerpot',
     ladi: '1000 Wala Red Ladi',
@@ -1681,6 +1808,18 @@ button:active { transform: scale(0.96); }
   document.querySelectorAll('.cracker-tile-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const cKey = btn.dataset.cracker;
+      $('stageSection').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      triggerKidCrackerLighting(cKey);
+    });
+  });
+
+  // ORBITING CRACKERS AROUND THE DIYA!
+  document.querySelectorAll('.orbit-cracker-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const cKey = btn.dataset.cracker;
+      const rect = btn.getBoundingClientRect();
+      spawnBurst(rect.left + rect.width / 2, rect.top + rect.height / 2, 45, '#ffd700', 3.5);
       $('stageSection').scrollIntoView({ behavior: 'smooth', block: 'center' });
       triggerKidCrackerLighting(cKey);
     });
