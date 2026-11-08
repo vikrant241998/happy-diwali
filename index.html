@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#060814">
-<meta name="description" content="Happy Diwali! An interactive festival of lights experience with 10 real crackers, realistic sounds, animated kid lighting, and cosmic solar-system diyas.">
+<meta name="description" content="Happy Diwali! An interactive festival of lights experience with realistic crackers, authentic sounds, animated kid lighting, and cosmic solar-system diyas.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="🪔 Happy Diwali — Interactive Fireworks & Celebration">
-<meta property="og:description" content="Watch the kid light 10 real crackers with sound effects, enjoy the cosmic orbiting diyas, and generate your personalized greeting!">
+<meta property="og:title" content="🪔 Happy Diwali — Realistic Fireworks & Celebration">
+<meta property="og:description" content="Watch realistic Anar fountains, sky rockets, sparklers, and bombs ignited by an animated kid with authentic sounds!">
 <meta property="og:image" content="og-preview.png">
-<title>Happy Diwali 🪔 Interactive Fireworks & Celebration</title>
+<title>Happy Diwali 🪔 Realistic Fireworks & Celebration</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -70,7 +70,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   z-index: -9999 !important;
 }
 
-/* Fullscreen Canvas for Fireworks, Rockets & Particle Physics */
+/* Fullscreen Canvas for Real-Life Fireworks, Rockets, Anar Volcano & Shockwaves */
 #fx {
   position: fixed;
   inset: 0;
@@ -210,21 +210,21 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
 }
 
 /* ====================================================
-   SOLAR-SYSTEM DIYA SHOWCASE WITH ORBITING CRACKERS!
-   Central Sun Diya + Orbiting Planetary Diyas & Live Crackers
+   SOLAR-SYSTEM DIYA SHOWCASE (Pure Diyas, Clean Orbit)
+   Central Sun Diya + Orbiting Planetary Diyas
    ==================================================== */
 .diya-solar-section {
   position: relative;
   width: 100%;
-  height: 290px;
+  height: 270px;
   display: grid;
   place-items: center;
-  margin: 4px 0;
+  margin: 2px 0;
 }
 .solar-ambient-aura {
   position: absolute;
-  width: 220px;
-  height: 220px;
+  width: 210px;
+  height: 210px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(255, 170, 50, 0.4) 0%, rgba(255, 110, 38, 0.15) 50%, transparent 72%);
   filter: blur(25px);
@@ -244,34 +244,33 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   pointer-events: none;
 }
 .orbit-path.inner {
-  width: 156px;
-  height: 156px;
-  animation: spinOrbit 13s linear infinite;
+  width: 150px;
+  height: 150px;
+  animation: spinOrbit 12s linear infinite;
 }
 .orbit-path.middle {
-  width: 218px;
-  height: 218px;
+  width: 210px;
+  height: 210px;
   border-color: rgba(255, 170, 50, 0.28);
-  animation: spinOrbit 19s linear infinite reverse;
+  animation: spinOrbit 18s linear infinite reverse;
 }
 .orbit-path.outer {
-  width: 278px;
-  height: 278px;
+  width: 268px;
+  height: 268px;
   border-color: rgba(255, 214, 122, 0.18);
-  animation: spinOrbit 27s linear infinite;
+  animation: spinOrbit 26s linear infinite;
 }
 @keyframes spinOrbit {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
-/* Orbiting Planetary Diyas */
+/* Orbiting Planetary Diyas (Like Earth revolving around the Sun) */
 .orbiting-diya-wrap {
   position: absolute;
   top: -13px;
   left: 50%;
   transform: translateX(-50%);
-  pointer-events: auto;
 }
 .orbiting-diya-wrap.opposite {
   top: auto;
@@ -283,84 +282,13 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   width: 30px;
   height: 30px;
   filter: drop-shadow(0 0 9px rgba(255, 180, 50, 0.85));
-  animation: keepUpright 13s linear infinite reverse;
+  animation: keepUpright 12s linear infinite reverse;
 }
-.orbit-path.middle .mini-orbit-diya { animation: keepUpright 19s linear infinite; }
-.orbit-path.outer .mini-orbit-diya { animation: keepUpright 27s linear infinite reverse; }
+.orbit-path.middle .mini-orbit-diya { animation: keepUpright 18s linear infinite; }
+.orbit-path.outer .mini-orbit-diya { animation: keepUpright 26s linear infinite reverse; }
 @keyframes keepUpright {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
-
-/* ORBITING INTERACTIVE CRACKERS AROUND THE DIYA! */
-.orbit-cracker-btn {
-  position: absolute;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(32, 24, 52, 0.95), rgba(18, 14, 34, 0.98));
-  border: 1.5px solid rgba(255, 214, 122, 0.55);
-  display: grid;
-  place-items: center;
-  font-size: 17px;
-  box-shadow: 0 0 12px rgba(255, 180, 50, 0.6);
-  cursor: pointer;
-  pointer-events: auto;
-  z-index: 15;
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-}
-.orbit-cracker-btn:hover, .orbit-cracker-btn:active {
-  transform: scale(1.25) !important;
-  border-color: #ffd478;
-  box-shadow: 0 0 20px rgba(255, 140, 20, 0.85);
-}
-
-/* Positions of Crackers on Orbit Tracks */
-/* Orbit 1 Inner: Rocket at bottom */
-.orbit-path.inner .orbit-cracker-btn.pos-bottom {
-  bottom: -17px;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: keepUpright 13s linear infinite reverse;
-}
-
-/* Orbit 2 Middle: Fuljari at right, Anar at left */
-.orbit-path.middle .orbit-cracker-btn.pos-right {
-  right: -17px;
-  top: 50%;
-  transform: translateY(-50%);
-  animation: keepUpright 19s linear infinite;
-}
-.orbit-path.middle .orbit-cracker-btn.pos-left {
-  left: -17px;
-  top: 50%;
-  transform: translateY(-50%);
-  animation: keepUpright 19s linear infinite;
-}
-
-/* Orbit 3 Outer: Atom Bomb at bottom-right, Charkhi at bottom-left */
-.orbit-path.outer .orbit-cracker-btn.pos-bottom-right {
-  bottom: 0px;
-  right: 18px;
-  animation: keepUpright 27s linear infinite reverse;
-}
-.orbit-path.outer .orbit-cracker-btn.pos-bottom-left {
-  bottom: 0px;
-  left: 18px;
-  animation: keepUpright 27s linear infinite reverse;
-}
-
-/* Animated Burning Fuse Spark for Orbiting Crackers */
-.orbit-fuse-spark {
-  position: absolute;
-  top: -3px;
-  right: -3px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #ffffff;
-  box-shadow: 0 0 8px #ffea00, 0 0 14px #ff3300;
-  animation: fuseHiss 0.12s infinite alternate;
 }
 
 /* Central Main Burning Diya (Sun) */
@@ -400,18 +328,13 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   0% { transform: scale(0.9, 1.08) rotate(-2deg); }
   100% { transform: scale(1.08, 0.92) rotate(2deg); }
 }
-
-.diya-caption-badge {
+.diya-caption {
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   color: #ffdda1;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-align: center;
-  background: rgba(255, 214, 122, 0.08);
-  border: 1px solid rgba(255, 214, 122, 0.25);
-  border-radius: 99px;
-  padding: 5px 14px;
-  margin-top: -4px;
+  margin-top: -6px;
 }
 
 /* ====================================================
@@ -477,7 +400,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   box-shadow: 0 8px 22px rgba(252, 164, 52, 0.4);
 }
 
-/* Generated Festive Card (Clean without badge, copy button, or new name button) */
+/* Generated Festive Card */
 .festive-greeting-card {
   display: none;
   background: linear-gradient(145deg, rgba(28, 22, 48, 0.97), rgba(15, 18, 38, 0.99));
@@ -516,7 +439,8 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
 }
 
 /* ====================================================
-   INTERACTIVE KID & CRACKER LIGHTING STAGE
+   REALISTIC FIREWORKS ARENA WITH ANIMATED KID
+   Realistic Anar Volcanos, Rockets, Sparklers, Bombs
    ==================================================== */
 .stage-section {
   background: linear-gradient(180deg, rgba(16, 22, 44, 0.95), rgba(9, 12, 26, 0.98));
@@ -534,18 +458,18 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   justify-content: space-between;
 }
 .stage-title {
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 800;
   color: #ffd88a;
   letter-spacing: 0.04em;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
 }
 .stage-status-badge {
   font-size: 10px;
   font-weight: 700;
-  padding: 3px 9px;
+  padding: 3px 10px;
   border-radius: 99px;
   background: rgba(111, 240, 210, 0.15);
   color: var(--teal);
@@ -554,56 +478,62 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
 
 .lighting-arena {
   width: 100%;
-  height: 175px;
-  background: radial-gradient(circle at 50% 85%, rgba(245, 159, 40, 0.15) 0%, transparent 60%),
-              linear-gradient(180deg, #090e22 0%, #111833 75%, #182245 76%, #0b0f20 100%);
-  border-radius: 13px;
+  height: 215px;
+  background: radial-gradient(circle at 65% 85%, rgba(245, 159, 40, 0.2) 0%, transparent 60%),
+              linear-gradient(180deg, #070b1a 0%, #0e142e 72%, #182245 74%, #0b0f20 100%);
+  border-radius: 14px;
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(255, 214, 122, 0.18);
+  border: 1px solid rgba(255, 214, 122, 0.22);
 }
 .arena-ground {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 36px;
+  height: 42px;
   background: linear-gradient(180deg, #1b264d 0%, #111833 100%);
-  border-top: 1.5px solid rgba(255, 214, 122, 0.4);
+  border-top: 1.5px solid rgba(255, 214, 122, 0.45);
 }
 .arena-ground::before {
   content: "✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦";
   position: absolute;
-  top: 4px;
+  top: 5px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 9px;
-  color: rgba(255, 214, 122, 0.35);
+  color: rgba(255, 214, 122, 0.38);
   white-space: nowrap;
 }
 
+/* REALISTIC PHYSICAL CRACKER OBJECTS ON THE GROUND */
 .arena-cracker-target {
   position: absolute;
-  bottom: 32px;
-  left: 65%;
+  bottom: 38px;
+  left: 68%;
   transform: translateX(-50%);
-  width: 48px;
-  height: 56px;
+  width: 60px;
+  height: 70px;
   display: grid;
   place-items: center;
   z-index: 5;
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.18, 0.9, 0.2, 1);
 }
-.cracker-target-icon {
-  font-size: 30px;
+
+/* Detailed Vector Render of Actual Crackers */
+.realistic-cracker-svg {
+  width: 100%;
+  height: 100%;
   filter: drop-shadow(0 0 10px rgba(255, 170, 50, 0.5));
 }
+
+/* Animated Burning Fuse Spark */
 .fuse-spark {
   position: absolute;
   top: 2px;
-  right: 10px;
-  width: 7px;
-  height: 7px;
+  right: 14px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: #ffffff;
   box-shadow: 0 0 10px #ffea00, 0 0 20px #ff3300;
@@ -615,13 +545,14 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   100% { transform: scale(1.4); opacity: 1; }
 }
 
+/* Adorable Animated Kid Character */
 .arena-kid {
   position: absolute;
-  bottom: 32px;
-  left: 28%;
+  bottom: 38px;
+  left: 26%;
   transform: translateX(-50%);
-  width: 66px;
-  height: 80px;
+  width: 70px;
+  height: 85px;
   z-index: 6;
   transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.25, 1), left 0.6s cubic-bezier(0.2, 0.8, 0.25, 1);
 }
@@ -634,7 +565,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
 .arena-kid.cheering { animation: kidJump 0.4s ease-in-out infinite alternate; }
 @keyframes kidJump {
   0% { transform: translateY(0); }
-  100% { transform: translateY(-13px); }
+  100% { transform: translateY(-14px); }
 }
 
 .stage-action-banner {
@@ -793,7 +724,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
 </head>
 <body>
 
-<!-- Dynamic Canvas for Realistic Particles, Rockets, Explosions & Smoke -->
+<!-- Fullscreen Canvas for Real-Life Fireworks, Volcanic Anar, Rocket Trails & Explosions -->
 <canvas id="fx" aria-hidden="true"></canvas>
 
 <div class="mobile-app">
@@ -824,13 +755,12 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     </p>
   </section>
 
-  <!-- Solar System Diya Showcase: Sun Diya + Orbiting Planetary Diyas & Live Crackers -->
-  <section class="diya-solar-section" aria-label="Cosmic burning diya with orbiting miniature planetary diyas and crackers">
+  <!-- Solar System Diya Showcase: Sun Diya + Orbiting Planetary Diyas (Pure & Clean) -->
+  <section class="diya-solar-section" aria-label="Cosmic burning diya with orbiting miniature planetary diyas">
     <div class="solar-ambient-aura"></div>
 
-    <!-- Orbit Track 1 (Inner, 156px) - Diya + Rocket -->
+    <!-- Orbit Track 1 (Inner) -->
     <div class="orbit-path inner">
-      <!-- Mini Diya 1 -->
       <div class="orbiting-diya-wrap">
         <svg class="mini-orbit-diya" viewBox="0 0 100 100">
           <ellipse cx="50" cy="65" rx="36" ry="16" fill="#e67e22" stroke="#ffcb74" stroke-width="2"/>
@@ -841,17 +771,10 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
           </g>
         </svg>
       </div>
-
-      <!-- Live Orbiting Rocket (Bottom) -->
-      <button class="orbit-cracker-btn pos-bottom" data-cracker="rocket" type="button" title="Tap to launch Rocket!">
-        <span>🚀</span>
-        <span class="orbit-fuse-spark"></span>
-      </button>
     </div>
 
-    <!-- Orbit Track 2 (Middle, 218px) - Diyas + Fuljari (Sparkler) + Anar -->
+    <!-- Orbit Track 2 (Middle) with 2 Planetary Diyas -->
     <div class="orbit-path middle">
-      <!-- Mini Diya 2 (Top) -->
       <div class="orbiting-diya-wrap">
         <svg class="mini-orbit-diya" viewBox="0 0 100 100">
           <ellipse cx="50" cy="65" rx="36" ry="16" fill="#d35400" stroke="#ffd97a" stroke-width="2"/>
@@ -862,23 +785,20 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
           </g>
         </svg>
       </div>
-
-      <!-- Live Orbiting Fuljari / Sparkler (Right) -->
-      <button class="orbit-cracker-btn pos-right" data-cracker="sparkler" type="button" title="Tap to light Fuljari!">
-        <span>✨</span>
-        <span class="orbit-fuse-spark"></span>
-      </button>
-
-      <!-- Live Orbiting Anar / Flowerpot (Left) -->
-      <button class="orbit-cracker-btn pos-left" data-cracker="anar" type="button" title="Tap to ignite Anar!">
-        <span>🌋</span>
-        <span class="orbit-fuse-spark"></span>
-      </button>
+      <div class="orbiting-diya-wrap opposite">
+        <svg class="mini-orbit-diya" viewBox="0 0 100 100">
+          <ellipse cx="50" cy="65" rx="36" ry="16" fill="#e67e22" stroke="#ffcb74" stroke-width="2"/>
+          <ellipse cx="50" cy="62" rx="30" ry="9" fill="#963c1a"/>
+          <g class="mini-flame">
+            <ellipse cx="50" cy="42" rx="14" ry="24" fill="#ffb347" filter="drop-shadow(0 0 7px #ff9500)"/>
+            <ellipse cx="50" cy="44" rx="8" ry="16" fill="#fff7b2"/>
+          </g>
+        </svg>
+      </div>
     </div>
 
-    <!-- Orbit Track 3 (Outer, 278px) - Diya + Atom Bomb + Charkhi -->
+    <!-- Orbit Track 3 (Outer) -->
     <div class="orbit-path outer">
-      <!-- Mini Diya 3 (Top) -->
       <div class="orbiting-diya-wrap">
         <svg class="mini-orbit-diya" viewBox="0 0 100 100">
           <ellipse cx="50" cy="65" rx="36" ry="16" fill="#f39c12" stroke="#ffeaa7" stroke-width="2"/>
@@ -889,18 +809,6 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
           </g>
         </svg>
       </div>
-
-      <!-- Live Orbiting Atom Bomb (Bottom-Right) -->
-      <button class="orbit-cracker-btn pos-bottom-right" data-cracker="atomBomb" type="button" title="Tap to burst Bomb!">
-        <span>💣</span>
-        <span class="orbit-fuse-spark"></span>
-      </button>
-
-      <!-- Live Orbiting Ground Charkhi (Bottom-Left) -->
-      <button class="orbit-cracker-btn pos-bottom-left" data-cracker="charkhi" type="button" title="Tap to spin Charkhi!">
-        <span>🌀</span>
-        <span class="orbit-fuse-spark"></span>
-      </button>
     </div>
 
     <!-- Central Sun Diya with Continuous Live Burning Flame -->
@@ -969,7 +877,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
       </svg>
     </div>
   </section>
-  <div class="diya-caption-badge">✨ Tap the Diya or any Orbiting Cracker (🚀 ✨ 🌋 💣 🌀) to Ignite! ✨</div>
+  <div class="diya-caption">✨ Planetary Diyas Orbiting the Sun Diya ✨</div>
 
   <!-- Name Input Form -->
   <section class="input-card" id="inputBox">
@@ -991,7 +899,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     </div>
   </section>
 
-  <!-- Generated Greeting Card (Clean without badge, copy button, or new name button) -->
+  <!-- Generated Greeting Card -->
   <section class="festive-greeting-card" id="greetingCard">
     <h2 class="card-title" id="cardTitle">Happy Diwali! 🪔</h2>
     <div class="card-user" id="cardUser">Dear Friend,</div>
@@ -1001,7 +909,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     </p>
   </section>
 
-  <!-- Interactive Cracker Demonstration Stage with Animated Kid -->
+  <!-- Interactive Real-Life Fireworks Arena with Animated Kid -->
   <section class="stage-section" id="stageSection">
     <div class="stage-header">
       <span class="stage-title">
@@ -1011,13 +919,27 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     </div>
 
     <div class="lighting-arena" id="lightingArena">
-      <!-- Cracker Object on the Ground -->
+      <!-- Cracker Object on the Ground with Realistic Vector Graphics -->
       <div class="arena-cracker-target" id="arenaCrackerTarget">
-        <div class="cracker-target-icon" id="crackerDisplayIcon">🚀</div>
+        <div id="crackerModelContainer" style="width:100%;height:100%;">
+          <!-- Default: Realistic Anar Flowerpot -->
+          <svg class="realistic-cracker-svg" viewBox="0 0 100 120" id="svgCrackerModel">
+            <!-- Terracotta Base Cone -->
+            <polygon points="50,15 18,105 82,105" fill="#c0392b" stroke="#f1c40f" stroke-width="2.5"/>
+            <!-- Ornate Golden Bands -->
+            <polygon points="50,15 32,58 68,58" fill="#e67e22"/>
+            <polygon points="50,15 40,36 60,36" fill="#f39c12"/>
+            <!-- Clay Rim Base -->
+            <ellipse cx="50" cy="105" rx="34" ry="9" fill="#7f1d1d" stroke="#f1c40f" stroke-width="1.5"/>
+            <!-- Fuse at Top -->
+            <line x1="50" y1="15" x2="52" y2="4" stroke="#dcdde1" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <!-- Live Burning Fuse Spark -->
         <div class="fuse-spark" id="fuseSpark"></div>
       </div>
 
-      <!-- Cute Kid Character Vector (Holding Lighting Stick) -->
+      <!-- Cute Kid Character Vector -->
       <div class="arena-kid" id="arenaKid">
         <svg viewBox="0 0 100 120" width="100%" height="100%">
           <ellipse cx="50" cy="114" rx="28" ry="6" fill="#000000" opacity="0.45"/>
@@ -1066,10 +988,10 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     <!-- 10 Buttons in 2 Rows (5 buttons per row) -->
     <div class="crackers-2row-grid" id="crackersGrid">
       <!-- ROW 1 (Crackers 1-5) -->
-      <button class="cracker-tile-btn" data-cracker="rocket" type="button" title="Sky Rocket">
+      <button class="cracker-tile-btn" data-cracker="anar" type="button" title="Anar Flowerpot">
         <span class="cracker-tile-num">#1</span>
-        <span class="cracker-tile-icon">🚀</span>
-        <span class="cracker-tile-name">Rocket</span>
+        <span class="cracker-tile-icon">🌋</span>
+        <span class="cracker-tile-name">Anar</span>
       </button>
 
       <button class="cracker-tile-btn" data-cracker="sparkler" type="button" title="Golden Sparkler">
@@ -1078,29 +1000,29 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
         <span class="cracker-tile-name">Fuljari</span>
       </button>
 
-      <button class="cracker-tile-btn" data-cracker="charkhi" type="button" title="Ground Charkhi">
+      <button class="cracker-tile-btn" data-cracker="rocket" type="button" title="Sky Rocket">
         <span class="cracker-tile-num">#3</span>
+        <span class="cracker-tile-icon">🚀</span>
+        <span class="cracker-tile-name">Rocket</span>
+      </button>
+
+      <button class="cracker-tile-btn" data-cracker="atomBomb" type="button" title="Green Atom Bomb">
+        <span class="cracker-tile-num">#4</span>
+        <span class="cracker-tile-icon">💣</span>
+        <span class="cracker-tile-name">Bomb</span>
+      </button>
+
+      <button class="cracker-tile-btn" data-cracker="charkhi" type="button" title="Ground Charkhi">
+        <span class="cracker-tile-num">#5</span>
         <span class="cracker-tile-icon">🌀</span>
         <span class="cracker-tile-name">Charkhi</span>
       </button>
 
-      <button class="cracker-tile-btn" data-cracker="anar" type="button" title="Anar Flowerpot">
-        <span class="cracker-tile-num">#4</span>
-        <span class="cracker-tile-icon">🌋</span>
-        <span class="cracker-tile-name">Anar</span>
-      </button>
-
+      <!-- ROW 2 (Crackers 6-10) -->
       <button class="cracker-tile-btn" data-cracker="ladi" type="button" title="1000 Wala Red Ladi">
-        <span class="cracker-tile-num">#5</span>
+        <span class="cracker-tile-num">#6</span>
         <span class="cracker-tile-icon">🧨</span>
         <span class="cracker-tile-name">Ladi</span>
-      </button>
-
-      <!-- ROW 2 (Crackers 6-10) -->
-      <button class="cracker-tile-btn" data-cracker="atomBomb" type="button" title="Green Atom Bomb">
-        <span class="cracker-tile-num">#6</span>
-        <span class="cracker-tile-icon">💣</span>
-        <span class="cracker-tile-name">Bomb</span>
       </button>
 
       <button class="cracker-tile-btn" data-cracker="sutliBomb" type="button" title="Sutli Bomb">
@@ -1166,7 +1088,8 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   const toastBar = $('toastBar');
   
   const arenaKid = $('arenaKid');
-  const crackerDisplayIcon = $('crackerDisplayIcon');
+  const arenaCrackerTarget = $('arenaCrackerTarget');
+  const crackerModelContainer = $('crackerModelContainer');
   const fuseSpark = $('fuseSpark');
   const stageStatus = $('stageStatus');
   const stageBanner = $('stageBanner');
@@ -1206,7 +1129,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     return sharedNoise;
   }
 
-  // 1. Sky Rocket Sound
+  // 1. Sky Rocket Sound (Ascension Whistle + Huge Sky Burst)
   function soundRocket() {
     if (!soundEnabled) return;
     const ctx = getAudio();
@@ -1240,11 +1163,11 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     noise.start(now);
     noise.stop(now + 0.7);
 
-    setTimeout(() => soundExplosion(0.38, 140, 24, true), 650);
+    setTimeout(() => soundExplosion(0.42, 140, 24, true), 650);
   }
 
-  // 2. Sparkler / Fuljari Sound
-  function soundSparkler(durationMs = 2800) {
+  // 2. Fuljari (Sparkler) Sound (Intense Granular Sizzle)
+  function soundSparkler(durationMs = 3200) {
     if (!soundEnabled) return;
     const ctx = getAudio();
     if (!ctx) return;
@@ -1260,7 +1183,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
       n.buffer = getNoiseBuffer();
       const f = ctx.createBiquadFilter();
       f.type = 'bandpass';
-      f.frequency.value = 3500 + Math.random() * 3000;
+      f.frequency.value = 3500 + Math.random() * 3200;
       f.Q.value = 7;
       const g = ctx.createGain();
       g.gain.setValueAtTime(0.08 + Math.random() * 0.08, t);
@@ -1271,8 +1194,8 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     }, 32);
   }
 
-  // 3. Ground Charkhi Sound
-  function soundCharkhi(durationMs = 3500) {
+  // 3. Ground Charkhi Sound (Whirring centrifugal acceleration + swoosh)
+  function soundCharkhi(durationMs = 3600) {
     if (!soundEnabled) return;
     const ctx = getAudio();
     if (!ctx) return;
@@ -1285,7 +1208,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     osc.frequency.linearRampToValueAtTime(320, now + 1.2);
     osc.frequency.linearRampToValueAtTime(120, now + durationMs / 1000);
     g.gain.setValueAtTime(0.05, now);
-    g.gain.linearRampToValueAtTime(0.12, now + 1.0);
+    g.gain.linearRampToValueAtTime(0.14, now + 1.0);
     g.gain.exponentialRampToValueAtTime(0.001, now + durationMs / 1000);
     osc.connect(g).connect(ctx.destination);
     osc.start(now);
@@ -1294,8 +1217,8 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     soundSparkler(durationMs);
   }
 
-  // 4. Anar Flowerpot Sound
-  function soundAnar(durationMs = 3600) {
+  // 4. Anar Volcano Sound (Roaring volcanic fountain + sparkling hiss)
+  function soundAnar(durationMs = 4000) {
     if (!soundEnabled) return;
     const ctx = getAudio();
     if (!ctx) return;
@@ -1306,12 +1229,12 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     const f = ctx.createBiquadFilter();
     f.type = 'lowpass';
     f.frequency.setValueAtTime(600, now);
-    f.frequency.linearRampToValueAtTime(1600, now + 1.5);
+    f.frequency.linearRampToValueAtTime(1900, now + 1.8);
     f.frequency.linearRampToValueAtTime(400, now + durationMs / 1000);
 
     const g = ctx.createGain();
     g.gain.setValueAtTime(0.05, now);
-    g.gain.linearRampToValueAtTime(0.35, now + 1.2);
+    g.gain.linearRampToValueAtTime(0.4, now + 1.4);
     g.gain.exponentialRampToValueAtTime(0.001, now + durationMs / 1000);
 
     noise.connect(f).connect(g).connect(ctx.destination);
@@ -1321,38 +1244,38 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     soundSparkler(durationMs);
   }
 
-  // 5. 1000 Wala Ladi Sound
+  // 5. 1000 Wala Ladi Sound (Machine-gun rapid pops)
   function soundLadi(count = 18) {
     if (!soundEnabled) return;
     for (let i = 0; i < count; i++) {
       setTimeout(() => {
-        soundExplosion(0.22, 280, 50, false, 0.12);
+        soundExplosion(0.24, 280, 50, false, 0.12);
       }, i * 75 + Math.random() * 25);
     }
   }
 
-  // 6. Atom Bomb Sound
+  // 6. Atom Bomb Sound (Heavy sub-bass blast)
   function soundAtomBomb() {
-    soundExplosion(0.55, 120, 20, false, 0.55);
+    soundExplosion(0.65, 120, 18, false, 0.6);
   }
 
-  // 7. Sutli Bomb Sound
+  // 7. Sutli Bomb Sound (Dynamic echo dynamite blast)
   function soundSutliBomb() {
-    soundExplosion(0.65, 95, 18, true, 0.65);
+    soundExplosion(0.7, 95, 16, true, 0.65);
   }
 
   // 8. Magic Snake Tablet Sound
   function soundSnake() {
-    soundSparkler(2000);
+    soundSparkler(2500);
   }
 
   // 9. 7-Colour Sky Shot Sound
   function soundSkyShot() {
     if (!soundEnabled) return;
-    soundExplosion(0.2, 190, 40, false, 0.15);
+    soundExplosion(0.25, 190, 40, false, 0.15);
     for (let i = 0; i < 3; i++) {
       setTimeout(() => {
-        soundExplosion(0.35, 150, 25, true, 0.4);
+        soundExplosion(0.38, 150, 25, true, 0.4);
       }, 500 + i * 400);
     }
   }
@@ -1362,7 +1285,6 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     soundExplosion(0.25, 450, 70, false, 0.08);
   }
 
-  // Generic Explosion Synthesizer
   function soundExplosion(vol = 0.4, startFreq = 160, endFreq = 30, echo = false, dur = 0.45) {
     if (!soundEnabled) return;
     const ctx = getAudio();
@@ -1407,7 +1329,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
           pf.frequency.value = 1800 + Math.random() * 800;
           pf.Q.value = 5;
           const pg = ctx.createGain();
-          pg.gain.setValueAtTime(0.1, pt);
+          pg.gain.setValueAtTime(0.12, pt);
           pg.gain.exponentialRampToValueAtTime(0.001, pt + 0.08);
           p.connect(pf).connect(pg).connect(ctx.destination);
           p.start(pt);
@@ -1418,13 +1340,15 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   }
 
   // ====================================================
-  // FULLSCREEN 2D CANVAS PHYSICS & FIREWORK ANIMATION
+  // FULLSCREEN 2D CANVAS PHYSICS & REALISTIC ANIMATIONS
+  // Real Anar Fountains, Rockets, Shockwaves, and Sparks
   // ====================================================
   const canvas = $('fx');
   const ctx = canvas.getContext('2d');
   let width = 0, height = 0, dpr = 1;
   let particles = [];
-  let rockets = [];
+  let shockwaves = [];
+  let flyingRockets = [];
   let specialEffect = null;
   let rafId = 0;
 
@@ -1475,12 +1399,41 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     }
   }
 
+  class Shockwave {
+    constructor(x, y, maxRadius = 120, color = '#ffffff') {
+      this.x = x;
+      this.y = y;
+      this.radius = 4;
+      this.maxRadius = maxRadius;
+      this.color = color;
+      this.life = 1;
+      this.dead = false;
+    }
+    update() {
+      this.radius += (this.maxRadius - this.radius) * 0.18;
+      this.life -= 0.04;
+      if (this.life <= 0 || this.radius >= this.maxRadius - 2) {
+        this.dead = true;
+      }
+    }
+    draw(c) {
+      c.save();
+      c.globalAlpha = Math.max(0, this.life);
+      c.strokeStyle = this.color;
+      c.lineWidth = 4 * this.life;
+      c.beginPath();
+      c.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      c.stroke();
+      c.restore();
+    }
+  }
+
   function spawnBurst(x, y, count = 65, color = null, power = 4.5) {
     for (let i = 0; i < count; i++) {
       const angle = (Math.PI * 2 * i) / count + Math.random() * 0.2;
       const spd = (1.5 + Math.random() * power);
       const col = color || colors[Math.floor(Math.random() * colors.length)];
-      particles.push(new Particle(x, y, col, Math.cos(angle) * spd, Math.sin(angle) * spd, 1, 0.012 + Math.random() * 0.015, 0.03, 1.8 + Math.random() * 2));
+      particles.push(new Particle(x, y, col, Math.cos(angle) * spd, Math.sin(angle) * spd, 1, 0.012 + Math.random() * 0.015, 0.035, 1.8 + Math.random() * 2));
     }
     startAnim();
   }
@@ -1492,47 +1445,143 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   function loop() {
     ctx.clearRect(0, 0, width, height);
 
-    rockets = rockets.filter(r => !r.dead);
-    for (const r of rockets) {
+    // Shockwaves
+    shockwaves = shockwaves.filter(s => !s.dead);
+    for (const s of shockwaves) {
+      s.update();
+      s.draw(ctx);
+    }
+
+    // Flying rockets
+    flyingRockets = flyingRockets.filter(r => !r.dead);
+    for (const r of flyingRockets) {
       r.update();
       r.draw(ctx);
     }
 
+    // Special effects (Towering Anar fountain, Spinning Charkhi, Sizzling Fuljari)
     if (specialEffect) {
       specialEffect.update();
     }
 
+    // Particles
     particles = particles.filter(p => p.life > 0);
     for (const p of particles) {
       p.update();
       p.draw(ctx);
     }
 
-    if (rockets.length > 0 || particles.length > 0 || specialEffect) {
+    if (flyingRockets.length > 0 || particles.length > 0 || shockwaves.length > 0 || specialEffect) {
       rafId = requestAnimationFrame(loop);
     } else {
       rafId = 0;
     }
   }
 
+  // Get exact ground coordinate of cracker on screen
+  function getCrackerGroundPoint() {
+    const r = arenaCrackerTarget.getBoundingClientRect();
+    return {
+      x: r.left + r.width / 2,
+      y: r.top + 18,
+      groundY: r.bottom - 4
+    };
+  }
+
   // ====================================================
-  // THE 10 REALISTIC CRACKER ANIMATIONS & ACTIONS
+  // HYPER-REALISTIC CRACKER ANIMATIONS
+  // Real Anar Volcano Fountain, Rocket Launch, Bomb Shockwave
   // ====================================================
-  const crackerActions = {
+  const realisticAnimations = {
+    // 1. ANAR (FLOWERPOT): Towering 10-foot Volcano Fountain
+    anar: () => {
+      soundAnar(3800);
+      const pt = getCrackerGroundPoint();
+      const startTime = Date.now();
+      const endTime = startTime + 3800;
+
+      specialEffect = {
+        update() {
+          const now = Date.now();
+          if (now > endTime) {
+            specialEffect = null;
+            return;
+          }
+          const progress = (now - startTime) / 3800;
+          // Fountain height rises to majestic climax, then tapers off
+          const power = progress < 0.25 ? (progress / 0.25) : progress < 0.75 ? 1 : (1 - (progress - 0.75) / 0.25);
+          const count = Math.floor(6 + power * 12);
+
+          for (let k = 0; k < count; k++) {
+            // Shoots upward like a real pressurized volcano fountain
+            const angle = -Math.PI / 2 + (Math.random() * 0.5 - 0.25);
+            const speed = (4.5 + Math.random() * 8.5) * (0.6 + power * 0.7);
+            const palette = ['#ffffff', '#fff5b8', '#ffd700', '#ff9900', '#ff4500'];
+            const col = palette[Math.floor(Math.random() * palette.length)];
+
+            particles.push(new Particle(
+              pt.x + (Math.random() * 8 - 4),
+              pt.y,
+              col,
+              Math.cos(angle) * speed,
+              Math.sin(angle) * speed,
+              1,
+              0.016 + Math.random() * 0.015,
+              0.22, // Realistic downward gravity shower
+              1.8 + Math.random() * 2
+            ));
+          }
+        }
+      };
+      startAnim();
+    },
+
+    // 2. FULJARI (SPARKLER): Handheld Sizzling Shower of Needles
+    sparkler: () => {
+      soundSparkler(3200);
+      const pt = getCrackerGroundPoint();
+      const endTime = Date.now() + 3200;
+
+      specialEffect = {
+        update() {
+          if (Date.now() > endTime) {
+            specialEffect = null;
+            return;
+          }
+          for (let k = 0; k < 8; k++) {
+            // 360-degree needle spray
+            const angle = Math.random() * Math.PI * 2;
+            const spd = 2 + Math.random() * 6.5;
+            const c = Math.random() > 0.3 ? '#ffffff' : '#ffd700';
+            particles.push(new Particle(pt.x, pt.y, c, Math.cos(angle) * spd, Math.sin(angle) * spd, 0.75, 0.028, 0.05, 1.4));
+          }
+        }
+      };
+      startAnim();
+    },
+
+    // 3. SKY ROCKET: Real Liftoff from Bottle -> Ascends Sky -> Peony Burst!
     rocket: () => {
       soundRocket();
-      const startX = width * 0.5;
-      const startY = height - 20;
-      const targetY = height * 0.22;
-      let rx = startX, ry = startY;
-      const rObj = {
+      const pt = getCrackerGroundPoint();
+      let rx = pt.x, ry = pt.y;
+      let vy = -5;
+      const targetY = height * 0.18;
+
+      const rocketObj = {
         dead: false,
         update() {
-          ry -= 14;
-          particles.push(new Particle(rx + (Math.random() * 4 - 2), ry + 6, '#ff9900', 0, 1.5, 0.6, 0.05, 0.01, 2));
+          // Accelerates upwards with violent thrust
+          vy -= 0.65;
+          ry += vy;
+          // Thruster fire & smoke trail
+          for (let i = 0; i < 3; i++) {
+            particles.push(new Particle(rx + (Math.random() * 4 - 2), ry + 10, '#ff7700', (Math.random() - 0.5) * 1.5, 3 + Math.random() * 2, 0.5, 0.06, 0.02, 2.5));
+          }
           if (ry <= targetY) {
             this.dead = true;
-            spawnBurst(rx, ry, 90, '#ffd700', 5.5);
+            shockwaves.push(new Shockwave(rx, ry, 90, '#ffd700'));
+            spawnBurst(rx, ry, 110, '#ffd700', 6);
           }
         },
         draw(c) {
@@ -1544,153 +1593,210 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
           c.restore();
         }
       };
-      rockets.push(rObj);
+      flyingRockets.push(rocketObj);
       startAnim();
     },
 
-    sparkler: () => {
-      soundSparkler(3200);
-      const sx = width * 0.5, sy = height * 0.52;
-      const endTime = Date.now() + 3200;
-      specialEffect = {
-        update() {
-          if (Date.now() > endTime) {
-            specialEffect = null;
-            return;
-          }
-          for (let k = 0; k < 6; k++) {
-            const angle = Math.random() * Math.PI * 2;
-            const spd = 2 + Math.random() * 6;
-            const c = Math.random() > 0.3 ? '#fff5c0' : '#ffd700';
-            particles.push(new Particle(sx, sy, c, Math.cos(angle) * spd, Math.sin(angle) * spd, 0.8, 0.025, 0.04, 1.5));
-          }
-        }
-      };
-      startAnim();
+    // 4. ATOM BOMB: Sudden Shockwave Ring, White Flash & Earth Shaking Burst
+    atomBomb: () => {
+      soundAtomBomb();
+      const pt = getCrackerGroundPoint();
+      shockwaves.push(new Shockwave(pt.x, pt.y, 140, '#00ff88'));
+      shockwaves.push(new Shockwave(pt.x, pt.y, 80, '#ffffff'));
+      spawnBurst(pt.x, pt.y, 120, '#00ff88', 6.5);
     },
 
+    // 5. GROUND CHARKHI: Rapid Spinning Rings of Fire
     charkhi: () => {
-      soundCharkhi(3500);
-      const cx = width * 0.5, cy = height * 0.68;
-      const endTime = Date.now() + 3500;
+      soundCharkhi(3600);
+      const pt = getCrackerGroundPoint();
+      const endTime = Date.now() + 3600;
       let rot = 0;
+
       specialEffect = {
         update() {
           if (Date.now() > endTime) {
             specialEffect = null;
             return;
           }
-          rot += 0.35;
+          rot += 0.45;
           for (let k = 0; k < 4; k++) {
             const a = rot + (k * Math.PI / 2);
-            const spd = 3.5 + Math.random() * 4;
+            const spd = 4 + Math.random() * 4.5;
             const c = k % 2 === 0 ? '#00ffcc' : '#ffd700';
-            particles.push(new Particle(cx, cy, c, Math.cos(a) * spd, Math.sin(a) * spd, 0.7, 0.03, 0.02, 2));
+            particles.push(new Particle(pt.x, pt.y + 12, c, Math.cos(a) * spd, Math.sin(a) * spd * 0.4, 0.7, 0.028, 0.015, 2));
           }
         }
       };
       startAnim();
     },
 
-    anar: () => {
-      soundAnar(3600);
-      const ax = width * 0.5, ay = height * 0.72;
-      const endTime = Date.now() + 3600;
-      specialEffect = {
-        update() {
-          if (Date.now() > endTime) {
-            specialEffect = null;
-            return;
-          }
-          for (let k = 0; k < 7; k++) {
-            const angle = -Math.PI / 2 + (Math.random() * 0.8 - 0.4);
-            const spd = 5 + Math.random() * 8.5;
-            const c = Math.random() > 0.4 ? '#ffffff' : '#ff9900';
-            particles.push(new Particle(ax, ay, c, Math.cos(angle) * spd, Math.sin(angle) * spd, 1, 0.02, 0.07, 2.2));
-          }
-        }
-      };
-      startAnim();
-    },
-
+    // 6. 1000 WALA LADI: Chain-Reaction Rapid String Explosions
     ladi: () => {
       soundLadi(16);
-      const lx = width * 0.5, ly = height * 0.7;
+      const pt = getCrackerGroundPoint();
       let count = 0;
       const timer = setInterval(() => {
         if (++count > 16) {
           clearInterval(timer);
           return;
         }
-        const ox = lx + (Math.random() * 70 - 35);
-        const oy = ly + (Math.random() * 40 - 20);
-        spawnBurst(ox, oy, 16, '#ff3344', 2.8);
+        const ox = pt.x + (Math.random() * 50 - 25);
+        const oy = pt.y + 10 + (Math.random() * 15 - 7);
+        shockwaves.push(new Shockwave(ox, oy, 35, '#ff3344'));
+        spawnBurst(ox, oy, 18, '#ff3344', 3);
       }, 85);
     },
 
-    atomBomb: () => {
-      soundAtomBomb();
-      const bx = width * 0.5, by = height * 0.65;
-      spawnBurst(bx, by, 110, '#00ff88', 6);
-    },
-
+    // 7. SUTLI BOMB: Jute Dynamite Blast
     sutliBomb: () => {
       soundSutliBomb();
-      const sx = width * 0.5, sy = height * 0.65;
-      spawnBurst(sx, sy, 130, '#ffaa00', 7);
+      const pt = getCrackerGroundPoint();
+      shockwaves.push(new Shockwave(pt.x, pt.y, 150, '#ff9900'));
+      shockwaves.push(new Shockwave(pt.x, pt.y, 75, '#ffffff'));
+      spawnBurst(pt.x, pt.y, 130, '#ffaa00', 7);
     },
 
+    // 8. MAGIC SNAKE: Sizzling ash growth
     snake: () => {
       soundSnake();
-      const kx = width * 0.5, ky = height * 0.72;
+      const pt = getCrackerGroundPoint();
       for (let i = 0; i < 30; i++) {
         setTimeout(() => {
-          particles.push(new Particle(kx + (Math.random() * 12 - 6), ky - i * 3, '#4a4a4a', (Math.random() - 0.5) * 0.5, -0.4, 2, 0.008, -0.01, 5 + i * 0.4));
+          particles.push(new Particle(pt.x + (Math.random() * 10 - 5), pt.y - i * 3, '#4a4a4a', (Math.random() - 0.5) * 0.5, -0.4, 2, 0.008, -0.01, 5 + i * 0.4));
           startAnim();
         }, i * 70);
       }
     },
 
+    // 9. 7-COLOUR SKY SHOT: Multi-Stage Sky Shells
     skyShot: () => {
       soundSkyShot();
+      const pt = getCrackerGroundPoint();
+      shockwaves.push(new Shockwave(pt.x, pt.y, 45, '#ffd700'));
       const colors7 = ['#ff0055', '#ff9900', '#ffea00', '#00ffcc', '#0099ff', '#aa00ff', '#ffffff'];
       for (let i = 0; i < 3; i++) {
         setTimeout(() => {
           const sx = width * (0.3 + i * 0.2);
           const sy = height * (0.2 + (i % 2) * 0.1);
-          spawnBurst(sx, sy, 70, colors7[i * 2 % colors7.length], 5);
+          shockwaves.push(new Shockwave(sx, sy, 70, colors7[i * 2 % colors7.length]));
+          spawnBurst(sx, sy, 75, colors7[i * 2 % colors7.length], 5.5);
         }, 500 + i * 400);
       }
     },
 
+    // 10. POP-POP SNAPPER
     popSnapper: () => {
       soundPopSnapper();
-      const px = width * 0.5 + (Math.random() * 40 - 20);
-      const py = height * 0.75;
-      spawnBurst(px, py, 25, '#ffffff', 3.5);
+      const pt = getCrackerGroundPoint();
+      shockwaves.push(new Shockwave(pt.x, pt.y, 25, '#ffffff'));
+      spawnBurst(pt.x, pt.y + 10, 25, '#ffffff', 3.5);
     }
   };
 
-  const crackerIcons = {
-    rocket: '🚀',
-    sparkler: '✨',
-    charkhi: '🌀',
-    anar: '🌋',
-    ladi: '🧨',
-    atomBomb: '💣',
-    sutliBomb: '💥',
-    snake: '🐍',
-    skyShot: '🎆',
-    popSnapper: '⚡'
+  // Realistic Visual Models (SVG) for each cracker type on the ground
+  const crackerSVGs = {
+    anar: `
+      <svg class="realistic-cracker-svg" viewBox="0 0 100 120">
+        <polygon points="50,15 18,105 82,105" fill="#c0392b" stroke="#f1c40f" stroke-width="2.5"/>
+        <polygon points="50,15 32,58 68,58" fill="#e67e22"/>
+        <polygon points="50,15 40,36 60,36" fill="#f39c12"/>
+        <ellipse cx="50" cy="105" rx="34" ry="9" fill="#7f1d1d" stroke="#f1c40f" stroke-width="1.5"/>
+        <line x1="50" y1="15" x2="52" y2="4" stroke="#dcdde1" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+    `,
+    rocket: `
+      <svg class="realistic-cracker-svg" viewBox="0 0 100 120">
+        <!-- Bamboo Stick in Bottle -->
+        <line x1="50" y1="30" x2="50" y2="116" stroke="#c8a065" stroke-width="3" stroke-linecap="round"/>
+        <!-- Rocket Body -->
+        <rect x="42" y="32" width="16" height="46" rx="3" fill="#e74c3c" stroke="#f1c40f" stroke-width="2"/>
+        <!-- Nose Cone -->
+        <polygon points="50,14 38,32 62,32" fill="#f39c12" stroke="#f1c40f" stroke-width="1.5"/>
+        <!-- Fuse -->
+        <line x1="50" y1="78" x2="44" y2="92" stroke="#dcdde1" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    `,
+    sparkler: `
+      <svg class="realistic-cracker-svg" viewBox="0 0 100 120">
+        <!-- Wire Stick -->
+        <line x1="50" y1="12" x2="50" y2="112" stroke="#bdc3c7" stroke-width="3.5" stroke-linecap="round"/>
+        <!-- Chemical Coating -->
+        <rect x="45" y="16" width="10" height="60" rx="4" fill="#7f8c8d" stroke="#f39c12" stroke-width="1.5"/>
+        <circle cx="50" cy="14" r="3.5" fill="#ffffff" filter="drop-shadow(0 0 4px #ffd700)"/>
+      </svg>
+    `,
+    atomBomb: `
+      <svg class="realistic-cracker-svg" viewBox="0 0 100 120">
+        <!-- Green Twine Body -->
+        <rect x="25" y="45" width="50" height="58" rx="8" fill="#27ae60" stroke="#f1c40f" stroke-width="2.5"/>
+        <line x1="25" y1="64" x2="75" y2="64" stroke="#e67e22" stroke-width="2"/>
+        <line x1="25" y1="84" x2="75" y2="84" stroke="#e67e22" stroke-width="2"/>
+        <!-- Red Label -->
+        <circle cx="50" cy="74" r="12" fill="#c0392b"/>
+        <!-- Fuse -->
+        <path d="M50 45 Q56 25 64 22" fill="none" stroke="#dcdde1" stroke-width="3.5" stroke-linecap="round"/>
+      </svg>
+    `,
+    sutliBomb: `
+      <svg class="realistic-cracker-svg" viewBox="0 0 100 120">
+        <!-- Jute Jari Texture -->
+        <polygon points="50,38 82,62 70,102 30,102 18,62" fill="#b9770e" stroke="#f39c12" stroke-width="2.5"/>
+        <line x1="30" y1="50" x2="70" y2="90" stroke="#d68910" stroke-width="2"/>
+        <line x1="70" y1="50" x2="30" y2="90" stroke="#d68910" stroke-width="2"/>
+        <path d="M50 38 Q45 22 56 16" fill="none" stroke="#dcdde1" stroke-width="3.5" stroke-linecap="round"/>
+      </svg>
+    `,
+    charkhi: `
+      <svg class="realistic-cracker-svg" viewBox="0 0 100 120">
+        <circle cx="50" cy="75" r="32" fill="#d35400" stroke="#f1c40f" stroke-width="2.5"/>
+        <circle cx="50" cy="75" r="22" fill="#e67e22"/>
+        <circle cx="50" cy="75" r="10" fill="#f39c12"/>
+        <!-- Tangential Jet Nozzles -->
+        <rect x="76" y="70" width="8" height="6" fill="#f1c40f"/>
+        <rect x="16" y="74" width="8" height="6" fill="#f1c40f"/>
+      </svg>
+    `,
+    ladi: `
+      <svg class="realistic-cracker-svg" viewBox="0 0 100 120">
+        <!-- Garland of Red Crackers -->
+        <line x1="50" y1="20" x2="50" y2="105" stroke="#dcdde1" stroke-width="2"/>
+        <rect x="36" y="25" width="28" height="8" rx="2" fill="#c0392b" stroke="#f1c40f" stroke-width="1"/>
+        <rect x="36" y="40" width="28" height="8" rx="2" fill="#c0392b" stroke="#f1c40f" stroke-width="1"/>
+        <rect x="36" y="55" width="28" height="8" rx="2" fill="#c0392b" stroke="#f1c40f" stroke-width="1"/>
+        <rect x="36" y="70" width="28" height="8" rx="2" fill="#c0392b" stroke="#f1c40f" stroke-width="1"/>
+        <rect x="36" y="85" width="28" height="8" rx="2" fill="#c0392b" stroke="#f1c40f" stroke-width="1"/>
+      </svg>
+    `,
+    snake: `
+      <svg class="realistic-cracker-svg" viewBox="0 0 100 120">
+        <ellipse cx="50" cy="85" rx="26" ry="14" fill="#2c3e50" stroke="#7f8c8d" stroke-width="2"/>
+        <ellipse cx="50" cy="81" rx="20" ry="9" fill="#1a252f"/>
+      </svg>
+    `,
+    skyShot: `
+      <svg class="realistic-cracker-svg" viewBox="0 0 100 120">
+        <rect x="34" y="30" width="32" height="76" rx="4" fill="#8e44ad" stroke="#f1c40f" stroke-width="2.5"/>
+        <line x1="34" y1="52" x2="66" y2="52" stroke="#ffd700" stroke-width="2"/>
+        <line x1="34" y1="78" x2="66" y2="78" stroke="#ffd700" stroke-width="2"/>
+        <line x1="50" y1="30" x2="50" y2="14" stroke="#dcdde1" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+    `,
+    popSnapper: `
+      <svg class="realistic-cracker-svg" viewBox="0 0 100 120">
+        <circle cx="50" cy="82" r="14" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2"/>
+        <polygon points="50,68 46,55 54,55" fill="#e74c3c"/>
+      </svg>
+    `
   };
 
   const crackerNames = {
-    rocket: 'Sky Rocket',
-    sparkler: 'Fuljari (Sparkler)',
-    charkhi: 'Ground Charkhi',
     anar: 'Anar Flowerpot',
-    ladi: '1000 Wala Red Ladi',
+    sparkler: 'Fuljari (Sparkler)',
+    rocket: 'Sky Rocket',
     atomBomb: 'Green Atom Bomb',
+    charkhi: 'Ground Charkhi',
+    ladi: '1000 Wala Red Ladi',
     sutliBomb: 'Sutli Bomb',
     snake: 'Magic Snake Tablet',
     skyShot: '7-Colour Sky Shot',
@@ -1707,7 +1813,10 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     isLightingInProgress = true;
     getAudio();
 
-    crackerDisplayIcon.textContent = crackerIcons[crackerKey] || '🎆';
+    // 1. Swap in the realistic vector model on the ground
+    if (crackerSVGs[crackerKey]) {
+      crackerModelContainer.innerHTML = crackerSVGs[crackerKey];
+    }
     stageStatus.textContent = 'Lighting...';
     stageBanner.textContent = `👦 Kid is approaching to light the ${crackerNames[crackerKey]}!`;
 
@@ -1715,33 +1824,39 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
       b.classList.toggle('active-firing', b.dataset.cracker === crackerKey);
     });
 
+    // Step 1: Kid walks forward
     arenaKid.className = 'arena-kid approaching lighting';
     
+    // Step 2: Fuse ignites
     setTimeout(() => {
       fuseSpark.style.display = 'block';
       stageBanner.textContent = `🔥 Fuse is lit! Watch out!`;
 
+      // Step 3: Kid runs back covering ears
       setTimeout(() => {
         arenaKid.className = 'arena-kid running-back';
 
+        // Step 4: Cracker explodes / erupts with real physics
         setTimeout(() => {
           fuseSpark.style.display = 'none';
           arenaKid.className = 'arena-kid cheering';
           stageStatus.textContent = 'Boom! Active ✨';
-          stageBanner.textContent = `🎉 Kid is cheering! Enjoy the ${crackerNames[crackerKey]}!`;
+          stageBanner.textContent = `🎉 Kid is cheering! Watch the ${crackerNames[crackerKey]} in action!`;
           showToast(`💥 ${crackerNames[crackerKey]} Activated!`);
 
-          if (crackerActions[crackerKey]) {
-            crackerActions[crackerKey]();
+          // Execute realistic cracker effect & audio
+          if (realisticAnimations[crackerKey]) {
+            realisticAnimations[crackerKey]();
           }
 
+          // Reset kid after celebration
           setTimeout(() => {
             arenaKid.className = 'arena-kid';
             stageStatus.textContent = 'Ready to Light';
             stageBanner.textContent = `👆 Tap any cracker to watch the kid light it!`;
             document.querySelectorAll('.cracker-tile-btn').forEach(b => b.classList.remove('active-firing'));
             isLightingInProgress = false;
-          }, 3200);
+          }, 3800);
 
         }, 700);
       }, 550);
@@ -1765,8 +1880,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     inputBox.style.display = 'none';
     greetingCard.style.display = 'block';
 
-    crackerActions.rocket();
-    setTimeout(() => crackerActions.sparkler(), 500);
+    triggerKidCrackerLighting('anar');
     showToast(name ? `✨ Greeting created for ${name}!` : '✨ Happy Diwali Greeting Created!');
   }
 
@@ -1813,21 +1927,10 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     });
   });
 
-  // ORBITING CRACKERS AROUND THE DIYA!
-  document.querySelectorAll('.orbit-cracker-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const cKey = btn.dataset.cracker;
-      const rect = btn.getBoundingClientRect();
-      spawnBurst(rect.left + rect.width / 2, rect.top + rect.height / 2, 45, '#ffd700', 3.5);
-      $('stageSection').scrollIntoView({ behavior: 'smooth', block: 'center' });
-      triggerKidCrackerLighting(cKey);
-    });
-  });
-
   // Central Sun Diya Click interaction
   $('centralDiya').addEventListener('click', () => {
-    triggerKidCrackerLighting('sparkler');
+    $('stageSection').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    triggerKidCrackerLighting('anar');
   });
 
   // Auto-run if preset
