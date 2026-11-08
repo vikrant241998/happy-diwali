@@ -1124,11 +1124,11 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
         </div>
         <div class="cta-hero-prompt">
           <span class="cta-hand-icon">👇</span>
-          <span><strong>CLICK ANY BUTTON BELOW</strong> TO LAUNCH 10s FIREWORKS!</span>
+          <span><strong>CLICK ANY BUTTON BELOW</strong> TO LAUNCH 4s FIREWORKS!</span>
           <span class="cta-hand-icon">👇</span>
         </div>
         <p class="cta-sub-highlight">
-          🔊 Turn up volume! Experience authentic roaring sound & non-stop 10s live celebration!
+          🔊 Turn up volume! Experience authentic roaring sound & live 4s celebration!
         </p>
       </div>
     </div>
@@ -1136,53 +1136,53 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     <!-- 10 Buttons in 2 Rows (5 buttons per row) -->
     <div class="crackers-2row-grid" id="crackersGrid">
       <!-- ROW 1 (Crackers 1-5) -->
-      <button class="cracker-tile-btn" data-cracker="anar" type="button" title="Anar Flowerpot (10s Show)">
+      <button class="cracker-tile-btn" data-cracker="anar" type="button" title="Anar Flowerpot (4s Show)">
         <span class="cracker-tile-icon">🌋</span>
         <span class="cracker-tile-name">Anar</span>
       </button>
 
-      <button class="cracker-tile-btn" data-cracker="sparkler" type="button" title="Golden Sparkler (10s Show)">
+      <button class="cracker-tile-btn" data-cracker="sparkler" type="button" title="Golden Sparkler (4s Show)">
         <span class="cracker-tile-icon">✨</span>
         <span class="cracker-tile-name">Fuljari</span>
       </button>
 
-      <button class="cracker-tile-btn" data-cracker="rocket" type="button" title="Sky Rocket (10s Show)">
+      <button class="cracker-tile-btn" data-cracker="rocket" type="button" title="Sky Rocket (4s Show)">
         <span class="cracker-tile-icon">🚀</span>
         <span class="cracker-tile-name">Rocket</span>
       </button>
 
-      <button class="cracker-tile-btn" data-cracker="atomBomb" type="button" title="Green Atom Bomb (10s Show)">
+      <button class="cracker-tile-btn" data-cracker="atomBomb" type="button" title="Green Atom Bomb (4s Show)">
         <span class="cracker-tile-icon">💣</span>
         <span class="cracker-tile-name">Bomb</span>
       </button>
 
-      <button class="cracker-tile-btn" data-cracker="charkhi" type="button" title="Ground Charkhi (10s Show)">
+      <button class="cracker-tile-btn" data-cracker="charkhi" type="button" title="Ground Charkhi (4s Show)">
         <span class="cracker-tile-icon">🌀</span>
         <span class="cracker-tile-name">Charkhi</span>
       </button>
 
       <!-- ROW 2 (Crackers 6-10) -->
-      <button class="cracker-tile-btn" data-cracker="ladi" type="button" title="1000 Wala Red Ladi (10s Show)">
+      <button class="cracker-tile-btn" data-cracker="ladi" type="button" title="1000 Wala Red Ladi (4s Show)">
         <span class="cracker-tile-icon">🧨</span>
         <span class="cracker-tile-name">Ladi</span>
       </button>
 
-      <button class="cracker-tile-btn" data-cracker="sutliBomb" type="button" title="Sutli Bomb (10s Show)">
+      <button class="cracker-tile-btn" data-cracker="sutliBomb" type="button" title="Sutli Bomb (4s Show)">
         <span class="cracker-tile-icon">💥</span>
         <span class="cracker-tile-name">Sutli</span>
       </button>
 
-      <button class="cracker-tile-btn" data-cracker="snake" type="button" title="Magic Snake Tablet (10s Show)">
+      <button class="cracker-tile-btn" data-cracker="snake" type="button" title="Magic Snake Tablet (4s Show)">
         <span class="cracker-tile-icon">🐍</span>
         <span class="cracker-tile-name">Snake</span>
       </button>
 
-      <button class="cracker-tile-btn" data-cracker="skyShot" type="button" title="7-Colour Sky Shot (10s Show)">
+      <button class="cracker-tile-btn" data-cracker="skyShot" type="button" title="7-Colour Sky Shot (4s Show)">
         <span class="cracker-tile-icon">🎆</span>
         <span class="cracker-tile-name">SkyShot</span>
       </button>
 
-      <button class="cracker-tile-btn" data-cracker="popSnapper" type="button" title="Pop-Pop Snappers (10s Show)">
+      <button class="cracker-tile-btn" data-cracker="popSnapper" type="button" title="Pop-Pop Snappers (4s Show)">
         <span class="cracker-tile-icon">⚡</span>
         <span class="cracker-tile-name">Snapper</span>
       </button>
@@ -1192,7 +1192,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     <div class="crackers-bottom-callout">
       <div class="bottom-callout-bubble">
         <span class="bounce-finger">👆</span>
-        <span>Tap any button above: <strong>All 10 crackers run for a full 10-second high-power show with loud sound!</strong></span>
+        <span>Tap any button above: <strong>All 10 crackers run for a live 4-second high-power show with loud sound!</strong></span>
       </div>
     </div>
   </section>
@@ -1596,9 +1596,125 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   }
 
   // ====================================================
-  // 4. FULJARI (SPARKLER): 10s Non-Stop Sizzling Iron Filings
+  // JOYFUL 5-SECOND "HAPPY DIWALI" FESTIVE CELEBRATION SONG
+  // Auspicious Shehnai, Harmonious Chimes & Golden Bells (5s)
+  // (Plays when user enters their name & celebrates Diwali)
   // ====================================================
-  function soundSparkler(durationMs = 10000) {
+  function playHappyDiwaliSong5s() {
+    const ctx = getAudio();
+    if (!ctx) return;
+    const dest = getAudioDest();
+    const startTime = ctx.currentTime;
+    const songDuration = 5.0; // Exactly 5 seconds celebration!
+
+    // Master volume envelope for the 5-second festive tune
+    const songMasterGain = ctx.createGain();
+    songMasterGain.gain.setValueAtTime(0.001, startTime);
+    songMasterGain.gain.linearRampToValueAtTime(0.85, startTime + 0.15);
+    songMasterGain.gain.setValueAtTime(0.85, startTime + 4.3);
+    songMasterGain.gain.exponentialRampToValueAtTime(0.001, startTime + songDuration);
+    songMasterGain.connect(dest);
+
+    // Warm Festive Tanpura / Harmonium Drone Pad (Auspicious Indian Festival Foundation)
+    const droneFreqs = [130.81, 196.00, 261.63]; // C3, G3, C4
+    droneFreqs.forEach(freq => {
+      const droneOsc = ctx.createOscillator();
+      const droneGain = ctx.createGain();
+      droneOsc.type = 'triangle';
+      droneOsc.frequency.setValueAtTime(freq, startTime);
+      droneGain.gain.setValueAtTime(0.08, startTime);
+      droneGain.gain.exponentialRampToValueAtTime(0.001, startTime + songDuration);
+      droneOsc.connect(droneGain).connect(songMasterGain);
+      droneOsc.start(startTime);
+      droneOsc.stop(startTime + songDuration + 0.05);
+    });
+
+    // Festive Melody Notes: Joyful Happy Diwali Celebration Anthem
+    const melodyNotes = [
+      // Phrase 1: "Hap-py Di-wa-li" (0.0s - 1.3s)
+      { f: 523.25, t: 0.05, d: 0.28 }, // C5
+      { f: 587.33, t: 0.35, d: 0.22 }, // D5
+      { f: 659.25, t: 0.60, d: 0.40 }, // E5
+      { f: 783.99, t: 1.02, d: 0.45 }, // G5
+
+      // Phrase 2: "Sa-ra Ja-han Sajao" (1.5s - 2.7s)
+      { f: 880.00, t: 1.50, d: 0.35 }, // A5
+      { f: 783.99, t: 1.88, d: 0.30 }, // G5
+      { f: 659.25, t: 2.20, d: 0.32 }, // E5
+      { f: 587.33, t: 2.54, d: 0.38 }, // D5
+
+      // Phrase 3: "Deep Jale Sukh Aaye" (2.9s - 4.0s)
+      { f: 523.25, t: 2.94, d: 0.28 }, // C5
+      { f: 659.25, t: 3.24, d: 0.30 }, // E5
+      { f: 783.99, t: 3.56, d: 0.35 }, // G5
+      { f: 880.00, t: 3.92, d: 0.32 }, // A5
+      { f: 1046.50, t: 4.25, d: 0.75 }  // C6 (Grand Celebration Climax!)
+    ];
+
+    melodyNotes.forEach(note => {
+      const noteTime = startTime + note.t;
+
+      // 1. Festive Shehnai / Indian Flute Reed Tone
+      const reedOsc = ctx.createOscillator();
+      const reedGain = ctx.createGain();
+      reedOsc.type = 'sawtooth';
+      reedOsc.frequency.setValueAtTime(note.f, noteTime);
+
+      const reedFilter = ctx.createBiquadFilter();
+      reedFilter.type = 'lowpass';
+      reedFilter.frequency.setValueAtTime(note.f * 2.8, noteTime);
+      reedFilter.Q.value = 3.0;
+
+      const vibrato = ctx.createOscillator();
+      const vibGain = ctx.createGain();
+      vibrato.frequency.value = 5.2;
+      vibGain.gain.value = 4.5;
+      vibrato.connect(reedOsc.frequency);
+      vibrato.start(noteTime);
+      vibrato.stop(noteTime + note.d);
+
+      reedGain.gain.setValueAtTime(0.001, noteTime);
+      reedGain.gain.linearRampToValueAtTime(0.22, noteTime + 0.04);
+      reedGain.gain.exponentialRampToValueAtTime(0.001, noteTime + note.d);
+
+      reedOsc.connect(reedFilter).connect(reedGain).connect(songMasterGain);
+      reedOsc.start(noteTime);
+      reedOsc.stop(noteTime + note.d + 0.05);
+
+      // 2. Sparkling Temple Glockenspiel / Golden Bell Chime
+      const chimeOsc = ctx.createOscillator();
+      const chimeGain = ctx.createGain();
+      chimeOsc.type = 'sine';
+      chimeOsc.frequency.setValueAtTime(note.f, noteTime);
+
+      chimeGain.gain.setValueAtTime(0.28, noteTime);
+      chimeGain.gain.exponentialRampToValueAtTime(0.001, noteTime + note.d * 1.4);
+
+      chimeOsc.connect(chimeGain).connect(songMasterGain);
+      chimeOsc.start(noteTime);
+      chimeOsc.stop(noteTime + note.d * 1.5);
+    });
+
+    // Sparkling Wind Chime Arpeggio at Climax (3.8s - 4.9s)
+    const arpeggio = [523.25, 659.25, 783.99, 1046.50, 1318.51];
+    arpeggio.forEach((f, idx) => {
+      const ct = startTime + 3.8 + idx * 0.12;
+      const o = ctx.createOscillator();
+      const g = ctx.createGain();
+      o.type = 'sine';
+      o.frequency.setValueAtTime(f, ct);
+      g.gain.setValueAtTime(0.18, ct);
+      g.gain.exponentialRampToValueAtTime(0.001, ct + 0.6);
+      o.connect(g).connect(songMasterGain);
+      o.start(ct);
+      o.stop(ct + 0.65);
+    });
+  }
+
+  // ====================================================
+  // 4. FULJARI (SPARKLER): 4s Non-Stop Sizzling Iron Filings
+  // ====================================================
+  function soundSparkler(durationMs = 4000) {
     const ctx = getAudio();
     if (!ctx) return;
     const dest = getAudioDest();
@@ -1626,15 +1742,14 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   }
 
   // ====================================================
-  // 5. ANAR (FLOWERPOT): 10s Non-Stop Volcanic Roar & Sparks
+  // 5. ANAR (FLOWERPOT): 4s Volcanic Roar & Sparks
   // ====================================================
-  function soundAnar(durationMs = 10000) {
+  function soundAnar(durationMs = 4000) {
     const ctx = getAudio();
     if (!ctx) return;
     const dest = getAudioDest();
     const now = ctx.currentTime;
 
-    // Continuous turbulent roaring fountain exhaust jet
     const noise = ctx.createBufferSource();
     noise.buffer = getNoiseBuffer();
     noise.loop = true;
@@ -1642,20 +1757,20 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     const lowRoar = ctx.createBiquadFilter();
     lowRoar.type = 'bandpass';
     lowRoar.frequency.setValueAtTime(360, now);
-    lowRoar.frequency.linearRampToValueAtTime(820, now + 2.0);
-    lowRoar.frequency.linearRampToValueAtTime(680, now + 8.0);
+    lowRoar.frequency.linearRampToValueAtTime(820, now + 1.2);
+    lowRoar.frequency.linearRampToValueAtTime(680, now + 3.2);
     lowRoar.Q.value = 2.2;
 
     const midRoar = ctx.createBiquadFilter();
     midRoar.type = 'lowpass';
     midRoar.frequency.setValueAtTime(1450, now);
-    midRoar.frequency.linearRampToValueAtTime(2700, now + 1.8);
-    midRoar.frequency.linearRampToValueAtTime(1900, now + 8.5);
+    midRoar.frequency.linearRampToValueAtTime(2700, now + 1.4);
+    midRoar.frequency.linearRampToValueAtTime(1900, now + 3.5);
 
     const g = ctx.createGain();
     g.gain.setValueAtTime(0.18, now);
-    g.gain.linearRampToValueAtTime(0.78, now + 1.2);
-    g.gain.linearRampToValueAtTime(0.70, now + 8.5);
+    g.gain.linearRampToValueAtTime(0.78, now + 0.8);
+    g.gain.linearRampToValueAtTime(0.70, now + 3.4);
     g.gain.exponentialRampToValueAtTime(0.001, now + durationMs / 1000);
 
     noise.connect(lowRoar).connect(g);
@@ -1664,15 +1779,14 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     noise.start(now);
     noise.stop(now + durationMs / 1000);
 
-    // Continuous dense golden spark crackles
     soundSparkler(durationMs);
   }
 
   // ====================================================
-  // 6. 1000 WALA LADI: 10s Continuous Machine-Gun Red Cracker Pops
+  // 6. 1000 WALA LADI: 4s Continuous Machine-Gun Red Cracker Pops
   // (DHAK-DHAK-PHAT-DHAK-PATAK!)
   // ====================================================
-  function soundLadi(durationMs = 10000) {
+  function soundLadi(durationMs = 4000) {
     const start = Date.now();
     const timer = setInterval(() => {
       if (Date.now() - start > durationMs) {
@@ -1685,9 +1799,9 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   }
 
   // ====================================================
-  // 7. GROUND CHARKHI: 10s Continuous Spinning Thruster Woosh
+  // 7. GROUND CHARKHI: 4s Continuous Spinning Thruster Woosh
   // ====================================================
-  function soundCharkhi(durationMs = 10000) {
+  function soundCharkhi(durationMs = 4000) {
     const ctx = getAudio();
     if (!ctx) return;
     const dest = getAudioDest();
@@ -1697,7 +1811,6 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     noise.buffer = getNoiseBuffer();
     noise.loop = true;
 
-    // Cyclic rotational woosh of rotating fire nozzles
     const f = ctx.createBiquadFilter();
     f.type = 'bandpass';
     f.frequency.setValueAtTime(620, now);
@@ -1707,7 +1820,6 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     g.gain.setValueAtTime(0.4, now);
     g.gain.exponentialRampToValueAtTime(0.001, now + durationMs / 1000);
 
-    // Modulate rotation speed in cycles
     const lfo = ctx.createOscillator();
     lfo.type = 'sine';
     lfo.frequency.setValueAtTime(7.5, now);
@@ -1726,43 +1838,41 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   }
 
   // ====================================================
-  // 8. ATOM BOMB & SUTLI BOMB: Heavy Ground Detonations & Echoes
+  // 8. ATOM BOMB & SUTLI BOMB: Heavy Ground Detonations & Echoes (4s)
   // ====================================================
-  function soundAtomBomb(durationMs = 10000) {
+  function soundAtomBomb(durationMs = 4000) {
     soundExplosion(1.25, true, true, 0.85);
-    const intervals = [1400, 2900, 4400, 5900, 7400, 8900];
+    const intervals = [1300, 2700];
     intervals.forEach(delay => {
       setTimeout(() => soundExplosion(0.85, true, true, 0.65), delay);
     });
   }
 
-  function soundSutliBomb(durationMs = 10000) {
+  function soundSutliBomb(durationMs = 4000) {
     soundExplosion(1.35, true, true, 0.9);
-    const intervals = [1500, 3100, 4800, 6400, 8100, 9300];
+    const intervals = [1400, 2800];
     intervals.forEach(delay => {
       setTimeout(() => soundExplosion(0.8, false, true, 0.55), delay);
     });
   }
 
-  // 9. MAGIC SNAKE: Sizzling Tablet
-  function soundSnake(durationMs = 10000) {
+  // 9. MAGIC SNAKE: Sizzling Tablet (4s)
+  function soundSnake(durationMs = 4000) {
     soundSparkler(durationMs);
   }
 
-  // 10. 7-COLOUR SKY SHOT: 8 Mortar Tube Launches + Aerial Explosions
-  function soundSkyShot(durationMs = 10000) {
-    for (let i = 0; i < 8; i++) {
+  // 10. 7-COLOUR SKY SHOT: 4 Mortar Launches + Aerial Explosions (4s)
+  function soundSkyShot(durationMs = 4000) {
+    for (let i = 0; i < 4; i++) {
       setTimeout(() => {
-        // Mortar tube launch "THUMP"
         soundExplosion(0.6, false, false, 0.16);
-        // Aerial shell burst in sky
         setTimeout(() => soundExplosion(1.05, true, true, 0.75), 350);
-      }, i * 1200);
+      }, i * 950);
     }
   }
 
-  // 11. POP-POP SNAPPER: Continuous Ground Snaps (Cracker Button 10)
-  function soundPopSnapper(durationMs = 10000) {
+  // 11. POP-POP SNAPPER: Continuous Ground Snaps (Cracker Button 10 - 4s)
+  function soundPopSnapper(durationMs = 4000) {
     const start = Date.now();
     const timer = setInterval(() => {
       if (Date.now() - start > durationMs) {
@@ -1917,15 +2027,15 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   }
 
   // ====================================================
-  // HYPER-REALISTIC CRACKER ANIMATIONS (FULL 10-SECONDS EACH)
+  // HYPER-REALISTIC CRACKER ANIMATIONS (4-SECONDS SHOW EACH)
   // ====================================================
   const realisticAnimations = {
-    // 1. ANAR (FLOWERPOT): Non-Stop 10-Second Majestic Volcano Fountain
+    // 1. ANAR (FLOWERPOT): Non-Stop 4-Second Majestic Volcano Fountain
     anar: () => {
-      soundAnar(10000);
+      soundAnar(4000);
       const pt = getCrackerGroundPoint();
       const startTime = Date.now();
-      const endTime = startTime + 10000;
+      const endTime = startTime + 4000;
 
       specialEffect = {
         update() {
@@ -1934,7 +2044,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
             specialEffect = null;
             return;
           }
-          const progress = (now - startTime) / 10000;
+          const progress = (now - startTime) / 4000;
           const pulse = Math.sin(progress * Math.PI * 6) * 0.25;
           const power = Math.min(1, Math.max(0.4, (progress < 0.12 ? (progress / 0.12) : progress < 0.88 ? 1 : (1 - (progress - 0.88) / 0.12)) + pulse));
           const count = Math.floor(7 + power * 15);
@@ -1962,11 +2072,11 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
       startAnim();
     },
 
-    // 2. FULJARI (SPARKLER): Non-Stop 10-Second Dazzling Needle Shower
+    // 2. FULJARI (SPARKLER): Non-Stop 4-Second Dazzling Needle Shower
     sparkler: () => {
-      soundSparkler(10000);
+      soundSparkler(4000);
       const pt = getCrackerGroundPoint();
-      const endTime = Date.now() + 10000;
+      const endTime = Date.now() + 4000;
 
       specialEffect = {
         update() {
@@ -1985,12 +2095,12 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
       startAnim();
     },
 
-    // 3. SKY ROCKET: Continuous Salvo of 5 Distinct High-Altitude Rockets over 10s
+    // 3. SKY ROCKET: Salvo of 2 High-Altitude Rockets over 4s
     rocket: () => {
       const pt = getCrackerGroundPoint();
-      const rocketColors = ['#ffd700', '#ff3366', '#00ffcc', '#ff9900', '#aa00ff'];
+      const rocketColors = ['#ffd700', '#ff3366', '#00ffcc', '#ff9900'];
 
-      for (let s = 0; s < 5; s++) {
+      for (let s = 0; s < 2; s++) {
         setTimeout(() => {
           soundRocket();
           let rx = pt.x + (s % 2 === 0 ? -12 : 12);
@@ -2023,19 +2133,19 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
             }
           });
           startAnim();
-        }, s * 2200);
+        }, s * 1800);
       }
     },
 
-    // 4. ATOM BOMB: Gigantic Initial Blast + 6 Secondary Thunderous Detonations over 10s
+    // 4. ATOM BOMB: Gigantic Blast + Thunderous Echoes over 4s
     atomBomb: () => {
-      soundAtomBomb(10000);
+      soundAtomBomb(4000);
       const pt = getCrackerGroundPoint();
       shockwaves.push(new Shockwave(pt.x, pt.y, 160, '#00ff88'));
       shockwaves.push(new Shockwave(pt.x, pt.y, 90, '#ffffff'));
       spawnBurst(pt.x, pt.y, 140, '#00ff88', 7.5);
 
-      const delays = [1400, 2900, 4400, 5900, 7400, 8900];
+      const delays = [1300, 2700];
       delays.forEach((delay, idx) => {
         setTimeout(() => {
           const ox = pt.x + (Math.random() * 70 - 35);
@@ -2047,11 +2157,11 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
       });
     },
 
-    // 5. GROUND CHARKHI: Continuous 10-Second Furious Spinning Rings of Fire
+    // 5. GROUND CHARKHI: Continuous 4-Second Furious Spinning Rings of Fire
     charkhi: () => {
-      soundCharkhi(10000);
+      soundCharkhi(4000);
       const pt = getCrackerGroundPoint();
-      const endTime = Date.now() + 10000;
+      const endTime = Date.now() + 4000;
       let rot = 0;
 
       specialEffect = {
@@ -2072,11 +2182,11 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
       startAnim();
     },
 
-    // 6. 1000 WALA LADI: Non-Stop 10-Second Rapid Red Cracker Chain Reaction
+    // 6. 1000 WALA LADI: Non-Stop 4-Second Rapid Red Cracker Chain Reaction
     ladi: () => {
-      soundLadi(10000);
+      soundLadi(4000);
       const pt = getCrackerGroundPoint();
-      const endTime = Date.now() + 10000;
+      const endTime = Date.now() + 4000;
 
       const timer = setInterval(() => {
         if (Date.now() > endTime) {
@@ -2090,15 +2200,15 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
       }, 95);
     },
 
-    // 7. SUTLI BOMB: Dynamite Shockwave + 6 Sustained Grand Celebratory Shells over 10s
+    // 7. SUTLI BOMB: Dynamite Shockwave + Celebratory Bursts over 4s
     sutliBomb: () => {
-      soundSutliBomb(10000);
+      soundSutliBomb(4000);
       const pt = getCrackerGroundPoint();
       shockwaves.push(new Shockwave(pt.x, pt.y, 170, '#ff9900'));
       shockwaves.push(new Shockwave(pt.x, pt.y, 90, '#ffffff'));
       spawnBurst(pt.x, pt.y, 150, '#ffaa00', 8);
 
-      const delays = [1500, 3100, 4800, 6400, 8100, 9300];
+      const delays = [1400, 2800];
       delays.forEach((delay, idx) => {
         setTimeout(() => {
           const ox = pt.x + (Math.random() * 80 - 40);
@@ -2110,12 +2220,12 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
       });
     },
 
-    // 8. MAGIC SNAKE: Sizzling Ash Serpent Growing Upwards for 10 Full Seconds
+    // 8. MAGIC SNAKE: Sizzling Ash Serpent Growing Upwards for 4 Full Seconds
     snake: () => {
-      soundSnake(10000);
+      soundSnake(4000);
       const pt = getCrackerGroundPoint();
       const startTime = Date.now();
-      const endTime = startTime + 10000;
+      const endTime = startTime + 4000;
       let counter = 0;
 
       const timer = setInterval(() => {
@@ -2124,7 +2234,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
           return;
         }
         counter++;
-        const heightOffset = Math.min(counter * 1.2, 85);
+        const heightOffset = Math.min(counter * 1.8, 85);
         const wiggle = Math.sin(counter * 0.32) * 14;
         particles.push(new Particle(
           pt.x + wiggle + (Math.random() * 6 - 3),
@@ -2154,13 +2264,13 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
       }, 80);
     },
 
-    // 9. 7-COLOUR SKY SHOT: 8 Spectacular Mortar Shells in 8 Brilliant Hues across 10s
+    // 9. 7-COLOUR SKY SHOT: 4 Spectacular Mortar Shells in Brilliant Hues across 4s
     skyShot: () => {
-      soundSkyShot(10000);
+      soundSkyShot(4000);
       const pt = getCrackerGroundPoint();
       const colors7 = ['#ff0055', '#ff9900', '#ffd700', '#00ff88', '#00e5ff', '#aa00ff', '#ff3366', '#ffffff'];
 
-      for (let i = 0; i < 8; i++) {
+      for (let i = 0; i < 4; i++) {
         setTimeout(() => {
           shockwaves.push(new Shockwave(pt.x, pt.y, 45, '#ffd700'));
           setTimeout(() => {
@@ -2170,15 +2280,15 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
             shockwaves.push(new Shockwave(sx, sy, 88, col));
             spawnBurst(sx, sy, 95, col, 6.5);
           }, 350);
-        }, i * 1200);
+        }, i * 950);
       }
     },
 
-    // 10. POP-POP SNAPPER: Non-Stop Ground Crackling Snappers for 10 Seconds
+    // 10. POP-POP SNAPPER: Non-Stop Ground Crackling Snappers for 4 Seconds
     popSnapper: () => {
-      soundPopSnapper(10000);
+      soundPopSnapper(4000);
       const pt = getCrackerGroundPoint();
-      const endTime = Date.now() + 10000;
+      const endTime = Date.now() + 4000;
 
       const timer = setInterval(() => {
         if (Date.now() > endTime) {
@@ -2293,7 +2403,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   };
 
   // ====================================================
-  // ANIMATED KID LIGHTING SEQUENCE (FULL 10-SECOND SHOW)
+  // ANIMATED KID LIGHTING SEQUENCE (FULL 4-SECOND SHOW)
   // ====================================================
   let isLightingInProgress = false;
 
@@ -2324,22 +2434,22 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
         setTimeout(() => {
           fuseSpark.style.display = 'none';
           arenaKid.className = 'arena-kid cheering';
-          stageStatus.textContent = 'Boom! Active ✨ (10s)';
-          stageBanner.textContent = `🎉 Kid is cheering! Enjoy the 10-second ${crackerNames[crackerKey]} celebration!`;
-          showToast(`💥 ${crackerNames[crackerKey]} Activated! (10s Show)`);
+          stageStatus.textContent = 'Boom! Active ✨ (4s)';
+          stageBanner.textContent = `🎉 Kid is cheering! Enjoy the 4-second ${crackerNames[crackerKey]} celebration!`;
+          showToast(`💥 ${crackerNames[crackerKey]} Activated! (4s Show)`);
 
           if (realisticAnimations[crackerKey]) {
             realisticAnimations[crackerKey]();
           }
 
-          // Reset after a full 10.5 seconds continuous show!
+          // Reset after a 4.5 seconds show!
           setTimeout(() => {
             arenaKid.className = 'arena-kid';
             stageStatus.textContent = 'Ready to Light';
-            stageBanner.textContent = `👆 Tap any cracker button to watch the 10-second live show!`;
+            stageBanner.textContent = `👆 Tap any cracker button to watch the 4-second live show!`;
             document.querySelectorAll('.cracker-tile-btn').forEach(b => b.classList.remove('active-firing'));
             isLightingInProgress = false;
-          }, 10500);
+          }, 4500);
 
         }, 700);
       }, 550);
@@ -2367,8 +2477,18 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     inputBox.style.display = 'none';
     greetingCard.style.display = 'block';
 
-    triggerKidCrackerLighting('anar');
-    showToast(formattedName ? `✨ Greeting created for ${formattedName}!` : '✨ Happy Diwali Greeting Created!');
+    // Play melodious 5-second Happy Diwali celebration song and spawn golden fireworks
+    playHappyDiwaliSong5s();
+
+    const rect = greetingCard.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = Math.max(120, rect.top + 40);
+    shockwaves.push(new Shockwave(cx, cy, 130, '#ffd700'));
+    shockwaves.push(new Shockwave(cx, cy, 75, '#ffffff'));
+    spawnBurst(cx, cy, 90, '#ffd700', 6.2);
+    startAnim();
+
+    showToast(formattedName ? `✨ Happy Diwali ${formattedName}! 🎵 Playing Festive Song` : '✨ Happy Diwali! 🎵 Playing Festive Song');
   }
 
   // ====================================================
