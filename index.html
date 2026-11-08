@@ -93,52 +93,91 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   gap: 22px;
 }
 
-/* Top App Header */
+/* Top App Header: Left Diya + Centered Text + Right Diya */
 .app-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 12px;
-  border-bottom: 1px solid rgba(255, 214, 122, 0.18);
+  padding: 8px 4px 14px;
+  border-bottom: 1px solid rgba(255, 214, 122, 0.2);
+  width: 100%;
 }
-.brand-box {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.brand-diya-badge {
-  width: 42px;
-  height: 42px;
+.header-diya {
+  position: relative;
+  width: 44px;
+  height: 44px;
   border-radius: 12px;
   background: linear-gradient(135deg, rgba(255, 214, 122, 0.22), rgba(245, 159, 40, 0.1));
-  border: 1px solid rgba(255, 214, 122, 0.4);
+  border: 1.5px solid rgba(255, 214, 122, 0.45);
   display: grid;
   place-items: center;
-  font-size: 22px;
   box-shadow: 0 0 18px rgba(255, 180, 50, 0.35);
-  animation: diyaPulse 2.8s ease-in-out infinite;
+  animation: headerDiyaPulse 2.8s ease-in-out infinite;
+  flex-shrink: 0;
+  cursor: pointer;
+  user-select: none;
 }
-@keyframes diyaPulse {
-  0%, 100% { transform: scale(1); box-shadow: 0 0 16px rgba(255, 180, 50, 0.3); }
-  50% { transform: scale(1.08); box-shadow: 0 0 28px rgba(255, 180, 50, 0.55); }
+.header-diya.header-diya-left {
+  animation-delay: 0s;
+}
+.header-diya.header-diya-right {
+  animation-delay: 1.4s;
+}
+.header-diya .diya-emoji {
+  font-size: 24px;
+  line-height: 1;
+  filter: drop-shadow(0 0 7px rgba(255, 180, 50, 0.7));
+}
+.header-diya .diya-glow-dot {
+  position: absolute;
+  top: 5px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff8db;
+  box-shadow: 0 0 10px #ff9800, 0 0 20px #ff3d00;
+  animation: flameFlicker 0.25s infinite alternate;
+}
+@keyframes flameFlicker {
+  0% { transform: scale(0.85); opacity: 0.7; }
+  100% { transform: scale(1.3); opacity: 1; }
+}
+@keyframes headerDiyaPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 14px rgba(255, 180, 50, 0.3);
+    border-color: rgba(255, 214, 122, 0.4);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 26px rgba(255, 180, 50, 0.65), 0 0 10px rgba(255, 100, 20, 0.5);
+    border-color: rgba(255, 235, 150, 0.85);
+  }
+}
+.header-center-text {
+  text-align: center;
+  flex: 1;
+  padding: 0 10px;
 }
 .brand-name {
   font-family: var(--font-heading);
-  font-size: 21px;
-  font-weight: 800;
+  font-size: 23px;
+  font-weight: 900;
   letter-spacing: 0.04em;
-  background: linear-gradient(120deg, #fff3d1, #ffd478 55%, #f6a132);
+  background: linear-gradient(120deg, #ffffff 0%, #fff0c7 30%, #ffd478 60%, #f6a132 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   line-height: 1.15;
+  filter: drop-shadow(0 2px 10px rgba(255, 170, 50, 0.35));
 }
 .brand-sub {
-  font-size: 9px;
+  font-size: 9.5px;
   font-weight: 700;
-  letter-spacing: 0.15em;
-  color: #e5b974;
+  letter-spacing: 0.16em;
+  color: #ffdc96;
   text-transform: uppercase;
+  margin-top: 2px;
 }
 
 /* Sound button is hidden per user request */
@@ -884,14 +923,19 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
 <canvas id="fx" aria-hidden="true"></canvas>
 
 <div class="mobile-app">
-  <!-- Top Header -->
+  <!-- Top Header with Left & Right Corner Diyas and Centered Text -->
   <header class="app-header">
-    <div class="brand-box">
-      <div class="brand-diya-badge" aria-hidden="true">🪔</div>
-      <div>
-        <div class="brand-name">Happy Diwali</div>
-        <div class="brand-sub">FESTIVAL OF LIGHTS · 2026</div>
-      </div>
+    <div class="header-diya header-diya-left" id="headerDiyaLeft" aria-hidden="true" title="Diwali Diya - Tap for Sparkles!">
+      <div class="diya-glow-dot"></div>
+      <span class="diya-emoji">🪔</span>
+    </div>
+    <div class="header-center-text">
+      <div class="brand-name">Happy Diwali</div>
+      <div class="brand-sub">FESTIVAL OF LIGHTS · 2026</div>
+    </div>
+    <div class="header-diya header-diya-right" id="headerDiyaRight" aria-hidden="true" title="Diwali Diya - Tap for Sparkles!">
+      <div class="diya-glow-dot"></div>
+      <span class="diya-emoji">🪔</span>
     </div>
   </header>
 
@@ -1300,28 +1344,32 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   }
 
   // ====================================================
-  // PROCEDURAL HIGH-POWER SOUND SYNTHESIS & MASTER AUDIO
+  // AUTHENTIC PYROTECHNIC ACOUSTIC SOUND ENGINE
+  // Realistic Gunpowder Detonations, Shockwaves & Crackles
+  // (No artificial sine or video-game synthesizer tones!)
   // ====================================================
   let audioCtx = null;
   let masterGain = null;
   let masterCompressor = null;
   let sharedNoise = null;
+  let sharedBrownNoise = null;
+  const distortionCurves = {};
 
   function getAudio() {
     if (!audioCtx) {
       const AudioCtx = window.AudioContext || window.webkitAudioContext;
       if (AudioCtx) {
         audioCtx = new AudioCtx();
-        // Dynamic Compressor to maximize loudness and prevent clipping distortion
+        // Master Dynamics Compressor: prevents digital clipping while boosting perceived explosive loudness
         masterCompressor = audioCtx.createDynamicsCompressor();
-        masterCompressor.threshold.setValueAtTime(-16, audioCtx.currentTime);
+        masterCompressor.threshold.setValueAtTime(-14, audioCtx.currentTime);
         masterCompressor.knee.setValueAtTime(10, audioCtx.currentTime);
-        masterCompressor.ratio.setValueAtTime(7, audioCtx.currentTime);
-        masterCompressor.attack.setValueAtTime(0.002, audioCtx.currentTime);
-        masterCompressor.release.setValueAtTime(0.2, audioCtx.currentTime);
+        masterCompressor.ratio.setValueAtTime(8, audioCtx.currentTime);
+        masterCompressor.attack.setValueAtTime(0.001, audioCtx.currentTime);
+        masterCompressor.release.setValueAtTime(0.18, audioCtx.currentTime);
 
         masterGain = audioCtx.createGain();
-        masterGain.gain.setValueAtTime(1.65, audioCtx.currentTime); // LOUD & punchy festival volume!
+        masterGain.gain.setValueAtTime(1.85, audioCtx.currentTime); // High-impact authentic festival loudness!
 
         masterCompressor.connect(masterGain);
         masterGain.connect(audioCtx.destination);
@@ -1333,7 +1381,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     return audioCtx;
   }
 
-  // Global listener to immediately unlock Web Audio on first tap/touch
+  // Global listener to immediately unlock Web Audio on first user interaction
   ['pointerdown', 'touchstart', 'click', 'keydown'].forEach(evt => {
     window.addEventListener(evt, () => {
       const ctx = getAudio();
@@ -1341,11 +1389,12 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     }, { passive: true });
   });
 
+  // White noise buffer for sharp snaps & sparkler sizzles
   function getNoiseBuffer() {
     const ctx = getAudio();
     if (!ctx) return null;
     if (!sharedNoise) {
-      const size = ctx.sampleRate * 2.5;
+      const size = Math.floor(ctx.sampleRate * 2.5);
       sharedNoise = ctx.createBuffer(1, size, ctx.sampleRate);
       const data = sharedNoise.getChannelData(0);
       for (let i = 0; i < size; i++) data[i] = Math.random() * 2 - 1;
@@ -1353,108 +1402,255 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     return sharedNoise;
   }
 
+  // Brownian acoustic noise buffer: gives real chest-thumping sub-bass gunpowder explosions
+  function getBrownNoiseBuffer() {
+    const ctx = getAudio();
+    if (!ctx) return null;
+    if (!sharedBrownNoise) {
+      const size = Math.floor(ctx.sampleRate * 3.0);
+      sharedBrownNoise = ctx.createBuffer(1, size, ctx.sampleRate);
+      const data = sharedBrownNoise.getChannelData(0);
+      let lastOut = 0.0;
+      for (let i = 0; i < size; i++) {
+        const white = Math.random() * 2 - 1;
+        // Natural integration: power falls 6dB/octave like real atmospheric acoustic explosions
+        lastOut = (lastOut + (0.028 * white)) / 1.028;
+        data[i] = lastOut * 3.4;
+      }
+    }
+    return sharedBrownNoise;
+  }
+
+  // Non-linear saturation transfer curve for true explosive shockwave compression
+  function getDistortionCurve(amount = 22) {
+    if (distortionCurves[amount]) return distortionCurves[amount];
+    const n_samples = 44100;
+    const curve = new Float32Array(n_samples);
+    const deg = Math.PI / 180;
+    for (let i = 0; i < n_samples; ++i) {
+      const x = (i * 2) / n_samples - 1;
+      curve[i] = ((3 + amount) * x * 20 * deg) / (Math.PI + amount * Math.abs(x));
+    }
+    distortionCurves[amount] = curve;
+    return curve;
+  }
+
   function getAudioDest() {
     return masterCompressor || (audioCtx ? audioCtx.destination : null);
   }
 
-  // 1. Banner Diya Authentic Cracker Sounds
+  // ====================================================
+  // 1. UNIVERSAL CRACKER DETONATION BLAST
+  // True acoustic shockwave impulse + chest-thumping sub-bass
+  // + cardboard tear + open-air Diwali street echoes!
+  // ====================================================
+  function soundExplosion(vol = 0.85, isHeavy = false, echo = true, dur = 0.65) {
+    const ctx = getAudio();
+    if (!ctx) return;
+    const dest = getAudioDest();
+    const now = ctx.currentTime;
+
+    // A. Detonation Shockwave Transient ("CRACK!" of paper/casing rupturing)
+    const snap = ctx.createBufferSource();
+    snap.buffer = getNoiseBuffer();
+    const snapFilter = ctx.createBiquadFilter();
+    snapFilter.type = 'highpass';
+    snapFilter.frequency.setValueAtTime(isHeavy ? 1400 : 2200, now);
+    const snapGain = ctx.createGain();
+    snapGain.gain.setValueAtTime(vol * 1.5, now);
+    snapGain.gain.exponentialRampToValueAtTime(0.001, now + 0.038);
+    snap.connect(snapFilter).connect(snapGain).connect(dest);
+    snap.start(now);
+    snap.stop(now + 0.045);
+
+    // B. Sub-Bass Gunpowder Combustion Body ("DHUMMM!" - True acoustic pressure, NOT a sine wave!)
+    const blast = ctx.createBufferSource();
+    blast.buffer = getBrownNoiseBuffer();
+    const blastFilter = ctx.createBiquadFilter();
+    blastFilter.type = 'lowpass';
+    blastFilter.frequency.setValueAtTime(isHeavy ? 180 : 260, now);
+    blastFilter.frequency.exponentialRampToValueAtTime(32, now + dur);
+
+    const blastDistort = ctx.createWaveShaper();
+    blastDistort.curve = getDistortionCurve(isHeavy ? 28 : 18);
+    blastDistort.oversample = '2x';
+
+    const blastGain = ctx.createGain();
+    blastGain.gain.setValueAtTime(vol * (isHeavy ? 1.7 : 1.3), now);
+    blastGain.gain.exponentialRampToValueAtTime(0.001, now + dur);
+
+    blast.connect(blastFilter).connect(blastDistort).connect(blastGain).connect(dest);
+    blast.start(now);
+    blast.stop(now + dur + 0.05);
+
+    // C. Cardboard casing tear / gunpowder flash mid punch
+    const tear = ctx.createBufferSource();
+    tear.buffer = getNoiseBuffer();
+    const tearFilter = ctx.createBiquadFilter();
+    tearFilter.type = 'bandpass';
+    tearFilter.frequency.setValueAtTime(isHeavy ? 650 : 920, now);
+    tearFilter.Q.value = 2.4;
+    const tearGain = ctx.createGain();
+    tearGain.gain.setValueAtTime(vol * 0.95, now);
+    tearGain.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
+    tear.connect(tearFilter).connect(tearGain).connect(dest);
+    tear.start(now);
+    tear.stop(now + 0.14);
+
+    // D. Outdoor Festive Street Echoes (Air-absorbed natural reflections)
+    if (echo) {
+      const echoTaps = [0.08, 0.16, 0.26, 0.38];
+      echoTaps.forEach((del, idx) => {
+        setTimeout(() => {
+          if (!audioCtx) return;
+          const t = audioCtx.currentTime;
+          const e = audioCtx.createBufferSource();
+          e.buffer = getBrownNoiseBuffer();
+          const ef = audioCtx.createBiquadFilter();
+          ef.type = 'lowpass';
+          ef.frequency.value = 460 - idx * 85; // Treble absorbed by atmospheric air
+          const eg = audioCtx.createGain();
+          eg.gain.setValueAtTime(vol * (0.42 - idx * 0.09), t);
+          eg.gain.exponentialRampToValueAtTime(0.001, t + 0.2 + idx * 0.05);
+          e.connect(ef).connect(eg).connect(getAudioDest());
+          e.start(t);
+          e.stop(t + 0.26 + idx * 0.05);
+        }, del * 1000);
+      });
+    }
+
+    // E. Sizzling shrapnel sparks in air
+    const numSparks = isHeavy ? 4 : 2;
+    for (let s = 0; s < numSparks; s++) {
+      setTimeout(() => {
+        if (!audioCtx) return;
+        const st = audioCtx.currentTime;
+        const spk = audioCtx.createBufferSource();
+        spk.buffer = getNoiseBuffer();
+        const sf = audioCtx.createBiquadFilter();
+        sf.type = 'highpass';
+        sf.frequency.value = 3500 + Math.random() * 2500;
+        const sg = audioCtx.createGain();
+        sg.gain.setValueAtTime(vol * 0.32, st);
+        sg.gain.exponentialRampToValueAtTime(0.001, st + 0.045);
+        spk.connect(sf).connect(sg).connect(getAudioDest());
+        spk.start(st);
+        spk.stop(st + 0.05);
+      }, 70 + s * 55 + Math.random() * 30);
+    }
+  }
+
+  // ====================================================
+  // 2. AUTHENTIC DIYA CRACKER SOUND
+  // Snappy, crisp cardboard firecracker pop (PATAKKK!)
+  // ====================================================
   function soundDiyaCracker() {
     const ctx = getAudio();
     if (!ctx) return;
     const dest = getAudioDest();
     const now = ctx.currentTime;
 
-    // Snappy acoustic punch
-    const osc = ctx.createOscillator();
-    const og = ctx.createGain();
-    osc.type = 'triangle';
-    osc.frequency.setValueAtTime(420, now);
-    osc.frequency.exponentialRampToValueAtTime(48, now + 0.12);
-    og.gain.setValueAtTime(0.7, now);
-    og.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
-    osc.connect(og).connect(dest);
-    osc.start(now);
-    osc.stop(now + 0.13);
+    // A. Crisp casing snap ("PAT!")
+    const snap = ctx.createBufferSource();
+    snap.buffer = getNoiseBuffer();
+    const sf = ctx.createBiquadFilter();
+    sf.type = 'bandpass';
+    sf.frequency.setValueAtTime(1550 + Math.random() * 750, now);
+    sf.Q.value = 3.6;
+    const sg = ctx.createGain();
+    sg.gain.setValueAtTime(0.95, now);
+    sg.gain.exponentialRampToValueAtTime(0.001, now + 0.04);
+    snap.connect(sf).connect(sg).connect(dest);
+    snap.start(now);
+    snap.stop(now + 0.05);
 
-    // Loud crackling burst noise
-    const noise = ctx.createBufferSource();
-    noise.buffer = getNoiseBuffer();
-    const filter = ctx.createBiquadFilter();
-    filter.type = 'bandpass';
-    filter.frequency.setValueAtTime(2800 + Math.random() * 1200, now);
-    filter.Q.value = 3.2;
-    const ng = ctx.createGain();
-    ng.gain.setValueAtTime(0.75, now);
-    ng.gain.exponentialRampToValueAtTime(0.001, now + 0.18);
-    noise.connect(filter).connect(ng).connect(dest);
-    noise.start(now);
-    noise.stop(now + 0.2);
+    // B. Acoustic pressure pop thump
+    const pop = ctx.createBufferSource();
+    pop.buffer = getBrownNoiseBuffer();
+    const pf = ctx.createBiquadFilter();
+    pf.type = 'lowpass';
+    pf.frequency.setValueAtTime(280, now);
+    pf.frequency.exponentialRampToValueAtTime(45, now + 0.09);
+    const pg = ctx.createGain();
+    pg.gain.setValueAtTime(1.0, now);
+    pg.gain.exponentialRampToValueAtTime(0.001, now + 0.09);
+    pop.connect(pf).connect(pg).connect(dest);
+    pop.start(now);
+    pop.stop(now + 0.1);
 
-    // Trailing high-frequency sizzles
+    // C. Micro sparkler crackle tail
     for (let i = 0; i < 3; i++) {
       setTimeout(() => {
         if (!audioCtx) return;
         const t = audioCtx.currentTime;
-        const sn = audioCtx.createBufferSource();
-        sn.buffer = getNoiseBuffer();
-        const sf = audioCtx.createBiquadFilter();
-        sf.type = 'highpass';
-        sf.frequency.value = 4200;
-        const sg = audioCtx.createGain();
-        sg.gain.setValueAtTime(0.35, t);
-        sg.gain.exponentialRampToValueAtTime(0.001, t + 0.05);
-        sn.connect(sf).connect(sg).connect(getAudioDest());
-        sn.start(t);
-        sn.stop(t + 0.06);
-      }, 35 + i * 45);
+        const s = audioCtx.createBufferSource();
+        s.buffer = getNoiseBuffer();
+        const flt = audioCtx.createBiquadFilter();
+        flt.type = 'highpass';
+        flt.frequency.value = 3900 + Math.random() * 1400;
+        const g = audioCtx.createGain();
+        g.gain.setValueAtTime(0.38, t);
+        g.gain.exponentialRampToValueAtTime(0.001, t + 0.04);
+        s.connect(flt).connect(g).connect(getAudioDest());
+        s.start(t);
+        s.stop(t + 0.05);
+      }, 30 + i * 40);
     }
   }
 
   function soundDiyaGrandBurst() {
     const ctx = getAudio();
     if (!ctx) return;
-    soundExplosion(0.9, 190, 24, true, 0.6);
+    soundExplosion(1.15, true, true, 0.8);
     soundDiyaCracker();
   }
 
-  // 2. Sky Rocket Sound (Ascension Whistle + Huge Sky Burst)
+  // ====================================================
+  // 3. SKY ROCKET: Pyrotechnic Whistling Motor + Sky Blast
+  // (Aerodynamic screaming propellant jet, not a clean sine!)
+  // ====================================================
   function soundRocket() {
     const ctx = getAudio();
     if (!ctx) return;
     const dest = getAudioDest();
     const now = ctx.currentTime;
 
-    const osc = ctx.createOscillator();
-    const oscGain = ctx.createGain();
-    osc.type = 'sine';
-    osc.frequency.setValueAtTime(480, now);
-    osc.frequency.exponentialRampToValueAtTime(2900, now + 0.68);
-    oscGain.gain.setValueAtTime(0.02, now);
-    oscGain.gain.linearRampToValueAtTime(0.2, now + 0.45);
-    oscGain.gain.exponentialRampToValueAtTime(0.001, now + 0.7);
-    osc.connect(oscGain).connect(dest);
-    osc.start(now);
-    osc.stop(now + 0.72);
-
+    // Screaming pyrotechnic rocket whistle
     const noise = ctx.createBufferSource();
     noise.buffer = getNoiseBuffer();
-    const filter = ctx.createBiquadFilter();
-    filter.type = 'bandpass';
-    filter.frequency.setValueAtTime(320, now);
-    filter.frequency.exponentialRampToValueAtTime(2600, now + 0.68);
-    filter.Q.value = 5.5;
-    const nGain = ctx.createGain();
-    nGain.gain.setValueAtTime(0.02, now);
-    nGain.gain.linearRampToValueAtTime(0.35, now + 0.5);
-    nGain.gain.exponentialRampToValueAtTime(0.001, now + 0.7);
-    noise.connect(filter).connect(nGain).connect(dest);
-    noise.start(now);
-    noise.stop(now + 0.72);
+    
+    const f1 = ctx.createBiquadFilter();
+    f1.type = 'bandpass';
+    f1.frequency.setValueAtTime(750, now);
+    f1.frequency.exponentialRampToValueAtTime(3200, now + 0.65);
+    f1.Q.value = 8.5; // High resonance screamer
 
-    setTimeout(() => soundExplosion(0.85, 140, 22, true, 0.55), 680);
+    const f2 = ctx.createBiquadFilter();
+    f2.type = 'bandpass';
+    f2.frequency.setValueAtTime(1450, now);
+    f2.frequency.exponentialRampToValueAtTime(5600, now + 0.65);
+    f2.Q.value = 9.0;
+
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(0.05, now);
+    g.gain.linearRampToValueAtTime(0.68, now + 0.5);
+    g.gain.exponentialRampToValueAtTime(0.001, now + 0.68);
+
+    noise.connect(f1);
+    noise.connect(f2);
+    f1.connect(g);
+    f2.connect(g);
+    g.connect(dest);
+    noise.start(now);
+    noise.stop(now + 0.7);
+
+    // Sudden massive sky blast at apex!
+    setTimeout(() => soundExplosion(1.0, true, true, 0.75), 680);
   }
 
-  // 3. Fuljari (Sparkler) Sound - Non-stop 10s Intense Granular Sizzle
+  // ====================================================
+  // 4. FULJARI (SPARKLER): 10s Non-Stop Sizzling Iron Filings
+  // ====================================================
   function soundSparkler(durationMs = 10000) {
     const ctx = getAudio();
     if (!ctx) return;
@@ -1471,182 +1667,163 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
       n.buffer = getNoiseBuffer();
       const f = ctx.createBiquadFilter();
       f.type = 'bandpass';
-      f.frequency.value = 3200 + Math.random() * 3800;
-      f.Q.value = 6;
+      f.frequency.value = 3600 + Math.random() * 4200;
+      f.Q.value = 6.5;
       const g = ctx.createGain();
-      g.gain.setValueAtTime(0.18 + Math.random() * 0.14, t);
-      g.gain.exponentialRampToValueAtTime(0.001, t + 0.045);
+      g.gain.setValueAtTime(0.24 + Math.random() * 0.18, t);
+      g.gain.exponentialRampToValueAtTime(0.001, t + 0.04);
       n.connect(f).connect(g).connect(dest);
       n.start(t);
-      n.stop(t + 0.08);
-    }, 28);
+      n.stop(t + 0.05);
+    }, 24);
   }
 
-  // 4. Ground Charkhi Sound - 10s Continuous Spinning Whirr & Sizzling Jets
-  function soundCharkhi(durationMs = 10000) {
-    const ctx = getAudio();
-    if (!ctx) return;
-    const dest = getAudioDest();
-    const now = ctx.currentTime;
-
-    const osc = ctx.createOscillator();
-    const g = ctx.createGain();
-    osc.type = 'triangle';
-    osc.frequency.setValueAtTime(150, now);
-    osc.frequency.linearRampToValueAtTime(360, now + 1.2);
-    osc.frequency.linearRampToValueAtTime(280, now + 5.0);
-    osc.frequency.linearRampToValueAtTime(120, now + durationMs / 1000);
-    g.gain.setValueAtTime(0.08, now);
-    g.gain.linearRampToValueAtTime(0.24, now + 0.8);
-    g.gain.exponentialRampToValueAtTime(0.001, now + durationMs / 1000);
-    osc.connect(g).connect(dest);
-    osc.start(now);
-    osc.stop(now + durationMs / 1000);
-
-    soundSparkler(durationMs);
-  }
-
-  // 5. Anar Volcano Sound - 10s Loud Roaring Volcanic Fountain
+  // ====================================================
+  // 5. ANAR (FLOWERPOT): 10s Non-Stop Volcanic Roar & Sparks
+  // ====================================================
   function soundAnar(durationMs = 10000) {
     const ctx = getAudio();
     if (!ctx) return;
     const dest = getAudioDest();
     const now = ctx.currentTime;
 
+    // Continuous turbulent roaring fountain exhaust jet
     const noise = ctx.createBufferSource();
     noise.buffer = getNoiseBuffer();
-    const f = ctx.createBiquadFilter();
-    f.type = 'lowpass';
-    f.frequency.setValueAtTime(650, now);
-    f.frequency.linearRampToValueAtTime(2200, now + 2.0);
-    f.frequency.linearRampToValueAtTime(1800, now + 7.5);
-    f.frequency.linearRampToValueAtTime(450, now + durationMs / 1000);
+    noise.loop = true;
+
+    const lowRoar = ctx.createBiquadFilter();
+    lowRoar.type = 'bandpass';
+    lowRoar.frequency.setValueAtTime(360, now);
+    lowRoar.frequency.linearRampToValueAtTime(820, now + 2.0);
+    lowRoar.frequency.linearRampToValueAtTime(680, now + 8.0);
+    lowRoar.Q.value = 2.2;
+
+    const midRoar = ctx.createBiquadFilter();
+    midRoar.type = 'lowpass';
+    midRoar.frequency.setValueAtTime(1450, now);
+    midRoar.frequency.linearRampToValueAtTime(2700, now + 1.8);
+    midRoar.frequency.linearRampToValueAtTime(1900, now + 8.5);
 
     const g = ctx.createGain();
-    g.gain.setValueAtTime(0.12, now);
-    g.gain.linearRampToValueAtTime(0.65, now + 1.5);
-    g.gain.linearRampToValueAtTime(0.55, now + 8.0);
+    g.gain.setValueAtTime(0.18, now);
+    g.gain.linearRampToValueAtTime(0.78, now + 1.2);
+    g.gain.linearRampToValueAtTime(0.70, now + 8.5);
     g.gain.exponentialRampToValueAtTime(0.001, now + durationMs / 1000);
 
-    noise.connect(f).connect(g).connect(dest);
+    noise.connect(lowRoar).connect(g);
+    noise.connect(midRoar).connect(g);
+    g.connect(dest);
     noise.start(now);
     noise.stop(now + durationMs / 1000);
 
+    // Continuous dense golden spark crackles
     soundSparkler(durationMs);
   }
 
-  // 6. 1000 Wala Ladi Sound - Continuous 10s Machine-Gun Barrage
+  // ====================================================
+  // 6. 1000 WALA LADI: 10s Continuous Machine-Gun Red Cracker Pops
+  // (DHAK-DHAK-PHAT-DHAK-PATAK!)
+  // ====================================================
   function soundLadi(durationMs = 10000) {
-    const startTime = Date.now();
+    const start = Date.now();
     const timer = setInterval(() => {
-      if (Date.now() - startTime > durationMs) {
+      if (Date.now() - start > durationMs) {
         clearInterval(timer);
         return;
       }
-      soundExplosion(0.55, 310, 55, false, 0.14);
-    }, 90);
+      const isLoud = Math.random() > 0.65;
+      soundExplosion(isLoud ? 0.75 : 0.55, false, false, 0.12);
+    }, 85);
   }
 
-  // 7. Atom Bomb Sound - Massive Sub-Bass Blast + 10s Sustained Detonations
-  function soundAtomBomb(durationMs = 10000) {
-    soundExplosion(0.95, 110, 16, true, 0.7);
-    const intervals = [1400, 2900, 4400, 5900, 7400, 8900];
-    intervals.forEach(delay => {
-      setTimeout(() => soundExplosion(0.7, 130, 22, true, 0.5), delay);
-    });
-  }
-
-  // 8. Sutli Bomb Sound - Heavy Dynamite Detonation + 10s Echo Barrage
-  function soundSutliBomb(durationMs = 10000) {
-    soundExplosion(1.0, 90, 14, true, 0.75);
-    const intervals = [1500, 3100, 4800, 6400, 8100, 9300];
-    intervals.forEach(delay => {
-      setTimeout(() => soundExplosion(0.65, 120, 20, true, 0.45), delay);
-    });
-  }
-
-  // 9. Magic Snake Tablet Sound - Continuous 10s Sizzle
-  function soundSnake(durationMs = 10000) {
-    soundSparkler(durationMs);
-  }
-
-  // 10. 7-Colour Sky Shot Sound - 8 Aerial Mortar Launches across 10s
-  function soundSkyShot(durationMs = 10000) {
-    for (let i = 0; i < 8; i++) {
-      setTimeout(() => {
-        // Launch thud
-        soundExplosion(0.45, 210, 45, false, 0.18);
-        // Sky explosion
-        setTimeout(() => soundExplosion(0.8, 145, 20, true, 0.5), 350);
-      }, i * 1200);
-    }
-  }
-
-  // 11. Pop-Pop Snapper Sound - Continuous 10s Pops
-  function soundPopSnapper(durationMs = 10000) {
-    const startTime = Date.now();
-    const timer = setInterval(() => {
-      if (Date.now() - startTime > durationMs) {
-        clearInterval(timer);
-        return;
-      }
-      soundExplosion(0.45, 480, 80, false, 0.09);
-    }, 220);
-  }
-
-  // Universal Explosive Core Synth
-  function soundExplosion(vol = 0.6, startFreq = 160, endFreq = 28, echo = false, dur = 0.45) {
+  // ====================================================
+  // 7. GROUND CHARKHI: 10s Continuous Spinning Thruster Woosh
+  // ====================================================
+  function soundCharkhi(durationMs = 10000) {
     const ctx = getAudio();
     if (!ctx) return;
     const dest = getAudioDest();
     const now = ctx.currentTime;
 
-    const osc = ctx.createOscillator();
-    const og = ctx.createGain();
-    osc.type = 'sine';
-    osc.frequency.setValueAtTime(startFreq, now);
-    osc.frequency.exponentialRampToValueAtTime(endFreq, now + dur);
-    og.gain.setValueAtTime(vol, now);
-    og.gain.exponentialRampToValueAtTime(0.001, now + dur);
-    osc.connect(og).connect(dest);
-    osc.start(now);
-    osc.stop(now + dur + 0.05);
-
     const noise = ctx.createBufferSource();
     noise.buffer = getNoiseBuffer();
-    const filter = ctx.createBiquadFilter();
-    filter.type = 'lowpass';
-    filter.frequency.setValueAtTime(2900, now);
-    filter.frequency.exponentialRampToValueAtTime(70, now + dur * 0.7);
+    noise.loop = true;
 
-    const ng = ctx.createGain();
-    ng.gain.setValueAtTime(vol * 1.1, now);
-    ng.gain.exponentialRampToValueAtTime(0.001, now + dur * 0.7);
+    // Cyclic rotational woosh of rotating fire nozzles
+    const f = ctx.createBiquadFilter();
+    f.type = 'bandpass';
+    f.frequency.setValueAtTime(620, now);
+    f.Q.value = 4.2;
 
-    noise.connect(filter).connect(ng).connect(dest);
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(0.4, now);
+    g.gain.exponentialRampToValueAtTime(0.001, now + durationMs / 1000);
+
+    // Modulate rotation speed in cycles
+    const lfo = ctx.createOscillator();
+    lfo.type = 'sine';
+    lfo.frequency.setValueAtTime(7.5, now);
+    const lfoGain = ctx.createGain();
+    lfoGain.gain.setValueAtTime(450, now);
+    lfo.connect(lfoGain);
+    lfoGain.connect(f.frequency);
+
+    noise.connect(f).connect(g).connect(dest);
+    lfo.start(now);
     noise.start(now);
-    noise.stop(now + dur * 0.75);
+    lfo.stop(now + durationMs / 1000);
+    noise.stop(now + durationMs / 1000);
 
-    if (echo) {
-      for (let k = 0; k < 5; k++) {
-        setTimeout(() => {
-          if (!audioCtx) return;
-          const pt = audioCtx.currentTime;
-          const p = audioCtx.createBufferSource();
-          p.buffer = getNoiseBuffer();
-          const pf = audioCtx.createBiquadFilter();
-          pf.type = 'bandpass';
-          pf.frequency.value = 1600 + Math.random() * 900;
-          pf.Q.value = 5;
-          const pg = audioCtx.createGain();
-          pg.gain.setValueAtTime(vol * 0.35, pt);
-          pg.gain.exponentialRampToValueAtTime(0.001, pt + 0.1);
-          p.connect(pf).connect(pg).connect(getAudioDest());
-          p.start(pt);
-          p.stop(pt + 0.12);
-        }, 75 + k * 65);
-      }
+    soundSparkler(durationMs);
+  }
+
+  // ====================================================
+  // 8. ATOM BOMB & SUTLI BOMB: Heavy Ground Detonations & Echoes
+  // ====================================================
+  function soundAtomBomb(durationMs = 10000) {
+    soundExplosion(1.25, true, true, 0.85);
+    const intervals = [1400, 2900, 4400, 5900, 7400, 8900];
+    intervals.forEach(delay => {
+      setTimeout(() => soundExplosion(0.85, true, true, 0.65), delay);
+    });
+  }
+
+  function soundSutliBomb(durationMs = 10000) {
+    soundExplosion(1.35, true, true, 0.9);
+    const intervals = [1500, 3100, 4800, 6400, 8100, 9300];
+    intervals.forEach(delay => {
+      setTimeout(() => soundExplosion(0.8, false, true, 0.55), delay);
+    });
+  }
+
+  // 9. MAGIC SNAKE: Sizzling Tablet
+  function soundSnake(durationMs = 10000) {
+    soundSparkler(durationMs);
+  }
+
+  // 10. 7-COLOUR SKY SHOT: 8 Mortar Tube Launches + Aerial Explosions
+  function soundSkyShot(durationMs = 10000) {
+    for (let i = 0; i < 8; i++) {
+      setTimeout(() => {
+        // Mortar tube launch "THUMP"
+        soundExplosion(0.6, false, false, 0.16);
+        // Aerial shell burst in sky
+        setTimeout(() => soundExplosion(1.05, true, true, 0.75), 350);
+      }, i * 1200);
     }
+  }
+
+  // 11. POP-POP SNAPPER: Continuous Ground Snaps
+  function soundPopSnapper(durationMs = 10000) {
+    const start = Date.now();
+    const timer = setInterval(() => {
+      if (Date.now() - start > durationMs) {
+        clearInterval(timer);
+        return;
+      }
+      soundDiyaCracker();
+    }, 220);
   }
 
   // ====================================================
@@ -2301,6 +2478,22 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
       triggerKidCrackerLighting(cKey);
     });
   });
+
+  // Header Left and Right Corner Diyas: Tap to trigger festive sparkles & sound!
+  function triggerHeaderDiyaEffect(el) {
+    if (!el) return;
+    getAudio();
+    const rect = el.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    shockwaves.push(new Shockwave(cx, cy, 65, '#ffd700'));
+    spawnBurst(cx, cy, 45, '#ffd700', 4.2);
+    soundDiyaCracker();
+    showToast('✨ Sacred Diya Radiance! 🪔');
+  }
+
+  $('headerDiyaLeft')?.addEventListener('click', () => triggerHeaderDiyaEffect($('headerDiyaLeft')));
+  $('headerDiyaRight')?.addEventListener('click', () => triggerHeaderDiyaEffect($('headerDiyaRight')));
 
   // Central Sun Diya Click: Blasts Crackers & Fireworks around the Diya with Grand Sound!
   $('centralDiya').addEventListener('click', (e) => {
