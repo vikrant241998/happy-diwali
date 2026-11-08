@@ -479,7 +479,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
 .crackers-main-heading {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: 22px;
+  font-size: 23px;
   font-weight: 800;
   background: linear-gradient(110deg, #fff3d1, #ffd478 50%, #ff893b);
   -webkit-background-clip: text;
@@ -492,6 +492,122 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   color: var(--muted);
 }
 
+/* Eye-Catching Call-To-Action Banner for Diwali Crackers */
+.cracker-cta-banner {
+  margin: 9px 0 3px;
+  background: linear-gradient(135deg, rgba(255, 85, 0, 0.25) 0%, rgba(255, 193, 7, 0.18) 50%, rgba(255, 60, 0, 0.25) 100%);
+  border: 1.8px solid rgba(255, 214, 122, 0.65);
+  border-radius: 14px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 4px 22px rgba(255, 120, 20, 0.32), inset 0 0 16px rgba(255, 214, 122, 0.14);
+  animation: ctaPulseGlow 2.2s ease-in-out infinite alternate;
+}
+@keyframes ctaPulseGlow {
+  0% {
+    border-color: rgba(255, 214, 122, 0.5);
+    box-shadow: 0 4px 18px rgba(255, 120, 20, 0.25), inset 0 0 12px rgba(255, 214, 122, 0.1);
+  }
+  100% {
+    border-color: rgba(255, 235, 160, 1);
+    box-shadow: 0 8px 30px rgba(255, 140, 20, 0.55), 0 0 15px rgba(255, 215, 0, 0.45), inset 0 0 20px rgba(255, 214, 122, 0.25);
+  }
+}
+.cta-sparkle-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(90deg, #ff3d00, #ff9100);
+  border-radius: 99px;
+  padding: 3px 11px;
+  box-shadow: 0 2px 10px rgba(255, 61, 0, 0.45);
+}
+.cta-sparkle-pill .pulsing-fire {
+  font-size: 11px;
+  animation: fireBounce 1s infinite alternate;
+}
+@keyframes fireBounce {
+  0% { transform: scale(0.85); }
+  100% { transform: scale(1.3); }
+}
+.cta-pill-text {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.cta-hero-prompt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 13.8px;
+  font-weight: 900;
+  color: #fff6d9;
+  text-align: center;
+  line-height: 1.3;
+}
+.cta-hero-prompt strong {
+  background: linear-gradient(110deg, #ffffff 0%, #ffe6a0 40%, #ffbb33 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+.cta-hand-icon {
+  font-size: 16px;
+  display: inline-block;
+  animation: bounceDown 1.1s ease-in-out infinite;
+}
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+.cta-sub-highlight {
+  margin: 0;
+  font-size: 11px;
+  color: #ffd88a;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+.crackers-bottom-callout {
+  margin-top: 3px;
+  display: flex;
+  justify-content: center;
+}
+.bottom-callout-bubble {
+  background: rgba(255, 214, 122, 0.09);
+  border: 1px dashed rgba(255, 214, 122, 0.48);
+  border-radius: 10px;
+  padding: 6px 12px;
+  font-size: 11.5px;
+  color: #fff2dd;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  line-height: 1.35;
+}
+.bottom-callout-bubble strong {
+  color: #ffd478;
+}
+.bottom-callout-bubble .bounce-finger {
+  font-size: 14px;
+  display: inline-block;
+  animation: bounceUp 1.1s ease-in-out infinite;
+}
+@keyframes bounceUp {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
 /* 2-Row Compact Mobile Grid (5 Columns x 2 Rows = 10 Crackers) */
 .crackers-2row-grid {
   display: grid;
@@ -500,8 +616,8 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   width: 100%;
 }
 .cracker-tile-btn {
-  background: linear-gradient(145deg, rgba(23, 29, 58, 0.95), rgba(12, 16, 36, 0.98));
-  border: 1px solid rgba(255, 214, 122, 0.28);
+  background: linear-gradient(145deg, rgba(28, 35, 70, 0.95), rgba(15, 20, 44, 0.98));
+  border: 1.2px solid rgba(255, 214, 122, 0.35);
   border-radius: 12px;
   padding: 9px 2px 8px;
   display: flex;
@@ -511,14 +627,21 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   gap: 3px;
   text-align: center;
   min-height: 56px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.32);
   transition: all 0.15s cubic-bezier(0.18, 0.9, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+}
+.cracker-tile-btn:hover {
+  border-color: #ffd478;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 170, 50, 0.38);
 }
 .cracker-tile-btn:active, .cracker-tile-btn.active-firing {
   transform: scale(0.94);
   border-color: #ffd478;
-  background: linear-gradient(145deg, rgba(65, 38, 22, 0.95), rgba(35, 22, 15, 0.98));
-  box-shadow: 0 0 16px rgba(255, 140, 20, 0.55);
+  background: linear-gradient(145deg, rgba(75, 42, 22, 0.95), rgba(42, 25, 16, 0.98));
+  box-shadow: 0 0 18px rgba(255, 140, 20, 0.65);
 }
 .cracker-tile-icon {
   font-size: 21px;
@@ -947,62 +1070,86 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   <section class="crackers-section">
     <div class="crackers-heading-box">
       <h2 class="crackers-main-heading">🎇 Diwali Crackers</h2>
-      <p class="crackers-subheading">Tap any cracker below to watch the live demonstration!</p>
+      
+      <!-- High-Impact Pulsing CTA Banner -->
+      <div class="cracker-cta-banner">
+        <div class="cta-sparkle-pill">
+          <span class="pulsing-fire">🔥</span>
+          <span class="cta-pill-text">TAP ANY CRACKER BUTTON TO ACTIVATE</span>
+          <span class="pulsing-fire">🔥</span>
+        </div>
+        <div class="cta-hero-prompt">
+          <span class="cta-hand-icon">👇</span>
+          <span><strong>CLICK ANY BUTTON BELOW</strong> TO LAUNCH 10s FIREWORKS!</span>
+          <span class="cta-hand-icon">👇</span>
+        </div>
+        <p class="cta-sub-highlight">
+          🔊 Turn up volume! Experience authentic roaring sound & non-stop 10s live celebration!
+        </p>
+      </div>
     </div>
 
     <!-- 10 Buttons in 2 Rows (5 buttons per row) -->
     <div class="crackers-2row-grid" id="crackersGrid">
       <!-- ROW 1 (Crackers 1-5) -->
-      <button class="cracker-tile-btn" data-cracker="anar" type="button" title="Anar Flowerpot">
+      <button class="cracker-tile-btn" data-cracker="anar" type="button" title="Anar Flowerpot (10s Show)">
         <span class="cracker-tile-icon">🌋</span>
         <span class="cracker-tile-name">Anar</span>
       </button>
 
-      <button class="cracker-tile-btn" data-cracker="sparkler" type="button" title="Golden Sparkler">
+      <button class="cracker-tile-btn" data-cracker="sparkler" type="button" title="Golden Sparkler (10s Show)">
         <span class="cracker-tile-icon">✨</span>
         <span class="cracker-tile-name">Fuljari</span>
       </button>
 
-      <button class="cracker-tile-btn" data-cracker="rocket" type="button" title="Sky Rocket">
+      <button class="cracker-tile-btn" data-cracker="rocket" type="button" title="Sky Rocket (10s Show)">
         <span class="cracker-tile-icon">🚀</span>
         <span class="cracker-tile-name">Rocket</span>
       </button>
 
-      <button class="cracker-tile-btn" data-cracker="atomBomb" type="button" title="Green Atom Bomb">
+      <button class="cracker-tile-btn" data-cracker="atomBomb" type="button" title="Green Atom Bomb (10s Show)">
         <span class="cracker-tile-icon">💣</span>
         <span class="cracker-tile-name">Bomb</span>
       </button>
 
-      <button class="cracker-tile-btn" data-cracker="charkhi" type="button" title="Ground Charkhi">
+      <button class="cracker-tile-btn" data-cracker="charkhi" type="button" title="Ground Charkhi (10s Show)">
         <span class="cracker-tile-icon">🌀</span>
         <span class="cracker-tile-name">Charkhi</span>
       </button>
 
       <!-- ROW 2 (Crackers 6-10) -->
-      <button class="cracker-tile-btn" data-cracker="ladi" type="button" title="1000 Wala Red Ladi">
+      <button class="cracker-tile-btn" data-cracker="ladi" type="button" title="1000 Wala Red Ladi (10s Show)">
         <span class="cracker-tile-icon">🧨</span>
         <span class="cracker-tile-name">Ladi</span>
       </button>
 
-      <button class="cracker-tile-btn" data-cracker="sutliBomb" type="button" title="Sutli Bomb">
+      <button class="cracker-tile-btn" data-cracker="sutliBomb" type="button" title="Sutli Bomb (10s Show)">
         <span class="cracker-tile-icon">💥</span>
         <span class="cracker-tile-name">Sutli</span>
       </button>
 
-      <button class="cracker-tile-btn" data-cracker="snake" type="button" title="Magic Snake Tablet">
+      <button class="cracker-tile-btn" data-cracker="snake" type="button" title="Magic Snake Tablet (10s Show)">
         <span class="cracker-tile-icon">🐍</span>
         <span class="cracker-tile-name">Snake</span>
       </button>
 
-      <button class="cracker-tile-btn" data-cracker="skyShot" type="button" title="7-Colour Sky Shot">
+      <button class="cracker-tile-btn" data-cracker="skyShot" type="button" title="7-Colour Sky Shot (10s Show)">
         <span class="cracker-tile-icon">🎆</span>
         <span class="cracker-tile-name">SkyShot</span>
       </button>
 
-      <button class="cracker-tile-btn" data-cracker="popSnapper" type="button" title="Pop-Pop Snappers">
+      <button class="cracker-tile-btn" data-cracker="popSnapper" type="button" title="Pop-Pop Snappers (10s Show)">
         <span class="cracker-tile-icon">⚡</span>
         <span class="cracker-tile-name">Snapper</span>
       </button>
+    </div>
+
+    <!-- Guiding Bottom Callout for Visitors -->
+    <div class="crackers-bottom-callout">
+      <div class="bottom-callout-bubble">
+        <span class="bounce-finger">👆</span>
+        <span>Tap any button above: <strong>All 10 crackers run for a full 10-second high-power show with loud sound!</strong></span>
+      </div>
     </div>
   </section>
 
@@ -1153,21 +1300,46 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   }
 
   // ====================================================
-  // PROCEDURAL SOUND SYNTHESIS FOR ALL 10 CRACKERS
+  // PROCEDURAL HIGH-POWER SOUND SYNTHESIS & MASTER AUDIO
   // ====================================================
   let audioCtx = null;
+  let masterGain = null;
+  let masterCompressor = null;
   let sharedNoise = null;
 
   function getAudio() {
     if (!audioCtx) {
       const AudioCtx = window.AudioContext || window.webkitAudioContext;
-      if (AudioCtx) audioCtx = new AudioCtx();
+      if (AudioCtx) {
+        audioCtx = new AudioCtx();
+        // Dynamic Compressor to maximize loudness and prevent clipping distortion
+        masterCompressor = audioCtx.createDynamicsCompressor();
+        masterCompressor.threshold.setValueAtTime(-16, audioCtx.currentTime);
+        masterCompressor.knee.setValueAtTime(10, audioCtx.currentTime);
+        masterCompressor.ratio.setValueAtTime(7, audioCtx.currentTime);
+        masterCompressor.attack.setValueAtTime(0.002, audioCtx.currentTime);
+        masterCompressor.release.setValueAtTime(0.2, audioCtx.currentTime);
+
+        masterGain = audioCtx.createGain();
+        masterGain.gain.setValueAtTime(1.65, audioCtx.currentTime); // LOUD & punchy festival volume!
+
+        masterCompressor.connect(masterGain);
+        masterGain.connect(audioCtx.destination);
+      }
     }
     if (audioCtx && audioCtx.state === 'suspended') {
       audioCtx.resume();
     }
     return audioCtx;
   }
+
+  // Global listener to immediately unlock Web Audio on first tap/touch
+  ['pointerdown', 'touchstart', 'click', 'keydown'].forEach(evt => {
+    window.addEventListener(evt, () => {
+      const ctx = getAudio();
+      if (ctx && ctx.state === 'suspended') ctx.resume();
+    }, { passive: true });
+  });
 
   function getNoiseBuffer() {
     const ctx = getAudio();
@@ -1181,46 +1353,112 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     return sharedNoise;
   }
 
-  // 1. Sky Rocket Sound (Ascension Whistle + Huge Sky Burst)
+  function getAudioDest() {
+    return masterCompressor || (audioCtx ? audioCtx.destination : null);
+  }
+
+  // 1. Banner Diya Authentic Cracker Sounds
+  function soundDiyaCracker() {
+    const ctx = getAudio();
+    if (!ctx) return;
+    const dest = getAudioDest();
+    const now = ctx.currentTime;
+
+    // Snappy acoustic punch
+    const osc = ctx.createOscillator();
+    const og = ctx.createGain();
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(420, now);
+    osc.frequency.exponentialRampToValueAtTime(48, now + 0.12);
+    og.gain.setValueAtTime(0.7, now);
+    og.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
+    osc.connect(og).connect(dest);
+    osc.start(now);
+    osc.stop(now + 0.13);
+
+    // Loud crackling burst noise
+    const noise = ctx.createBufferSource();
+    noise.buffer = getNoiseBuffer();
+    const filter = ctx.createBiquadFilter();
+    filter.type = 'bandpass';
+    filter.frequency.setValueAtTime(2800 + Math.random() * 1200, now);
+    filter.Q.value = 3.2;
+    const ng = ctx.createGain();
+    ng.gain.setValueAtTime(0.75, now);
+    ng.gain.exponentialRampToValueAtTime(0.001, now + 0.18);
+    noise.connect(filter).connect(ng).connect(dest);
+    noise.start(now);
+    noise.stop(now + 0.2);
+
+    // Trailing high-frequency sizzles
+    for (let i = 0; i < 3; i++) {
+      setTimeout(() => {
+        if (!audioCtx) return;
+        const t = audioCtx.currentTime;
+        const sn = audioCtx.createBufferSource();
+        sn.buffer = getNoiseBuffer();
+        const sf = audioCtx.createBiquadFilter();
+        sf.type = 'highpass';
+        sf.frequency.value = 4200;
+        const sg = audioCtx.createGain();
+        sg.gain.setValueAtTime(0.35, t);
+        sg.gain.exponentialRampToValueAtTime(0.001, t + 0.05);
+        sn.connect(sf).connect(sg).connect(getAudioDest());
+        sn.start(t);
+        sn.stop(t + 0.06);
+      }, 35 + i * 45);
+    }
+  }
+
+  function soundDiyaGrandBurst() {
+    const ctx = getAudio();
+    if (!ctx) return;
+    soundExplosion(0.9, 190, 24, true, 0.6);
+    soundDiyaCracker();
+  }
+
+  // 2. Sky Rocket Sound (Ascension Whistle + Huge Sky Burst)
   function soundRocket() {
     const ctx = getAudio();
     if (!ctx) return;
+    const dest = getAudioDest();
     const now = ctx.currentTime;
 
     const osc = ctx.createOscillator();
     const oscGain = ctx.createGain();
     osc.type = 'sine';
-    osc.frequency.setValueAtTime(450, now);
-    osc.frequency.exponentialRampToValueAtTime(2700, now + 0.65);
-    oscGain.gain.setValueAtTime(0.01, now);
-    oscGain.gain.linearRampToValueAtTime(0.12, now + 0.45);
-    oscGain.gain.exponentialRampToValueAtTime(0.001, now + 0.68);
-    osc.connect(oscGain).connect(ctx.destination);
+    osc.frequency.setValueAtTime(480, now);
+    osc.frequency.exponentialRampToValueAtTime(2900, now + 0.68);
+    oscGain.gain.setValueAtTime(0.02, now);
+    oscGain.gain.linearRampToValueAtTime(0.2, now + 0.45);
+    oscGain.gain.exponentialRampToValueAtTime(0.001, now + 0.7);
+    osc.connect(oscGain).connect(dest);
     osc.start(now);
-    osc.stop(now + 0.7);
+    osc.stop(now + 0.72);
 
     const noise = ctx.createBufferSource();
     noise.buffer = getNoiseBuffer();
     const filter = ctx.createBiquadFilter();
     filter.type = 'bandpass';
-    filter.frequency.setValueAtTime(300, now);
-    filter.frequency.exponentialRampToValueAtTime(2400, now + 0.65);
-    filter.Q.value = 5;
+    filter.frequency.setValueAtTime(320, now);
+    filter.frequency.exponentialRampToValueAtTime(2600, now + 0.68);
+    filter.Q.value = 5.5;
     const nGain = ctx.createGain();
-    nGain.gain.setValueAtTime(0.01, now);
-    nGain.gain.linearRampToValueAtTime(0.2, now + 0.5);
-    nGain.gain.exponentialRampToValueAtTime(0.001, now + 0.68);
-    noise.connect(filter).connect(nGain).connect(ctx.destination);
+    nGain.gain.setValueAtTime(0.02, now);
+    nGain.gain.linearRampToValueAtTime(0.35, now + 0.5);
+    nGain.gain.exponentialRampToValueAtTime(0.001, now + 0.7);
+    noise.connect(filter).connect(nGain).connect(dest);
     noise.start(now);
-    noise.stop(now + 0.7);
+    noise.stop(now + 0.72);
 
-    setTimeout(() => soundExplosion(0.42, 140, 24, true), 650);
+    setTimeout(() => soundExplosion(0.85, 140, 22, true, 0.55), 680);
   }
 
-  // 2. Fuljari (Sparkler) Sound (Intense Granular Sizzle)
-  function soundSparkler(durationMs = 3200) {
+  // 3. Fuljari (Sparkler) Sound - Non-stop 10s Intense Granular Sizzle
+  function soundSparkler(durationMs = 10000) {
     const ctx = getAudio();
     if (!ctx) return;
+    const dest = getAudioDest();
 
     const start = Date.now();
     const timer = setInterval(() => {
@@ -1233,107 +1471,134 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
       n.buffer = getNoiseBuffer();
       const f = ctx.createBiquadFilter();
       f.type = 'bandpass';
-      f.frequency.value = 3500 + Math.random() * 3200;
-      f.Q.value = 7;
+      f.frequency.value = 3200 + Math.random() * 3800;
+      f.Q.value = 6;
       const g = ctx.createGain();
-      g.gain.setValueAtTime(0.08 + Math.random() * 0.08, t);
-      g.gain.exponentialRampToValueAtTime(0.001, t + 0.04);
-      n.connect(f).connect(g).connect(ctx.destination);
+      g.gain.setValueAtTime(0.18 + Math.random() * 0.14, t);
+      g.gain.exponentialRampToValueAtTime(0.001, t + 0.045);
+      n.connect(f).connect(g).connect(dest);
       n.start(t);
       n.stop(t + 0.08);
-    }, 32);
+    }, 28);
   }
 
-  // 3. Ground Charkhi Sound (Whirring centrifugal acceleration + swoosh)
-  function soundCharkhi(durationMs = 3600) {
+  // 4. Ground Charkhi Sound - 10s Continuous Spinning Whirr & Sizzling Jets
+  function soundCharkhi(durationMs = 10000) {
     const ctx = getAudio();
     if (!ctx) return;
+    const dest = getAudioDest();
     const now = ctx.currentTime;
 
     const osc = ctx.createOscillator();
     const g = ctx.createGain();
     osc.type = 'triangle';
-    osc.frequency.setValueAtTime(140, now);
-    osc.frequency.linearRampToValueAtTime(320, now + 1.2);
+    osc.frequency.setValueAtTime(150, now);
+    osc.frequency.linearRampToValueAtTime(360, now + 1.2);
+    osc.frequency.linearRampToValueAtTime(280, now + 5.0);
     osc.frequency.linearRampToValueAtTime(120, now + durationMs / 1000);
-    g.gain.setValueAtTime(0.05, now);
-    g.gain.linearRampToValueAtTime(0.14, now + 1.0);
+    g.gain.setValueAtTime(0.08, now);
+    g.gain.linearRampToValueAtTime(0.24, now + 0.8);
     g.gain.exponentialRampToValueAtTime(0.001, now + durationMs / 1000);
-    osc.connect(g).connect(ctx.destination);
+    osc.connect(g).connect(dest);
     osc.start(now);
     osc.stop(now + durationMs / 1000);
 
     soundSparkler(durationMs);
   }
 
-  // 4. Anar Volcano Sound (Roaring volcanic fountain + sparkling hiss)
-  function soundAnar(durationMs = 4000) {
+  // 5. Anar Volcano Sound - 10s Loud Roaring Volcanic Fountain
+  function soundAnar(durationMs = 10000) {
     const ctx = getAudio();
     if (!ctx) return;
+    const dest = getAudioDest();
     const now = ctx.currentTime;
 
     const noise = ctx.createBufferSource();
     noise.buffer = getNoiseBuffer();
     const f = ctx.createBiquadFilter();
     f.type = 'lowpass';
-    f.frequency.setValueAtTime(600, now);
-    f.frequency.linearRampToValueAtTime(1900, now + 1.8);
-    f.frequency.linearRampToValueAtTime(400, now + durationMs / 1000);
+    f.frequency.setValueAtTime(650, now);
+    f.frequency.linearRampToValueAtTime(2200, now + 2.0);
+    f.frequency.linearRampToValueAtTime(1800, now + 7.5);
+    f.frequency.linearRampToValueAtTime(450, now + durationMs / 1000);
 
     const g = ctx.createGain();
-    g.gain.setValueAtTime(0.05, now);
-    g.gain.linearRampToValueAtTime(0.4, now + 1.4);
+    g.gain.setValueAtTime(0.12, now);
+    g.gain.linearRampToValueAtTime(0.65, now + 1.5);
+    g.gain.linearRampToValueAtTime(0.55, now + 8.0);
     g.gain.exponentialRampToValueAtTime(0.001, now + durationMs / 1000);
 
-    noise.connect(f).connect(g).connect(ctx.destination);
+    noise.connect(f).connect(g).connect(dest);
     noise.start(now);
     noise.stop(now + durationMs / 1000);
 
     soundSparkler(durationMs);
   }
 
-  // 5. 1000 Wala Ladi Sound (Machine-gun rapid pops)
-  function soundLadi(count = 18) {
-    for (let i = 0; i < count; i++) {
+  // 6. 1000 Wala Ladi Sound - Continuous 10s Machine-Gun Barrage
+  function soundLadi(durationMs = 10000) {
+    const startTime = Date.now();
+    const timer = setInterval(() => {
+      if (Date.now() - startTime > durationMs) {
+        clearInterval(timer);
+        return;
+      }
+      soundExplosion(0.55, 310, 55, false, 0.14);
+    }, 90);
+  }
+
+  // 7. Atom Bomb Sound - Massive Sub-Bass Blast + 10s Sustained Detonations
+  function soundAtomBomb(durationMs = 10000) {
+    soundExplosion(0.95, 110, 16, true, 0.7);
+    const intervals = [1400, 2900, 4400, 5900, 7400, 8900];
+    intervals.forEach(delay => {
+      setTimeout(() => soundExplosion(0.7, 130, 22, true, 0.5), delay);
+    });
+  }
+
+  // 8. Sutli Bomb Sound - Heavy Dynamite Detonation + 10s Echo Barrage
+  function soundSutliBomb(durationMs = 10000) {
+    soundExplosion(1.0, 90, 14, true, 0.75);
+    const intervals = [1500, 3100, 4800, 6400, 8100, 9300];
+    intervals.forEach(delay => {
+      setTimeout(() => soundExplosion(0.65, 120, 20, true, 0.45), delay);
+    });
+  }
+
+  // 9. Magic Snake Tablet Sound - Continuous 10s Sizzle
+  function soundSnake(durationMs = 10000) {
+    soundSparkler(durationMs);
+  }
+
+  // 10. 7-Colour Sky Shot Sound - 8 Aerial Mortar Launches across 10s
+  function soundSkyShot(durationMs = 10000) {
+    for (let i = 0; i < 8; i++) {
       setTimeout(() => {
-        soundExplosion(0.24, 280, 50, false, 0.12);
-      }, i * 75 + Math.random() * 25);
+        // Launch thud
+        soundExplosion(0.45, 210, 45, false, 0.18);
+        // Sky explosion
+        setTimeout(() => soundExplosion(0.8, 145, 20, true, 0.5), 350);
+      }, i * 1200);
     }
   }
 
-  // 6. Atom Bomb Sound (Heavy sub-bass blast)
-  function soundAtomBomb() {
-    soundExplosion(0.65, 120, 18, false, 0.6);
+  // 11. Pop-Pop Snapper Sound - Continuous 10s Pops
+  function soundPopSnapper(durationMs = 10000) {
+    const startTime = Date.now();
+    const timer = setInterval(() => {
+      if (Date.now() - startTime > durationMs) {
+        clearInterval(timer);
+        return;
+      }
+      soundExplosion(0.45, 480, 80, false, 0.09);
+    }, 220);
   }
 
-  // 7. Sutli Bomb Sound (Dynamic echo dynamite blast)
-  function soundSutliBomb() {
-    soundExplosion(0.7, 95, 16, true, 0.65);
-  }
-
-  // 8. Magic Snake Tablet Sound
-  function soundSnake() {
-    soundSparkler(2500);
-  }
-
-  // 9. 7-Colour Sky Shot Sound
-  function soundSkyShot() {
-    soundExplosion(0.25, 190, 40, false, 0.15);
-    for (let i = 0; i < 3; i++) {
-      setTimeout(() => {
-        soundExplosion(0.38, 150, 25, true, 0.4);
-      }, 500 + i * 400);
-    }
-  }
-
-  // 10. Pop-Pop Snapper Sound
-  function soundPopSnapper() {
-    soundExplosion(0.25, 450, 70, false, 0.08);
-  }
-
-  function soundExplosion(vol = 0.4, startFreq = 160, endFreq = 30, echo = false, dur = 0.45) {
+  // Universal Explosive Core Synth
+  function soundExplosion(vol = 0.6, startFreq = 160, endFreq = 28, echo = false, dur = 0.45) {
     const ctx = getAudio();
     if (!ctx) return;
+    const dest = getAudioDest();
     const now = ctx.currentTime;
 
     const osc = ctx.createOscillator();
@@ -1343,7 +1608,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     osc.frequency.exponentialRampToValueAtTime(endFreq, now + dur);
     og.gain.setValueAtTime(vol, now);
     og.gain.exponentialRampToValueAtTime(0.001, now + dur);
-    osc.connect(og).connect(ctx.destination);
+    osc.connect(og).connect(dest);
     osc.start(now);
     osc.stop(now + dur + 0.05);
 
@@ -1351,35 +1616,35 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     noise.buffer = getNoiseBuffer();
     const filter = ctx.createBiquadFilter();
     filter.type = 'lowpass';
-    filter.frequency.setValueAtTime(2600, now);
-    filter.frequency.exponentialRampToValueAtTime(80, now + dur * 0.7);
+    filter.frequency.setValueAtTime(2900, now);
+    filter.frequency.exponentialRampToValueAtTime(70, now + dur * 0.7);
 
     const ng = ctx.createGain();
-    ng.gain.setValueAtTime(vol * 0.9, now);
+    ng.gain.setValueAtTime(vol * 1.1, now);
     ng.gain.exponentialRampToValueAtTime(0.001, now + dur * 0.7);
 
-    noise.connect(filter).connect(ng).connect(ctx.destination);
+    noise.connect(filter).connect(ng).connect(dest);
     noise.start(now);
     noise.stop(now + dur * 0.75);
 
     if (echo) {
-      for (let k = 0; k < 4; k++) {
+      for (let k = 0; k < 5; k++) {
         setTimeout(() => {
-          if (!ctx) return;
-          const pt = ctx.currentTime;
-          const p = ctx.createBufferSource();
+          if (!audioCtx) return;
+          const pt = audioCtx.currentTime;
+          const p = audioCtx.createBufferSource();
           p.buffer = getNoiseBuffer();
-          const pf = ctx.createBiquadFilter();
+          const pf = audioCtx.createBiquadFilter();
           pf.type = 'bandpass';
-          pf.frequency.value = 1800 + Math.random() * 800;
+          pf.frequency.value = 1600 + Math.random() * 900;
           pf.Q.value = 5;
-          const pg = ctx.createGain();
-          pg.gain.setValueAtTime(0.12, pt);
-          pg.gain.exponentialRampToValueAtTime(0.001, pt + 0.08);
-          p.connect(pf).connect(pg).connect(ctx.destination);
+          const pg = audioCtx.createGain();
+          pg.gain.setValueAtTime(vol * 0.35, pt);
+          pg.gain.exponentialRampToValueAtTime(0.001, pt + 0.1);
+          p.connect(pf).connect(pg).connect(getAudioDest());
           p.start(pt);
-          p.stop(pt + 0.09);
-        }, 80 + k * 65);
+          p.stop(pt + 0.12);
+        }, 75 + k * 65);
       }
     }
   }
@@ -1528,15 +1793,15 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   }
 
   // ====================================================
-  // HYPER-REALISTIC CRACKER ANIMATIONS
+  // HYPER-REALISTIC CRACKER ANIMATIONS (FULL 10-SECONDS EACH)
   // ====================================================
   const realisticAnimations = {
-    // 1. ANAR (FLOWERPOT): Towering 10-foot Volcano Fountain
+    // 1. ANAR (FLOWERPOT): Non-Stop 10-Second Majestic Volcano Fountain
     anar: () => {
-      soundAnar(3800);
+      soundAnar(10000);
       const pt = getCrackerGroundPoint();
       const startTime = Date.now();
-      const endTime = startTime + 3800;
+      const endTime = startTime + 10000;
 
       specialEffect = {
         update() {
@@ -1545,26 +1810,27 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
             specialEffect = null;
             return;
           }
-          const progress = (now - startTime) / 3800;
-          const power = progress < 0.25 ? (progress / 0.25) : progress < 0.75 ? 1 : (1 - (progress - 0.75) / 0.25);
-          const count = Math.floor(6 + power * 12);
+          const progress = (now - startTime) / 10000;
+          const pulse = Math.sin(progress * Math.PI * 6) * 0.25;
+          const power = Math.min(1, Math.max(0.4, (progress < 0.12 ? (progress / 0.12) : progress < 0.88 ? 1 : (1 - (progress - 0.88) / 0.12)) + pulse));
+          const count = Math.floor(7 + power * 15);
 
           for (let k = 0; k < count; k++) {
-            const angle = -Math.PI / 2 + (Math.random() * 0.5 - 0.25);
-            const speed = (4.5 + Math.random() * 8.5) * (0.6 + power * 0.7);
-            const palette = ['#ffffff', '#fff5b8', '#ffd700', '#ff9900', '#ff4500'];
+            const angle = -Math.PI / 2 + (Math.random() * 0.55 - 0.275);
+            const speed = (5 + Math.random() * 10) * (0.65 + power * 0.65);
+            const palette = ['#ffffff', '#fff5b8', '#ffd700', '#ff9900', '#ff4500', '#00ffcc'];
             const col = palette[Math.floor(Math.random() * palette.length)];
 
             particles.push(new Particle(
-              pt.x + (Math.random() * 8 - 4),
+              pt.x + (Math.random() * 10 - 5),
               pt.y,
               col,
               Math.cos(angle) * speed,
               Math.sin(angle) * speed,
               1,
-              0.016 + Math.random() * 0.015,
+              0.014 + Math.random() * 0.014,
               0.22,
-              1.8 + Math.random() * 2
+              1.8 + Math.random() * 2.2
             ));
           }
         }
@@ -1572,11 +1838,11 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
       startAnim();
     },
 
-    // 2. FULJARI (SPARKLER): Handheld Sizzling Shower of Needles
+    // 2. FULJARI (SPARKLER): Non-Stop 10-Second Dazzling Needle Shower
     sparkler: () => {
-      soundSparkler(3200);
+      soundSparkler(10000);
       const pt = getCrackerGroundPoint();
-      const endTime = Date.now() + 3200;
+      const endTime = Date.now() + 10000;
 
       specialEffect = {
         update() {
@@ -1584,66 +1850,84 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
             specialEffect = null;
             return;
           }
-          for (let k = 0; k < 8; k++) {
+          for (let k = 0; k < 10; k++) {
             const angle = Math.random() * Math.PI * 2;
-            const spd = 2 + Math.random() * 6.5;
-            const c = Math.random() > 0.3 ? '#ffffff' : '#ffd700';
-            particles.push(new Particle(pt.x, pt.y, c, Math.cos(angle) * spd, Math.sin(angle) * spd, 0.75, 0.028, 0.05, 1.4));
+            const spd = 2.5 + Math.random() * 7;
+            const c = Math.random() > 0.35 ? '#ffffff' : (Math.random() > 0.5 ? '#ffd700' : '#ffaa00');
+            particles.push(new Particle(pt.x, pt.y, c, Math.cos(angle) * spd, Math.sin(angle) * spd, 0.8, 0.024, 0.045, 1.5));
           }
         }
       };
       startAnim();
     },
 
-    // 3. SKY ROCKET: Real Liftoff from Bottle -> Ascends Sky -> Peony Burst!
+    // 3. SKY ROCKET: Continuous Salvo of 5 Distinct High-Altitude Rockets over 10s
     rocket: () => {
-      soundRocket();
       const pt = getCrackerGroundPoint();
-      let rx = pt.x, ry = pt.y;
-      let vy = -5;
-      const targetY = height * 0.18;
+      const rocketColors = ['#ffd700', '#ff3366', '#00ffcc', '#ff9900', '#aa00ff'];
 
-      const rocketObj = {
-        dead: false,
-        update() {
-          vy -= 0.65;
-          ry += vy;
-          for (let i = 0; i < 3; i++) {
-            particles.push(new Particle(rx + (Math.random() * 4 - 2), ry + 10, '#ff7700', (Math.random() - 0.5) * 1.5, 3 + Math.random() * 2, 0.5, 0.06, 0.02, 2.5));
-          }
-          if (ry <= targetY) {
-            this.dead = true;
-            shockwaves.push(new Shockwave(rx, ry, 90, '#ffd700'));
-            spawnBurst(rx, ry, 110, '#ffd700', 6);
-          }
-        },
-        draw(c) {
-          c.save();
-          c.fillStyle = '#ffffff';
-          c.beginPath();
-          c.arc(rx, ry, 3.5, 0, Math.PI * 2);
-          c.fill();
-          c.restore();
-        }
-      };
-      flyingRockets.push(rocketObj);
-      startAnim();
+      for (let s = 0; s < 5; s++) {
+        setTimeout(() => {
+          soundRocket();
+          let rx = pt.x + (s % 2 === 0 ? -12 : 12);
+          let ry = pt.y;
+          let vy = -5.5;
+          const targetY = height * (0.12 + Math.random() * 0.12);
+          const col = rocketColors[s % rocketColors.length];
+
+          flyingRockets.push({
+            dead: false,
+            update() {
+              vy -= 0.62;
+              ry += vy;
+              for (let i = 0; i < 3; i++) {
+                particles.push(new Particle(rx + (Math.random() * 4 - 2), ry + 10, '#ff7700', (Math.random() - 0.5) * 1.5, 3 + Math.random() * 2, 0.5, 0.06, 0.02, 2.5));
+              }
+              if (ry <= targetY) {
+                this.dead = true;
+                shockwaves.push(new Shockwave(rx, ry, 110, col));
+                spawnBurst(rx, ry, 120, col, 6.8);
+              }
+            },
+            draw(c) {
+              c.save();
+              c.fillStyle = '#ffffff';
+              c.beginPath();
+              c.arc(rx, ry, 4, 0, Math.PI * 2);
+              c.fill();
+              c.restore();
+            }
+          });
+          startAnim();
+        }, s * 2200);
+      }
     },
 
-    // 4. ATOM BOMB: Sudden Shockwave Ring, White Flash & Earth Shaking Burst
+    // 4. ATOM BOMB: Gigantic Initial Blast + 6 Secondary Thunderous Detonations over 10s
     atomBomb: () => {
-      soundAtomBomb();
+      soundAtomBomb(10000);
       const pt = getCrackerGroundPoint();
-      shockwaves.push(new Shockwave(pt.x, pt.y, 140, '#00ff88'));
-      shockwaves.push(new Shockwave(pt.x, pt.y, 80, '#ffffff'));
-      spawnBurst(pt.x, pt.y, 120, '#00ff88', 6.5);
+      shockwaves.push(new Shockwave(pt.x, pt.y, 160, '#00ff88'));
+      shockwaves.push(new Shockwave(pt.x, pt.y, 90, '#ffffff'));
+      spawnBurst(pt.x, pt.y, 140, '#00ff88', 7.5);
+
+      const delays = [1400, 2900, 4400, 5900, 7400, 8900];
+      delays.forEach((delay, idx) => {
+        setTimeout(() => {
+          const ox = pt.x + (Math.random() * 70 - 35);
+          const oy = pt.y + (Math.random() * 20 - 10);
+          const col = idx % 2 === 0 ? '#ffcc00' : '#00ff88';
+          shockwaves.push(new Shockwave(ox, oy, 110, col));
+          spawnBurst(ox, oy, 85, col, 5.8);
+        }, delay);
+      });
     },
 
-    // 5. GROUND CHARKHI: Rapid Spinning Rings of Fire
+    // 5. GROUND CHARKHI: Continuous 10-Second Furious Spinning Rings of Fire
     charkhi: () => {
-      soundCharkhi(3600);
+      soundCharkhi(10000);
       const pt = getCrackerGroundPoint();
-      const endTime = Date.now() + 3600;
+      const endTime = Date.now() + 10000;
       let rot = 0;
 
       specialEffect = {
@@ -1652,78 +1936,138 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
             specialEffect = null;
             return;
           }
-          rot += 0.45;
-          for (let k = 0; k < 4; k++) {
-            const a = rot + (k * Math.PI / 2);
-            const spd = 4 + Math.random() * 4.5;
+          rot += 0.48;
+          for (let k = 0; k < 5; k++) {
+            const a = rot + (k * (Math.PI * 2) / 5);
+            const spd = 4.5 + Math.random() * 5.5;
             const c = k % 2 === 0 ? '#00ffcc' : '#ffd700';
-            particles.push(new Particle(pt.x, pt.y + 12, c, Math.cos(a) * spd, Math.sin(a) * spd * 0.4, 0.7, 0.028, 0.015, 2));
+            particles.push(new Particle(pt.x, pt.y + 12, c, Math.cos(a) * spd, Math.sin(a) * spd * 0.4, 0.75, 0.024, 0.015, 2.2));
           }
         }
       };
       startAnim();
     },
 
-    // 6. 1000 WALA LADI: Chain-Reaction Rapid String Explosions
+    // 6. 1000 WALA LADI: Non-Stop 10-Second Rapid Red Cracker Chain Reaction
     ladi: () => {
-      soundLadi(16);
+      soundLadi(10000);
       const pt = getCrackerGroundPoint();
-      let count = 0;
+      const endTime = Date.now() + 10000;
+
       const timer = setInterval(() => {
-        if (++count > 16) {
+        if (Date.now() > endTime) {
           clearInterval(timer);
           return;
         }
-        const ox = pt.x + (Math.random() * 50 - 25);
-        const oy = pt.y + 10 + (Math.random() * 15 - 7);
-        shockwaves.push(new Shockwave(ox, oy, 35, '#ff3344'));
-        spawnBurst(ox, oy, 18, '#ff3344', 3);
-      }, 85);
+        const ox = pt.x + (Math.random() * 80 - 40);
+        const oy = pt.y + 10 + (Math.random() * 20 - 10);
+        shockwaves.push(new Shockwave(ox, oy, 40, '#ff3344'));
+        spawnBurst(ox, oy, 24, '#ff3344', 3.6);
+      }, 95);
     },
 
-    // 7. SUTLI BOMB: Jute Dynamite Blast
+    // 7. SUTLI BOMB: Dynamite Shockwave + 6 Sustained Grand Celebratory Shells over 10s
     sutliBomb: () => {
-      soundSutliBomb();
+      soundSutliBomb(10000);
       const pt = getCrackerGroundPoint();
-      shockwaves.push(new Shockwave(pt.x, pt.y, 150, '#ff9900'));
-      shockwaves.push(new Shockwave(pt.x, pt.y, 75, '#ffffff'));
-      spawnBurst(pt.x, pt.y, 130, '#ffaa00', 7);
+      shockwaves.push(new Shockwave(pt.x, pt.y, 170, '#ff9900'));
+      shockwaves.push(new Shockwave(pt.x, pt.y, 90, '#ffffff'));
+      spawnBurst(pt.x, pt.y, 150, '#ffaa00', 8);
+
+      const delays = [1500, 3100, 4800, 6400, 8100, 9300];
+      delays.forEach((delay, idx) => {
+        setTimeout(() => {
+          const ox = pt.x + (Math.random() * 80 - 40);
+          const oy = pt.y - 45 - Math.random() * 50;
+          const col = idx % 2 === 0 ? '#ffd700' : '#ff4500';
+          shockwaves.push(new Shockwave(ox, oy, 110, col));
+          spawnBurst(ox, oy, 95, col, 6.2);
+        }, delay);
+      });
     },
 
-    // 8. MAGIC SNAKE: Sizzling ash growth
+    // 8. MAGIC SNAKE: Sizzling Ash Serpent Growing Upwards for 10 Full Seconds
     snake: () => {
-      soundSnake();
+      soundSnake(10000);
       const pt = getCrackerGroundPoint();
-      for (let i = 0; i < 30; i++) {
-        setTimeout(() => {
-          particles.push(new Particle(pt.x + (Math.random() * 10 - 5), pt.y - i * 3, '#4a4a4a', (Math.random() - 0.5) * 0.5, -0.4, 2, 0.008, -0.01, 5 + i * 0.4));
-          startAnim();
-        }, i * 70);
-      }
+      const startTime = Date.now();
+      const endTime = startTime + 10000;
+      let counter = 0;
+
+      const timer = setInterval(() => {
+        if (Date.now() > endTime) {
+          clearInterval(timer);
+          return;
+        }
+        counter++;
+        const heightOffset = Math.min(counter * 1.2, 85);
+        const wiggle = Math.sin(counter * 0.32) * 14;
+        particles.push(new Particle(
+          pt.x + wiggle + (Math.random() * 6 - 3),
+          pt.y - heightOffset,
+          '#424242',
+          (Math.random() - 0.5) * 0.4,
+          -0.3,
+          2.5,
+          0.007,
+          -0.008,
+          5 + Math.min(counter * 0.08, 6.5)
+        ));
+        if (Math.random() > 0.35) {
+          particles.push(new Particle(
+            pt.x + wiggle,
+            pt.y - heightOffset,
+            '#ff9900',
+            (Math.random() - 0.5) * 2,
+            -1.5,
+            0.6,
+            0.04,
+            0.05,
+            2
+          ));
+        }
+        startAnim();
+      }, 80);
     },
 
-    // 9. 7-COLOUR SKY SHOT: Multi-Stage Sky Shells
+    // 9. 7-COLOUR SKY SHOT: 8 Spectacular Mortar Shells in 8 Brilliant Hues across 10s
     skyShot: () => {
-      soundSkyShot();
+      soundSkyShot(10000);
       const pt = getCrackerGroundPoint();
-      shockwaves.push(new Shockwave(pt.x, pt.y, 45, '#ffd700'));
-      const colors7 = ['#ff0055', '#ff9900', '#ffea00', '#00ffcc', '#0099ff', '#aa00ff', '#ffffff'];
-      for (let i = 0; i < 3; i++) {
+      const colors7 = ['#ff0055', '#ff9900', '#ffd700', '#00ff88', '#00e5ff', '#aa00ff', '#ff3366', '#ffffff'];
+
+      for (let i = 0; i < 8; i++) {
         setTimeout(() => {
-          const sx = width * (0.3 + i * 0.2);
-          const sy = height * (0.2 + (i % 2) * 0.1);
-          shockwaves.push(new Shockwave(sx, sy, 70, colors7[i * 2 % colors7.length]));
-          spawnBurst(sx, sy, 75, colors7[i * 2 % colors7.length], 5.5);
-        }, 500 + i * 400);
+          shockwaves.push(new Shockwave(pt.x, pt.y, 45, '#ffd700'));
+          setTimeout(() => {
+            const sx = width * (0.2 + (i % 4) * 0.2 + (Math.random() * 0.1 - 0.05));
+            const sy = height * (0.14 + ((i + 1) % 3) * 0.1);
+            const col = colors7[i % colors7.length];
+            shockwaves.push(new Shockwave(sx, sy, 88, col));
+            spawnBurst(sx, sy, 95, col, 6.5);
+          }, 350);
+        }, i * 1200);
       }
     },
 
-    // 10. POP-POP SNAPPER
+    // 10. POP-POP SNAPPER: Non-Stop Ground Crackling Snappers for 10 Seconds
     popSnapper: () => {
-      soundPopSnapper();
+      soundPopSnapper(10000);
       const pt = getCrackerGroundPoint();
-      shockwaves.push(new Shockwave(pt.x, pt.y, 25, '#ffffff'));
-      spawnBurst(pt.x, pt.y + 10, 25, '#ffffff', 3.5);
+      const endTime = Date.now() + 10000;
+
+      const timer = setInterval(() => {
+        if (Date.now() > endTime) {
+          clearInterval(timer);
+          return;
+        }
+        for (let k = 0; k < 3; k++) {
+          const ox = pt.x + (Math.random() * 100 - 50);
+          const oy = pt.y + 12 + (Math.random() * 15 - 7);
+          shockwaves.push(new Shockwave(ox, oy, 28, '#ffffff'));
+          spawnBurst(ox, oy, 26, '#ffffff', 3.8);
+        }
+      }, 220);
     }
   };
 
@@ -1825,7 +2169,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   };
 
   // ====================================================
-  // ANIMATED KID LIGHTING SEQUENCE
+  // ANIMATED KID LIGHTING SEQUENCE (FULL 10-SECOND SHOW)
   // ====================================================
   let isLightingInProgress = false;
 
@@ -1856,21 +2200,22 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
         setTimeout(() => {
           fuseSpark.style.display = 'none';
           arenaKid.className = 'arena-kid cheering';
-          stageStatus.textContent = 'Boom! Active ✨';
-          stageBanner.textContent = `🎉 Kid is cheering! Watch the ${crackerNames[crackerKey]} in action!`;
-          showToast(`💥 ${crackerNames[crackerKey]} Activated!`);
+          stageStatus.textContent = 'Boom! Active ✨ (10s)';
+          stageBanner.textContent = `🎉 Kid is cheering! Enjoy the 10-second ${crackerNames[crackerKey]} celebration!`;
+          showToast(`💥 ${crackerNames[crackerKey]} Activated! (10s Show)`);
 
           if (realisticAnimations[crackerKey]) {
             realisticAnimations[crackerKey]();
           }
 
+          // Reset after a full 10.5 seconds continuous show!
           setTimeout(() => {
             arenaKid.className = 'arena-kid';
             stageStatus.textContent = 'Ready to Light';
-            stageBanner.textContent = `👆 Tap any cracker to watch the kid light it!`;
+            stageBanner.textContent = `👆 Tap any cracker button to watch the 10-second live show!`;
             document.querySelectorAll('.cracker-tile-btn').forEach(b => b.classList.remove('active-firing'));
             isLightingInProgress = false;
-          }, 3800);
+          }, 10500);
 
         }, 700);
       }, 550);
@@ -1903,7 +2248,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   }
 
   // ====================================================
-  // BANNER DIYA CRACKER BLAST ANIMATIONS
+  // BANNER DIYA CRACKER BLAST ANIMATIONS WITH SOUND
   // Ambient & interactive cracker bursts around the Diya
   // ====================================================
   function blastDiyaCracker() {
@@ -1919,12 +2264,14 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     const by = cy + Math.sin(angle) * radius;
 
     const burstColor = colors[Math.floor(Math.random() * colors.length)];
-    shockwaves.push(new Shockwave(bx, by, 45 + Math.random() * 30, burstColor));
-    spawnBurst(bx, by, 35 + Math.floor(Math.random() * 20), burstColor, 3.8);
-    soundExplosion(0.18, 220, 45, false, 0.15);
+    shockwaves.push(new Shockwave(bx, by, 50 + Math.random() * 30, burstColor));
+    spawnBurst(bx, by, 40 + Math.floor(Math.random() * 25), burstColor, 4.2);
+    
+    // Authentic loud cracker sound near the Diya
+    soundDiyaCracker();
   }
 
-  // Ambient gentle festive cracker bursts around the Diya
+  // Ambient festive cracker bursts around the Diya
   setInterval(() => {
     if (document.visibilityState === 'visible') {
       blastDiyaCracker();
@@ -1955,7 +2302,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     });
   });
 
-  // Central Sun Diya Click: Blasts Crackers & Fireworks around the Diya!
+  // Central Sun Diya Click: Blasts Crackers & Fireworks around the Diya with Grand Sound!
   $('centralDiya').addEventListener('click', (e) => {
     e.stopPropagation();
     getAudio();
@@ -1964,12 +2311,14 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     const cy = rect.top + rect.height / 2;
 
     // Direct celebratory golden burst + shockwave
-    shockwaves.push(new Shockwave(cx, cy, 95, '#ffd700'));
-    spawnBurst(cx, cy, 75, '#ffd700', 5.5);
-    soundExplosion(0.35, 160, 30, true, 0.35);
+    shockwaves.push(new Shockwave(cx, cy, 110, '#ffd700'));
+    shockwaves.push(new Shockwave(cx, cy, 65, '#ffffff'));
+    spawnBurst(cx, cy, 95, '#ffd700', 6.5);
+    soundDiyaGrandBurst();
 
-    setTimeout(blastDiyaCracker, 180);
-    setTimeout(blastDiyaCracker, 360);
+    setTimeout(blastDiyaCracker, 160);
+    setTimeout(blastDiyaCracker, 340);
+    setTimeout(blastDiyaCracker, 520);
     showToast('✨ Diya Celebration Fireworks! 🪔');
   });
 
