@@ -1,0 +1,1702 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#060814">
+<meta name="description" content="Happy Diwali! An interactive festival of lights experience with 10 real crackers, realistic sounds, animated kid lighting, and cosmic solar-system diyas.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="🪔 Happy Diwali — Interactive Fireworks & Celebration">
+<meta property="og:description" content="Watch the kid light 10 real crackers with sound effects, enjoy the cosmic orbiting diyas, and generate your personalized greeting!">
+<meta property="og:image" content="og-preview.png">
+<title>Happy Diwali 🪔 Interactive Fireworks & Celebration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #060814;
+  --surface: #0f1426;
+  --surface2: #161c36;
+  --card-border: rgba(255, 214, 122, 0.28);
+  --text: #fdfbf7;
+  --sub: #cbd2e8;
+  --muted: #8d95ab;
+  --gold: #ffd67a;
+  --gold-deep: #f59f28;
+  --saffron: #ff6e26;
+  --teal: #6ff0d2;
+  --font-heading: 'Cinzel', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html { scroll-behavior: smooth; font-size: 14.5px; }
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  color: var(--text);
+  background: var(--bg);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 50% 8%, rgba(245, 159, 40, 0.16) 0%, transparent 55%),
+    radial-gradient(circle at 80% 50%, rgba(255, 110, 38, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 20% 70%, rgba(111, 240, 210, 0.08) 0%, transparent 50%),
+    linear-gradient(180deg, #060814 0%, #0a0e20 45%, #05060f 100%);
+}
+
+button, input { font: inherit; }
+button { cursor: pointer; user-select: none; }
+button:active { transform: scale(0.96); }
+
+/* Fullscreen Canvas for Fireworks, Rockets & Particle Physics */
+#fx {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  width: 100%;
+  height: 100%;
+}
+
+/* Dedicated Mobile Frame Container (100% Mobile Optimized) */
+.mobile-app {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 12px 14px 34px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Top App Header */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 214, 122, 0.18);
+}
+.brand-box {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.brand-diya-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(255, 214, 122, 0.22), rgba(245, 159, 40, 0.1));
+  border: 1px solid rgba(255, 214, 122, 0.4);
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  box-shadow: 0 0 18px rgba(255, 180, 50, 0.35);
+  animation: diyaPulse 2.8s ease-in-out infinite;
+}
+@keyframes diyaPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 16px rgba(255, 180, 50, 0.3); }
+  50% { transform: scale(1.08); box-shadow: 0 0 28px rgba(255, 180, 50, 0.55); }
+}
+.brand-name {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  background: linear-gradient(120deg, #fff3d1, #ffd478 55%, #f6a132);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.15;
+}
+.brand-sub {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #e5b974;
+  text-transform: uppercase;
+}
+.sound-toggle-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 214, 122, 0.32);
+  color: #ffe6b0;
+  border-radius: 20px;
+  height: 36px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+
+/* Hero Section */
+.hero-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.festive-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(90deg, rgba(255, 214, 122, 0.15), rgba(245, 159, 40, 0.08));
+  border: 1px solid rgba(255, 214, 122, 0.35);
+  border-radius: 99px;
+  padding: 5px 12px;
+  color: #ffdf98;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.festive-pill .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffab2e;
+  box-shadow: 0 0 10px #ff9800;
+  animation: blinkDot 1.8s infinite;
+}
+@keyframes blinkDot { 50% { opacity: 0.3; } }
+
+.main-title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.15;
+  background: linear-gradient(110deg, #fff3d1 0%, #ffcf71 40%, #ff9e3b 80%, #ff6e26 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 14px rgba(255, 158, 59, 0.35));
+}
+.lead-msg {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--sub);
+  padding: 0 2px;
+}
+.lead-msg strong {
+  color: #ffe6b0;
+}
+
+/* ====================================================
+   SOLAR-SYSTEM DIYA SHOWCASE (Mobile Screen Centered)
+   Central Sun Diya + Orbiting Planetary Diyas
+   ==================================================== */
+.diya-solar-section {
+  position: relative;
+  width: 100%;
+  height: 270px;
+  display: grid;
+  place-items: center;
+  margin: 2px 0;
+}
+.solar-ambient-aura {
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 170, 50, 0.4) 0%, rgba(255, 110, 38, 0.15) 50%, transparent 72%);
+  filter: blur(25px);
+  animation: auraPulsate 3.5s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+@keyframes auraPulsate {
+  0% { transform: scale(0.9); opacity: 0.65; }
+  100% { transform: scale(1.22); opacity: 1; }
+}
+
+/* Planetary Orbit Tracks */
+.orbit-path {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 214, 122, 0.24);
+  pointer-events: none;
+}
+.orbit-path.inner {
+  width: 150px;
+  height: 150px;
+  animation: spinOrbit 12s linear infinite;
+}
+.orbit-path.middle {
+  width: 210px;
+  height: 210px;
+  border-color: rgba(255, 170, 50, 0.28);
+  animation: spinOrbit 18s linear infinite reverse;
+}
+.orbit-path.outer {
+  width: 268px;
+  height: 268px;
+  border-color: rgba(255, 214, 122, 0.18);
+  animation: spinOrbit 26s linear infinite;
+}
+@keyframes spinOrbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Orbiting Planetary Diyas */
+.orbiting-diya-wrap {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.orbiting-diya-wrap.opposite {
+  top: auto;
+  bottom: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.mini-orbit-diya {
+  width: 30px;
+  height: 30px;
+  filter: drop-shadow(0 0 9px rgba(255, 180, 50, 0.85));
+  animation: keepUpright 12s linear infinite reverse;
+}
+.orbit-path.middle .mini-orbit-diya { animation: keepUpright 18s linear infinite; }
+.orbit-path.outer .mini-orbit-diya { animation: keepUpright 26s linear infinite reverse; }
+@keyframes keepUpright {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Central Main Burning Diya (Sun) */
+.central-sun-diya {
+  position: relative;
+  z-index: 10;
+  width: 165px;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 35px rgba(255, 160, 40, 0.5));
+  animation: sunDiyaSway 4.5s ease-in-out infinite alternate;
+  cursor: pointer;
+}
+@keyframes sunDiyaSway {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-6px); }
+}
+
+/* Realistic Live Burning Flame */
+.live-flame-core {
+  transform-origin: 50% 80%;
+  animation: flameFlicker 0.14s ease-in-out infinite alternate, flameAura 2.5s ease-in-out infinite alternate;
+}
+@keyframes flameFlicker {
+  0% { transform: scale(0.96, 1.03) rotate(-1.5deg); }
+  50% { transform: scale(1.03, 0.97) rotate(1deg); }
+  100% { transform: scale(1, 1.05) rotate(2deg); }
+}
+@keyframes flameAura {
+  0% { filter: drop-shadow(0 0 16px #ff952c) drop-shadow(0 0 35px #ff5900); }
+  100% { filter: drop-shadow(0 0 24px #ffc107) drop-shadow(0 0 50px #ff7b00); }
+}
+
+.mini-flame {
+  transform-origin: 50% 80%;
+  animation: miniFlicker 0.18s ease-in-out infinite alternate;
+}
+@keyframes miniFlicker {
+  0% { transform: scale(0.9, 1.08) rotate(-2deg); }
+  100% { transform: scale(1.08, 0.92) rotate(2deg); }
+}
+.diya-caption {
+  font-size: 11px;
+  font-weight: 600;
+  color: #ffdda1;
+  letter-spacing: 0.06em;
+  text-align: center;
+  margin-top: -6px;
+}
+
+/* ====================================================
+   NAME INPUT & PERSONALIZED CARD
+   ==================================================== */
+.input-card {
+  background: linear-gradient(145deg, rgba(22, 28, 54, 0.95), rgba(12, 16, 32, 0.98));
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  padding: 18px 16px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.input-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffd88a;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.input-label i { color: #ff9800; font-style: normal; }
+.input-row {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.name-input {
+  width: 100%;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 214, 122, 0.32);
+  border-radius: 13px;
+  color: #ffffff;
+  padding: 0 15px;
+  font-size: 14.5px;
+  transition: all 0.2s;
+}
+.name-input:focus {
+  border-color: #ffd478;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(255, 214, 122, 0.2);
+  outline: none;
+}
+.name-input::placeholder { color: rgba(255, 255, 255, 0.4); }
+
+.btn-primary {
+  width: 100%;
+  height: 48px;
+  border: 0;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #ffd97d 0%, #fca434 50%, #ff6e26 100%);
+  color: #120902;
+  font-weight: 800;
+  font-size: 14.5px;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 8px 22px rgba(252, 164, 52, 0.4);
+}
+
+/* Generated Festive Card (Cleaned without badge, copy, or new name) */
+.festive-greeting-card {
+  display: none;
+  background: linear-gradient(145deg, rgba(28, 22, 48, 0.97), rgba(15, 18, 38, 0.99));
+  border: 1.5px solid rgba(255, 214, 122, 0.45);
+  border-radius: 18px;
+  padding: 20px 16px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5), 0 0 35px rgba(255, 180, 50, 0.2);
+  animation: cardFade 0.6s cubic-bezier(0.18, 0.9, 0.2, 1) both;
+}
+@keyframes cardFade {
+  from { opacity: 0; transform: translateY(18px); filter: blur(4px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+.card-title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1.2;
+  background: linear-gradient(110deg, #fff3d1, #ffd478, #ff9e3b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.card-user {
+  font-size: 17.5px;
+  font-weight: 700;
+  color: var(--teal);
+  margin: 8px 0 6px;
+}
+.card-body-text {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #f7ede0;
+  margin: 0;
+}
+
+/* ====================================================
+   INTERACTIVE KID & CRACKER LIGHTING STAGE
+   ==================================================== */
+.stage-section {
+  background: linear-gradient(180deg, rgba(16, 22, 44, 0.95), rgba(9, 12, 26, 0.98));
+  border: 1.5px solid var(--card-border);
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.stage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.stage-title {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #ffd88a;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.stage-status-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 99px;
+  background: rgba(111, 240, 210, 0.15);
+  color: var(--teal);
+  border: 1px solid rgba(111, 240, 210, 0.35);
+}
+
+.lighting-arena {
+  width: 100%;
+  height: 175px;
+  background: radial-gradient(circle at 50% 85%, rgba(245, 159, 40, 0.15) 0%, transparent 60%),
+              linear-gradient(180deg, #090e22 0%, #111833 75%, #182245 76%, #0b0f20 100%);
+  border-radius: 13px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 214, 122, 0.18);
+}
+.arena-ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 36px;
+  background: linear-gradient(180deg, #1b264d 0%, #111833 100%);
+  border-top: 1.5px solid rgba(255, 214, 122, 0.4);
+}
+.arena-ground::before {
+  content: "✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦";
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 9px;
+  color: rgba(255, 214, 122, 0.35);
+  white-space: nowrap;
+}
+
+.arena-cracker-target {
+  position: absolute;
+  bottom: 32px;
+  left: 65%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  z-index: 5;
+  transition: all 0.3s;
+}
+.cracker-target-icon {
+  font-size: 30px;
+  filter: drop-shadow(0 0 10px rgba(255, 170, 50, 0.5));
+}
+.fuse-spark {
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 10px #ffea00, 0 0 20px #ff3300;
+  display: none;
+  animation: fuseHiss 0.1s infinite alternate;
+}
+@keyframes fuseHiss {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(1.4); opacity: 1; }
+}
+
+.arena-kid {
+  position: absolute;
+  bottom: 32px;
+  left: 28%;
+  transform: translateX(-50%);
+  width: 66px;
+  height: 80px;
+  z-index: 6;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.25, 1), left 0.6s cubic-bezier(0.2, 0.8, 0.25, 1);
+}
+.arena-kid.approaching { left: 48%; }
+.arena-kid.lighting .kid-arm-sparkler { transform: rotate(45deg); }
+.arena-kid.running-back {
+  left: 14%;
+  transform: translateX(-50%) scaleX(-1);
+}
+.arena-kid.cheering { animation: kidJump 0.4s ease-in-out infinite alternate; }
+@keyframes kidJump {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-13px); }
+}
+
+.stage-action-banner {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #ffdda1;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 9px;
+  padding: 7px 10px;
+  border: 1px dashed rgba(255, 214, 122, 0.25);
+}
+
+/* ====================================================
+   TOP 10 CRACKERS IN EXACTLY 2 ROWS (NO SCROLLING)
+   5 buttons per row x 2 rows = 10 buttons total
+   ==================================================== */
+.crackers-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.crackers-heading-box {
+  text-align: center;
+}
+.crackers-main-heading {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 21px;
+  font-weight: 800;
+  background: linear-gradient(110deg, #fff3d1, #ffd478 50%, #ff893b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.crackers-subheading {
+  margin: 3px 0 0;
+  font-size: 11.5px;
+  color: var(--muted);
+}
+
+/* 2-Row Compact Mobile Grid (5 Columns x 2 Rows) */
+.crackers-2row-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  width: 100%;
+}
+.cracker-tile-btn {
+  background: linear-gradient(145deg, rgba(23, 29, 58, 0.95), rgba(12, 16, 36, 0.98));
+  border: 1px solid rgba(255, 214, 122, 0.28);
+  border-radius: 12px;
+  padding: 8px 2px 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  text-align: center;
+  min-height: 58px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: all 0.15s cubic-bezier(0.18, 0.9, 0.2, 1);
+}
+.cracker-tile-btn:active, .cracker-tile-btn.active-firing {
+  transform: scale(0.94);
+  border-color: #ffd478;
+  background: linear-gradient(145deg, rgba(65, 38, 22, 0.95), rgba(35, 22, 15, 0.98));
+  box-shadow: 0 0 16px rgba(255, 140, 20, 0.55);
+}
+.cracker-tile-icon {
+  font-size: 20px;
+  line-height: 1;
+  filter: drop-shadow(0 0 6px rgba(255, 170, 50, 0.4));
+}
+.cracker-tile-name {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #fff4dc;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.cracker-tile-num {
+  font-size: 7.5px;
+  color: #ffb84d;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* Toast Bar */
+.toast-bar {
+  position: fixed;
+  z-index: 100;
+  left: 50%;
+  bottom: 20px;
+  transform: translate(-50%, 18px);
+  background: rgba(20, 16, 34, 0.97);
+  color: #fff4db;
+  border: 1px solid rgba(255, 214, 122, 0.45);
+  padding: 9px 18px;
+  border-radius: 99px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 18px rgba(255, 170, 50, 0.3);
+  font-size: 12.5px;
+  font-weight: 700;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s cubic-bezier(0.18, 0.9, 0.2, 1);
+  white-space: nowrap;
+}
+.toast-bar.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* ====================================================
+   FOOTER (Vikrant Mulankar · Software Developer)
+   ==================================================== */
+.app-footer {
+  border-top: 1px solid rgba(255, 214, 122, 0.18);
+  padding-top: 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.footer-author {
+  font-size: 13px;
+  color: #e4e9f8;
+}
+.footer-author strong {
+  color: #ffd67a;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+.footer-role {
+  display: inline-block;
+  background: rgba(255, 214, 122, 0.14);
+  border: 1px solid rgba(255, 214, 122, 0.35);
+  color: #ffd88a;
+  border-radius: 99px;
+  padding: 3px 12px;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.footer-note {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+</style>
+</head>
+<body>
+
+<!-- Dynamic Canvas for Realistic Particles, Rockets, Explosions & Smoke -->
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<div class="mobile-app">
+  <!-- Top Header -->
+  <header class="app-header">
+    <div class="brand-box">
+      <div class="brand-diya-badge" aria-hidden="true">🪔</div>
+      <div>
+        <div class="brand-name">Happy Diwali</div>
+        <div class="brand-sub">FESTIVAL OF LIGHTS · 2026</div>
+      </div>
+    </div>
+    <button class="sound-toggle-btn" id="soundBtn" type="button" aria-pressed="true">
+      <span id="soundIcon">🔊</span>
+      <span id="soundLabel">Sound ON</span>
+    </button>
+  </header>
+
+  <!-- Hero Greeting Section -->
+  <section class="hero-card">
+    <div class="festive-pill">
+      <span class="dot"></span>
+      <span>Auspicious Festival of Lights ✨</span>
+    </div>
+    <h1 class="main-title">Happy Diwali!</h1>
+    <p class="lead-msg">
+      May the divine light illuminate your home with <strong>joy, prosperity, vibrant health, and eternal peace</strong>.
+    </p>
+  </section>
+
+  <!-- Solar System Diya Showcase: Live Burning Sun Diya + Orbiting Planetary Diyas -->
+  <section class="diya-solar-section" aria-label="Cosmic burning diya with orbiting miniature planetary diyas">
+    <div class="solar-ambient-aura"></div>
+
+    <!-- Orbit Track 1 (Inner) -->
+    <div class="orbit-path inner">
+      <div class="orbiting-diya-wrap">
+        <svg class="mini-orbit-diya" viewBox="0 0 100 100">
+          <ellipse cx="50" cy="65" rx="36" ry="16" fill="#e67e22" stroke="#ffcb74" stroke-width="2"/>
+          <ellipse cx="50" cy="62" rx="30" ry="9" fill="#963c1a"/>
+          <g class="mini-flame">
+            <ellipse cx="50" cy="42" rx="14" ry="24" fill="#ffb347" filter="drop-shadow(0 0 7px #ff9500)"/>
+            <ellipse cx="50" cy="44" rx="8" ry="16" fill="#fff7b2"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Orbit Track 2 (Middle) with 2 Planetary Diyas -->
+    <div class="orbit-path middle">
+      <div class="orbiting-diya-wrap">
+        <svg class="mini-orbit-diya" viewBox="0 0 100 100">
+          <ellipse cx="50" cy="65" rx="36" ry="16" fill="#d35400" stroke="#ffd97a" stroke-width="2"/>
+          <ellipse cx="50" cy="62" rx="30" ry="9" fill="#7a2e12"/>
+          <g class="mini-flame">
+            <ellipse cx="50" cy="42" rx="14" ry="24" fill="#ff9f43" filter="drop-shadow(0 0 7px #ff7b00)"/>
+            <ellipse cx="50" cy="44" rx="8" ry="16" fill="#ffffff"/>
+          </g>
+        </svg>
+      </div>
+      <div class="orbiting-diya-wrap opposite">
+        <svg class="mini-orbit-diya" viewBox="0 0 100 100">
+          <ellipse cx="50" cy="65" rx="36" ry="16" fill="#e67e22" stroke="#ffcb74" stroke-width="2"/>
+          <ellipse cx="50" cy="62" rx="30" ry="9" fill="#963c1a"/>
+          <g class="mini-flame">
+            <ellipse cx="50" cy="42" rx="14" ry="24" fill="#ffb347" filter="drop-shadow(0 0 7px #ff9500)"/>
+            <ellipse cx="50" cy="44" rx="8" ry="16" fill="#fff7b2"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Orbit Track 3 (Outer) -->
+    <div class="orbit-path outer">
+      <div class="orbiting-diya-wrap">
+        <svg class="mini-orbit-diya" viewBox="0 0 100 100">
+          <ellipse cx="50" cy="65" rx="36" ry="16" fill="#f39c12" stroke="#ffeaa7" stroke-width="2"/>
+          <ellipse cx="50" cy="62" rx="30" ry="9" fill="#994616"/>
+          <g class="mini-flame">
+            <ellipse cx="50" cy="42" rx="14" ry="24" fill="#fbc531" filter="drop-shadow(0 0 7px #e1b12c)"/>
+            <ellipse cx="50" cy="44" rx="8" ry="16" fill="#ffffff"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Central Sun Diya with Continuous Live Burning Flame -->
+    <div class="central-sun-diya" id="centralDiya" title="Tap to trigger celebration sparkles!">
+      <svg viewBox="0 0 440 440" width="100%" height="auto">
+        <defs>
+          <radialGradient id="sunDiyaGlow" cx="50%" cy="40%" r="50%">
+            <stop offset="0%" stop-color="#ffd56b" stop-opacity="0.9"/>
+            <stop offset="45%" stop-color="#ff8929" stop-opacity="0.45"/>
+            <stop offset="100%" stop-color="#d35400" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="clayBowl" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#ffe4a0"/>
+            <stop offset="15%" stop-color="#d97736"/>
+            <stop offset="45%" stop-color="#a83c20"/>
+            <stop offset="80%" stop-color="#eb9443"/>
+            <stop offset="100%" stop-color="#ffd175"/>
+          </linearGradient>
+          <linearGradient id="clayRim" x1="0" x2="0.1" y1="0" y2="1">
+            <stop offset="0%" stop-color="#fff0b8"/>
+            <stop offset="35%" stop-color="#f8b65e"/>
+            <stop offset="100%" stop-color="#963c1a"/>
+          </linearGradient>
+          <linearGradient id="flameGrad" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0%" stop-color="#ff4500"/>
+            <stop offset="25%" stop-color="#ff8c00"/>
+            <stop offset="60%" stop-color="#ffd700"/>
+            <stop offset="90%" stop-color="#fff8db"/>
+            <stop offset="100%" stop-color="#ffffff"/>
+          </linearGradient>
+          <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="8"/>
+          </filter>
+        </defs>
+
+        <circle cx="220" cy="220" r="170" fill="url(#sunDiyaGlow)" opacity="0.45"/>
+        <ellipse cx="220" cy="345" rx="125" ry="18" fill="#ff7f32" opacity="0.18" filter="url(#softGlow)"/>
+
+        <!-- Animated Live Flame -->
+        <g class="live-flame-core">
+          <ellipse cx="220" cy="180" rx="55" ry="85" fill="#ffa726" opacity="0.35" filter="url(#softGlow)"/>
+          <path d="M220 215 C160 178 202 120 216 85 C222 116 256 128 254 172 C252 193 238 208 220 215Z" fill="url(#flameGrad)"/>
+          <path d="M220 213 C180 185 208 140 218 115 C222 136 242 145 240 175 C238 193 230 205 220 213Z" fill="#ffeb7b"/>
+          <path d="M221 210 C206 190 217 165 221 145 C224 165 233 172 230 188 C228 196 225 204 221 210Z" fill="#ffffff"/>
+        </g>
+
+        <!-- Wick & Clay Body -->
+        <path d="M217 218 Q218 206 220 193" fill="none" stroke="#4a2c14" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="220" cy="193" r="2.5" fill="#ff3d00"/>
+        <ellipse cx="220" cy="278" rx="116" ry="28" fill="#c45d27" opacity="0.4"/>
+        <path d="M95 258 C128 277 170 288 220 288 S312 277 345 258 Q320 338 221 348 C122 337 111 303 95 258Z" fill="url(#clayBowl)" stroke="#f7b76d" stroke-width="2.5"/>
+        <path d="M100 260 Q220 307 340 260 Q332 280 220 295 Q108 281 100 260Z" fill="#ffc364" opacity="0.38"/>
+        <ellipse cx="220" cy="258" rx="127" ry="29" fill="url(#clayRim)"/>
+        <ellipse cx="220" cy="258" rx="114" ry="19" fill="#6d3023"/>
+        <ellipse cx="220" cy="260" rx="104" ry="15" fill="#c76829"/>
+        <ellipse cx="220" cy="255" rx="82" ry="9" fill="#f3a446" opacity="0.65"/>
+        <path d="M106 264 Q220 312 334 264" stroke="#fff4be" stroke-width="2.5" opacity="0.75" fill="none"/>
+        <path d="M154 306 Q220 341 286 306" stroke="#ffe7a5" stroke-width="1.8" opacity="0.6" fill="none"/>
+        <g fill="#ffe9ab" opacity="0.85">
+          <circle cx="174" cy="319" r="2.5"/>
+          <circle cx="197" cy="327" r="2.8"/>
+          <circle cx="220" cy="330" r="3.5"/>
+          <circle cx="243" cy="327" r="2.8"/>
+          <circle cx="266" cy="319" r="2.5"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+  <div class="diya-caption">✨ Planetary Diyas Orbiting the Sun Diya ✨</div>
+
+  <!-- Name Input Form -->
+  <section class="input-card" id="inputBox">
+    <label class="input-label" for="userName">
+      <i>✦</i> Enter your name
+    </label>
+    <div class="input-row">
+      <input 
+        type="text" 
+        id="userName" 
+        class="name-input" 
+        placeholder="Type your name (e.g. Rahul, Priya, Alex...)" 
+        maxlength="35"
+        autocomplete="given-name"
+      >
+      <button class="btn-primary" id="runScriptBtn" type="button">
+        <span>🪔</span> Run Script
+      </button>
+    </div>
+  </section>
+
+  <!-- Generated Greeting Card (Without badge, copy button, or new name button) -->
+  <section class="festive-greeting-card" id="greetingCard">
+    <h2 class="card-title" id="cardTitle">Happy Diwali! 🪔</h2>
+    <div class="card-user" id="cardUser">Dear Friend,</div>
+    <p class="card-body-text" id="cardBody">
+      May Goddess Lakshmi and Lord Ganesha shower your life with happiness, prosperity, wisdom, and good health. 
+      May your days shine brighter than a thousand diyas and every venture bring glorious success.
+    </p>
+  </section>
+
+  <!-- Interactive Cracker Demonstration Stage with Animated Kid -->
+  <section class="stage-section" id="stageSection">
+    <div class="stage-header">
+      <span class="stage-title">
+        <span>🎇</span> Live Demonstration Stage
+      </span>
+      <span class="stage-status-badge" id="stageStatus">Ready to Light</span>
+    </div>
+
+    <div class="lighting-arena" id="lightingArena">
+      <!-- Cracker Object on the Ground -->
+      <div class="arena-cracker-target" id="arenaCrackerTarget">
+        <div class="cracker-target-icon" id="crackerDisplayIcon">🚀</div>
+        <div class="fuse-spark" id="fuseSpark"></div>
+      </div>
+
+      <!-- Cute Kid Character Vector (Holding Lighting Stick) -->
+      <div class="arena-kid" id="arenaKid">
+        <svg viewBox="0 0 100 120" width="100%" height="100%">
+          <ellipse cx="50" cy="114" rx="28" ry="6" fill="#000000" opacity="0.45"/>
+          <ellipse cx="38" cy="110" rx="9" ry="5" fill="#f5a623"/>
+          <ellipse cx="62" cy="110" rx="9" ry="5" fill="#f5a623"/>
+          <rect x="34" y="94" width="9" height="18" rx="4" fill="#1b2a47"/>
+          <rect x="57" y="94" width="9" height="18" rx="4" fill="#1b2a47"/>
+          <path d="M28 62 Q50 56 72 62 L69 98 Q50 102 31 98 Z" fill="#d9383a" stroke="#ffd700" stroke-width="1.5"/>
+          <path d="M49 62 L49 88" stroke="#ffd700" stroke-width="2"/>
+
+          <g id="kidLeftArm">
+            <path d="M28 66 Q16 78 20 90" fill="none" stroke="#fbc531" stroke-width="7" stroke-linecap="round"/>
+          </g>
+
+          <g id="kidRightArm" class="kid-arm-sparkler">
+            <path d="M72 66 Q88 78 86 94" fill="none" stroke="#fbc531" stroke-width="7" stroke-linecap="round"/>
+            <line x1="86" y1="94" x2="108" y2="82" stroke="#dcdde1" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="108" cy="82" r="3.5" fill="#fff" filter="drop-shadow(0 0 4px #ffd700)"/>
+          </g>
+
+          <circle cx="50" cy="40" r="22" fill="#ffd19a"/>
+          <circle cx="43" cy="38" r="3" fill="#2d3436"/>
+          <circle cx="57" cy="38" r="3" fill="#2d3436"/>
+          <path d="M42 46 Q50 55 58 46" fill="none" stroke="#d63031" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="37" cy="44" r="3.5" fill="#ff7675" opacity="0.6"/>
+          <circle cx="63" cy="44" r="3.5" fill="#ff7675" opacity="0.6"/>
+
+          <path d="M27 34 Q50 12 73 34 Q65 18 50 18 Q35 18 27 34 Z" fill="#2d3436"/>
+          <path d="M28 28 Q50 18 72 28" fill="none" stroke="#ffd700" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="stage-action-banner" id="stageBanner">
+      👆 Tap any of the 10 crackers below to watch the kid light it!
+    </div>
+  </section>
+
+  <!-- Top 10 Grand Diwali Crackers Section (ONLY 2 ROWS FOR MOBILE - NO SCROLLING) -->
+  <section class="crackers-section">
+    <div class="crackers-heading-box">
+      <h2 class="crackers-main-heading">🎇 Top 10 Grand Diwali Crackers</h2>
+      <p class="crackers-subheading">Tap any cracker to ignite!</p>
+    </div>
+
+    <!-- 10 Buttons in 2 Rows (5 buttons per row) -->
+    <div class="crackers-2row-grid" id="crackersGrid">
+      <!-- ROW 1 (Crackers 1-5) -->
+      <button class="cracker-tile-btn" data-cracker="rocket" type="button" title="Sky Rocket">
+        <span class="cracker-tile-num">#1</span>
+        <span class="cracker-tile-icon">🚀</span>
+        <span class="cracker-tile-name">Rocket</span>
+      </button>
+
+      <button class="cracker-tile-btn" data-cracker="sparkler" type="button" title="Golden Sparkler">
+        <span class="cracker-tile-num">#2</span>
+        <span class="cracker-tile-icon">✨</span>
+        <span class="cracker-tile-name">Sparkler</span>
+      </button>
+
+      <button class="cracker-tile-btn" data-cracker="charkhi" type="button" title="Ground Charkhi">
+        <span class="cracker-tile-num">#3</span>
+        <span class="cracker-tile-icon">🌀</span>
+        <span class="cracker-tile-name">Charkhi</span>
+      </button>
+
+      <button class="cracker-tile-btn" data-cracker="anar" type="button" title="Anar Flowerpot">
+        <span class="cracker-tile-num">#4</span>
+        <span class="cracker-tile-icon">🌋</span>
+        <span class="cracker-tile-name">Anar</span>
+      </button>
+
+      <button class="cracker-tile-btn" data-cracker="ladi" type="button" title="1000 Wala Red Ladi">
+        <span class="cracker-tile-num">#5</span>
+        <span class="cracker-tile-icon">🧨</span>
+        <span class="cracker-tile-name">Ladi</span>
+      </button>
+
+      <!-- ROW 2 (Crackers 6-10) -->
+      <button class="cracker-tile-btn" data-cracker="atomBomb" type="button" title="Green Atom Bomb">
+        <span class="cracker-tile-num">#6</span>
+        <span class="cracker-tile-icon">💣</span>
+        <span class="cracker-tile-name">Atom</span>
+      </button>
+
+      <button class="cracker-tile-btn" data-cracker="sutliBomb" type="button" title="Sutli Bomb">
+        <span class="cracker-tile-num">#7</span>
+        <span class="cracker-tile-icon">💥</span>
+        <span class="cracker-tile-name">Sutli</span>
+      </button>
+
+      <button class="cracker-tile-btn" data-cracker="snake" type="button" title="Magic Snake Tablet">
+        <span class="cracker-tile-num">#8</span>
+        <span class="cracker-tile-icon">🐍</span>
+        <span class="cracker-tile-name">Snake</span>
+      </button>
+
+      <button class="cracker-tile-btn" data-cracker="skyShot" type="button" title="7-Colour Sky Shot">
+        <span class="cracker-tile-num">#9</span>
+        <span class="cracker-tile-icon">🎆</span>
+        <span class="cracker-tile-name">SkyShot</span>
+      </button>
+
+      <button class="cracker-tile-btn" data-cracker="popSnapper" type="button" title="Pop-Pop Snappers">
+        <span class="cracker-tile-num">#10</span>
+        <span class="cracker-tile-icon">⚡</span>
+        <span class="cracker-tile-name">Snapper</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- App Footer with Name & Software Developer -->
+  <footer class="app-footer">
+    <div class="footer-author">
+      Crafted with <span style="color:#ff6e6e;">♥</span> by <strong>Vikrant Mulankar</strong>
+    </div>
+    <div class="footer-role">Software Developer</div>
+    <div class="footer-note">Happy Diwali 2026 · Safe &amp; Joyful Celebration ✨</div>
+  </footer>
+</div>
+
+<!-- Floating Toast Notification -->
+<div class="toast-bar" id="toastBar" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+  'use strict';
+
+  const $ = id => document.getElementById(id);
+  const nameInput = $('userName');
+  const inputBox = $('inputBox');
+  const greetingCard = $('greetingCard');
+  const cardTitle = $('cardTitle');
+  const cardUser = $('cardUser');
+  const cardBody = $('cardBody');
+  const toastBar = $('toastBar');
+  
+  const arenaKid = $('arenaKid');
+  const crackerDisplayIcon = $('crackerDisplayIcon');
+  const fuseSpark = $('fuseSpark');
+  const stageStatus = $('stageStatus');
+  const stageBanner = $('stageBanner');
+
+  // URL query prefill (?to=Rahul)
+  const query = new URLSearchParams(location.search);
+  const preset = (query.get('to') || '').trim().slice(0, 35);
+  if (preset) nameInput.value = preset;
+
+  // ====================================================
+  // PROCEDURAL SOUND SYNTHESIS FOR ALL 10 CRACKERS
+  // ====================================================
+  let audioCtx = null;
+  let soundEnabled = true;
+  let sharedNoise = null;
+
+  function getAudio() {
+    if (!audioCtx) {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (AudioCtx) audioCtx = new AudioCtx();
+    }
+    if (audioCtx && audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+    return audioCtx;
+  }
+
+  function getNoiseBuffer() {
+    const ctx = getAudio();
+    if (!ctx) return null;
+    if (!sharedNoise) {
+      const size = ctx.sampleRate * 2.5;
+      sharedNoise = ctx.createBuffer(1, size, ctx.sampleRate);
+      const data = sharedNoise.getChannelData(0);
+      for (let i = 0; i < size; i++) data[i] = Math.random() * 2 - 1;
+    }
+    return sharedNoise;
+  }
+
+  // 1. Sky Rocket Sound
+  function soundRocket() {
+    if (!soundEnabled) return;
+    const ctx = getAudio();
+    if (!ctx) return;
+    const now = ctx.currentTime;
+
+    const osc = ctx.createOscillator();
+    const oscGain = ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(450, now);
+    osc.frequency.exponentialRampToValueAtTime(2700, now + 0.65);
+    oscGain.gain.setValueAtTime(0.01, now);
+    oscGain.gain.linearRampToValueAtTime(0.12, now + 0.45);
+    oscGain.gain.exponentialRampToValueAtTime(0.001, now + 0.68);
+    osc.connect(oscGain).connect(ctx.destination);
+    osc.start(now);
+    osc.stop(now + 0.7);
+
+    const noise = ctx.createBufferSource();
+    noise.buffer = getNoiseBuffer();
+    const filter = ctx.createBiquadFilter();
+    filter.type = 'bandpass';
+    filter.frequency.setValueAtTime(300, now);
+    filter.frequency.exponentialRampToValueAtTime(2400, now + 0.65);
+    filter.Q.value = 5;
+    const nGain = ctx.createGain();
+    nGain.gain.setValueAtTime(0.01, now);
+    nGain.gain.linearRampToValueAtTime(0.2, now + 0.5);
+    nGain.gain.exponentialRampToValueAtTime(0.001, now + 0.68);
+    noise.connect(filter).connect(nGain).connect(ctx.destination);
+    noise.start(now);
+    noise.stop(now + 0.7);
+
+    setTimeout(() => soundExplosion(0.38, 140, 24, true), 650);
+  }
+
+  // 2. Sparkler Sound
+  function soundSparkler(durationMs = 2800) {
+    if (!soundEnabled) return;
+    const ctx = getAudio();
+    if (!ctx) return;
+
+    const start = Date.now();
+    const timer = setInterval(() => {
+      if (!soundEnabled || Date.now() - start > durationMs) {
+        clearInterval(timer);
+        return;
+      }
+      const t = ctx.currentTime;
+      const n = ctx.createBufferSource();
+      n.buffer = getNoiseBuffer();
+      const f = ctx.createBiquadFilter();
+      f.type = 'bandpass';
+      f.frequency.value = 3500 + Math.random() * 3000;
+      f.Q.value = 7;
+      const g = ctx.createGain();
+      g.gain.setValueAtTime(0.08 + Math.random() * 0.08, t);
+      g.gain.exponentialRampToValueAtTime(0.001, t + 0.04);
+      n.connect(f).connect(g).connect(ctx.destination);
+      n.start(t);
+      n.stop(t + 0.08);
+    }, 32);
+  }
+
+  // 3. Ground Charkhi Sound
+  function soundCharkhi(durationMs = 3500) {
+    if (!soundEnabled) return;
+    const ctx = getAudio();
+    if (!ctx) return;
+    const now = ctx.currentTime;
+
+    const osc = ctx.createOscillator();
+    const g = ctx.createGain();
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(140, now);
+    osc.frequency.linearRampToValueAtTime(320, now + 1.2);
+    osc.frequency.linearRampToValueAtTime(120, now + durationMs / 1000);
+    g.gain.setValueAtTime(0.05, now);
+    g.gain.linearRampToValueAtTime(0.12, now + 1.0);
+    g.gain.exponentialRampToValueAtTime(0.001, now + durationMs / 1000);
+    osc.connect(g).connect(ctx.destination);
+    osc.start(now);
+    osc.stop(now + durationMs / 1000);
+
+    soundSparkler(durationMs);
+  }
+
+  // 4. Anar Flowerpot Sound
+  function soundAnar(durationMs = 3600) {
+    if (!soundEnabled) return;
+    const ctx = getAudio();
+    if (!ctx) return;
+    const now = ctx.currentTime;
+
+    const noise = ctx.createBufferSource();
+    noise.buffer = getNoiseBuffer();
+    const f = ctx.createBiquadFilter();
+    f.type = 'lowpass';
+    f.frequency.setValueAtTime(600, now);
+    f.frequency.linearRampToValueAtTime(1600, now + 1.5);
+    f.frequency.linearRampToValueAtTime(400, now + durationMs / 1000);
+
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(0.05, now);
+    g.gain.linearRampToValueAtTime(0.35, now + 1.2);
+    g.gain.exponentialRampToValueAtTime(0.001, now + durationMs / 1000);
+
+    noise.connect(f).connect(g).connect(ctx.destination);
+    noise.start(now);
+    noise.stop(now + durationMs / 1000);
+
+    soundSparkler(durationMs);
+  }
+
+  // 5. 1000 Wala Ladi Sound
+  function soundLadi(count = 18) {
+    if (!soundEnabled) return;
+    for (let i = 0; i < count; i++) {
+      setTimeout(() => {
+        soundExplosion(0.22, 280, 50, false, 0.12);
+      }, i * 75 + Math.random() * 25);
+    }
+  }
+
+  // 6. Atom Bomb Sound
+  function soundAtomBomb() {
+    soundExplosion(0.55, 120, 20, false, 0.55);
+  }
+
+  // 7. Sutli Bomb Sound
+  function soundSutliBomb() {
+    soundExplosion(0.65, 95, 18, true, 0.65);
+  }
+
+  // 8. Magic Snake Tablet Sound
+  function soundSnake() {
+    soundSparkler(2000);
+  }
+
+  // 9. 7-Colour Sky Shot Sound
+  function soundSkyShot() {
+    if (!soundEnabled) return;
+    soundExplosion(0.2, 190, 40, false, 0.15);
+    for (let i = 0; i < 3; i++) {
+      setTimeout(() => {
+        soundExplosion(0.35, 150, 25, true, 0.4);
+      }, 500 + i * 400);
+    }
+  }
+
+  // 10. Pop-Pop Snapper Sound
+  function soundPopSnapper() {
+    soundExplosion(0.25, 450, 70, false, 0.08);
+  }
+
+  // Generic Explosion Synthesizer
+  function soundExplosion(vol = 0.4, startFreq = 160, endFreq = 30, echo = false, dur = 0.45) {
+    if (!soundEnabled) return;
+    const ctx = getAudio();
+    if (!ctx) return;
+    const now = ctx.currentTime;
+
+    const osc = ctx.createOscillator();
+    const og = ctx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(startFreq, now);
+    osc.frequency.exponentialRampToValueAtTime(endFreq, now + dur);
+    og.gain.setValueAtTime(vol, now);
+    og.gain.exponentialRampToValueAtTime(0.001, now + dur);
+    osc.connect(og).connect(ctx.destination);
+    osc.start(now);
+    osc.stop(now + dur + 0.05);
+
+    const noise = ctx.createBufferSource();
+    noise.buffer = getNoiseBuffer();
+    const filter = ctx.createBiquadFilter();
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(2600, now);
+    filter.frequency.exponentialRampToValueAtTime(80, now + dur * 0.7);
+
+    const ng = ctx.createGain();
+    ng.gain.setValueAtTime(vol * 0.9, now);
+    ng.gain.exponentialRampToValueAtTime(0.001, now + dur * 0.7);
+
+    noise.connect(filter).connect(ng).connect(ctx.destination);
+    noise.start(now);
+    noise.stop(now + dur * 0.75);
+
+    if (echo) {
+      for (let k = 0; k < 4; k++) {
+        setTimeout(() => {
+          if (!soundEnabled || !ctx) return;
+          const pt = ctx.currentTime;
+          const p = ctx.createBufferSource();
+          p.buffer = getNoiseBuffer();
+          const pf = ctx.createBiquadFilter();
+          pf.type = 'bandpass';
+          pf.frequency.value = 1800 + Math.random() * 800;
+          pf.Q.value = 5;
+          const pg = ctx.createGain();
+          pg.gain.setValueAtTime(0.1, pt);
+          pg.gain.exponentialRampToValueAtTime(0.001, pt + 0.08);
+          p.connect(pf).connect(pg).connect(ctx.destination);
+          p.start(pt);
+          p.stop(pt + 0.09);
+        }, 80 + k * 65);
+      }
+    }
+  }
+
+  // ====================================================
+  // FULLSCREEN 2D CANVAS PHYSICS & FIREWORK ANIMATION
+  // ====================================================
+  const canvas = $('fx');
+  const ctx = canvas.getContext('2d');
+  let width = 0, height = 0, dpr = 1;
+  let particles = [];
+  let rockets = [];
+  let specialEffect = null;
+  let rafId = 0;
+
+  function resize() {
+    if (!ctx) return;
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = Math.round(width * dpr);
+    canvas.height = Math.round(height * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  resize();
+  window.addEventListener('resize', resize, { passive: true });
+
+  const colors = ['#ffd700', '#ff9900', '#ff3366', '#00ffcc', '#ff5500', '#ffea00', '#bb77ff', '#70e000', '#ffffff'];
+
+  class Particle {
+    constructor(x, y, color, vx, vy, life = 1, decay = 0.015, gravity = 0.035, size = 2) {
+      this.x = x;
+      this.y = y;
+      this.color = color || colors[Math.floor(Math.random() * colors.length)];
+      this.vx = vx;
+      this.vy = vy;
+      this.life = life;
+      this.decay = decay;
+      this.gravity = gravity;
+      this.size = size;
+      this.alpha = 1;
+    }
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+      this.vy += this.gravity;
+      this.vx *= 0.985;
+      this.vy *= 0.985;
+      this.life -= this.decay;
+      this.alpha = Math.max(0, this.life);
+    }
+    draw(c) {
+      c.save();
+      c.globalAlpha = this.alpha;
+      c.fillStyle = this.color;
+      c.beginPath();
+      c.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      c.fill();
+      c.restore();
+    }
+  }
+
+  function spawnBurst(x, y, count = 65, color = null, power = 4.5) {
+    for (let i = 0; i < count; i++) {
+      const angle = (Math.PI * 2 * i) / count + Math.random() * 0.2;
+      const spd = (1.5 + Math.random() * power);
+      const col = color || colors[Math.floor(Math.random() * colors.length)];
+      particles.push(new Particle(x, y, col, Math.cos(angle) * spd, Math.sin(angle) * spd, 1, 0.012 + Math.random() * 0.015, 0.03, 1.8 + Math.random() * 2));
+    }
+    startAnim();
+  }
+
+  function startAnim() {
+    if (!rafId) rafId = requestAnimationFrame(loop);
+  }
+
+  function loop() {
+    ctx.clearRect(0, 0, width, height);
+
+    rockets = rockets.filter(r => !r.dead);
+    for (const r of rockets) {
+      r.update();
+      r.draw(ctx);
+    }
+
+    if (specialEffect) {
+      specialEffect.update();
+    }
+
+    particles = particles.filter(p => p.life > 0);
+    for (const p of particles) {
+      p.update();
+      p.draw(ctx);
+    }
+
+    if (rockets.length > 0 || particles.length > 0 || specialEffect) {
+      rafId = requestAnimationFrame(loop);
+    } else {
+      rafId = 0;
+    }
+  }
+
+  // ====================================================
+  // THE 10 REALISTIC CRACKER ANIMATIONS & ACTIONS
+  // ====================================================
+  const crackerActions = {
+    rocket: () => {
+      soundRocket();
+      const startX = width * 0.5;
+      const startY = height - 20;
+      const targetY = height * 0.22;
+      let rx = startX, ry = startY;
+      const rObj = {
+        dead: false,
+        update() {
+          ry -= 14;
+          particles.push(new Particle(rx + (Math.random() * 4 - 2), ry + 6, '#ff9900', 0, 1.5, 0.6, 0.05, 0.01, 2));
+          if (ry <= targetY) {
+            this.dead = true;
+            spawnBurst(rx, ry, 90, '#ffd700', 5.5);
+          }
+        },
+        draw(c) {
+          c.save();
+          c.fillStyle = '#ffffff';
+          c.beginPath();
+          c.arc(rx, ry, 3.5, 0, Math.PI * 2);
+          c.fill();
+          c.restore();
+        }
+      };
+      rockets.push(rObj);
+      startAnim();
+    },
+
+    sparkler: () => {
+      soundSparkler(3200);
+      const sx = width * 0.5, sy = height * 0.52;
+      const endTime = Date.now() + 3200;
+      specialEffect = {
+        update() {
+          if (Date.now() > endTime) {
+            specialEffect = null;
+            return;
+          }
+          for (let k = 0; k < 6; k++) {
+            const angle = Math.random() * Math.PI * 2;
+            const spd = 2 + Math.random() * 6;
+            const c = Math.random() > 0.3 ? '#fff5c0' : '#ffd700';
+            particles.push(new Particle(sx, sy, c, Math.cos(angle) * spd, Math.sin(angle) * spd, 0.8, 0.025, 0.04, 1.5));
+          }
+        }
+      };
+      startAnim();
+    },
+
+    charkhi: () => {
+      soundCharkhi(3500);
+      const cx = width * 0.5, cy = height * 0.68;
+      const endTime = Date.now() + 3500;
+      let rot = 0;
+      specialEffect = {
+        update() {
+          if (Date.now() > endTime) {
+            specialEffect = null;
+            return;
+          }
+          rot += 0.35;
+          for (let k = 0; k < 4; k++) {
+            const a = rot + (k * Math.PI / 2);
+            const spd = 3.5 + Math.random() * 4;
+            const c = k % 2 === 0 ? '#00ffcc' : '#ffd700';
+            particles.push(new Particle(cx, cy, c, Math.cos(a) * spd, Math.sin(a) * spd, 0.7, 0.03, 0.02, 2));
+          }
+        }
+      };
+      startAnim();
+    },
+
+    anar: () => {
+      soundAnar(3600);
+      const ax = width * 0.5, ay = height * 0.72;
+      const endTime = Date.now() + 3600;
+      specialEffect = {
+        update() {
+          if (Date.now() > endTime) {
+            specialEffect = null;
+            return;
+          }
+          for (let k = 0; k < 7; k++) {
+            const angle = -Math.PI / 2 + (Math.random() * 0.8 - 0.4);
+            const spd = 5 + Math.random() * 8.5;
+            const c = Math.random() > 0.4 ? '#ffffff' : '#ff9900';
+            particles.push(new Particle(ax, ay, c, Math.cos(angle) * spd, Math.sin(angle) * spd, 1, 0.02, 0.07, 2.2));
+          }
+        }
+      };
+      startAnim();
+    },
+
+    ladi: () => {
+      soundLadi(16);
+      const lx = width * 0.5, ly = height * 0.7;
+      let count = 0;
+      const timer = setInterval(() => {
+        if (++count > 16) {
+          clearInterval(timer);
+          return;
+        }
+        const ox = lx + (Math.random() * 70 - 35);
+        const oy = ly + (Math.random() * 40 - 20);
+        spawnBurst(ox, oy, 16, '#ff3344', 2.8);
+      }, 85);
+    },
+
+    atomBomb: () => {
+      soundAtomBomb();
+      const bx = width * 0.5, by = height * 0.65;
+      spawnBurst(bx, by, 110, '#00ff88', 6);
+    },
+
+    sutliBomb: () => {
+      soundSutliBomb();
+      const sx = width * 0.5, sy = height * 0.65;
+      spawnBurst(sx, sy, 130, '#ffaa00', 7);
+    },
+
+    snake: () => {
+      soundSnake();
+      const kx = width * 0.5, ky = height * 0.72;
+      for (let i = 0; i < 30; i++) {
+        setTimeout(() => {
+          particles.push(new Particle(kx + (Math.random() * 12 - 6), ky - i * 3, '#4a4a4a', (Math.random() - 0.5) * 0.5, -0.4, 2, 0.008, -0.01, 5 + i * 0.4));
+          startAnim();
+        }, i * 70);
+      }
+    },
+
+    skyShot: () => {
+      soundSkyShot();
+      const colors7 = ['#ff0055', '#ff9900', '#ffea00', '#00ffcc', '#0099ff', '#aa00ff', '#ffffff'];
+      for (let i = 0; i < 3; i++) {
+        setTimeout(() => {
+          const sx = width * (0.3 + i * 0.2);
+          const sy = height * (0.2 + (i % 2) * 0.1);
+          spawnBurst(sx, sy, 70, colors7[i * 2 % colors7.length], 5);
+        }, 500 + i * 400);
+      }
+    },
+
+    popSnapper: () => {
+      soundPopSnapper();
+      const px = width * 0.5 + (Math.random() * 40 - 20);
+      const py = height * 0.75;
+      spawnBurst(px, py, 25, '#ffffff', 3.5);
+    }
+  };
+
+  const crackerIcons = {
+    rocket: '🚀',
+    sparkler: '✨',
+    charkhi: '🌀',
+    anar: '🌋',
+    ladi: '🧨',
+    atomBomb: '💣',
+    sutliBomb: '💥',
+    snake: '🐍',
+    skyShot: '🎆',
+    popSnapper: '⚡'
+  };
+
+  const crackerNames = {
+    rocket: 'Sky Rocket',
+    sparkler: 'Golden Sparkler',
+    charkhi: 'Ground Charkhi',
+    anar: 'Anar Flowerpot',
+    ladi: '1000 Wala Red Ladi',
+    atomBomb: 'Green Atom Bomb',
+    sutliBomb: 'Sutli Bomb',
+    snake: 'Magic Snake Tablet',
+    skyShot: '7-Colour Sky Shot',
+    popSnapper: 'Pop-Pop Snappers'
+  };
+
+  // ====================================================
+  // ANIMATED KID LIGHTING SEQUENCE
+  // ====================================================
+  let isLightingInProgress = false;
+
+  function triggerKidCrackerLighting(crackerKey) {
+    if (isLightingInProgress) return;
+    isLightingInProgress = true;
+    getAudio();
+
+    crackerDisplayIcon.textContent = crackerIcons[crackerKey] || '🎆';
+    stageStatus.textContent = 'Lighting...';
+    stageBanner.textContent = `👦 Kid is approaching to light the ${crackerNames[crackerKey]}!`;
+
+    document.querySelectorAll('.cracker-tile-btn').forEach(b => {
+      b.classList.toggle('active-firing', b.dataset.cracker === crackerKey);
+    });
+
+    arenaKid.className = 'arena-kid approaching lighting';
+    
+    setTimeout(() => {
+      fuseSpark.style.display = 'block';
+      stageBanner.textContent = `🔥 Fuse is lit! Watch out!`;
+
+      setTimeout(() => {
+        arenaKid.className = 'arena-kid running-back';
+
+        setTimeout(() => {
+          fuseSpark.style.display = 'none';
+          arenaKid.className = 'arena-kid cheering';
+          stageStatus.textContent = 'Boom! Active ✨';
+          stageBanner.textContent = `🎉 Kid is cheering! Enjoy the ${crackerNames[crackerKey]}!`;
+          showToast(`💥 ${crackerNames[crackerKey]} Activated!`);
+
+          if (crackerActions[crackerKey]) {
+            crackerActions[crackerKey]();
+          }
+
+          setTimeout(() => {
+            arenaKid.className = 'arena-kid';
+            stageStatus.textContent = 'Ready to Light';
+            stageBanner.textContent = `👆 Tap any cracker to watch the kid light it!`;
+            document.querySelectorAll('.cracker-tile-btn').forEach(b => b.classList.remove('active-firing'));
+            isLightingInProgress = false;
+          }, 3200);
+
+        }, 700);
+      }, 550);
+    }, 600);
+  }
+
+  // ====================================================
+  // GREETING GENERATION (RUN SCRIPT)
+  // ====================================================
+  function generateGreeting() {
+    getAudio();
+    const name = nameInput.value.trim().replace(/\s+/g, ' ').slice(0, 35);
+    
+    cardUser.textContent = name ? `Dear ${name},` : 'Dear Friend,';
+    cardTitle.textContent = name ? `Happy Diwali, ${name}! 🪔` : 'Happy Diwali! 🪔';
+    
+    if (name) {
+      cardBody.textContent = `May the festival of lights illuminate your path with boundless happiness, good health, and success, ${name}. May Goddess Lakshmi bless you and your family with eternal prosperity!`;
+    }
+
+    inputBox.style.display = 'none';
+    greetingCard.style.display = 'block';
+
+    crackerActions.rocket();
+    setTimeout(() => crackerActions.sparkler(), 500);
+    showToast(name ? `✨ Greeting created for ${name}!` : '✨ Happy Diwali Greeting Created!');
+  }
+
+  // Toast Helper
+  let toastTimer;
+  function showToast(msg) {
+    toastBar.textContent = msg;
+    toastBar.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toastBar.classList.remove('show'), 3000);
+  }
+
+  // Event Listeners
+  $('runScriptBtn').addEventListener('click', generateGreeting);
+  nameInput.addEventListener('keydown', e => {
+    if (e.key === 'Enter') generateGreeting();
+  });
+
+  // Sound Toggle
+  $('soundBtn').addEventListener('click', () => {
+    soundEnabled = !soundEnabled;
+    const btn = $('soundBtn');
+    const icon = $('soundIcon');
+    const label = $('soundLabel');
+    btn.setAttribute('aria-pressed', String(soundEnabled));
+    if (soundEnabled) {
+      icon.textContent = '🔊';
+      label.textContent = 'Sound ON';
+      getAudio();
+      showToast('🔊 Sound Enabled');
+    } else {
+      icon.textContent = '🔇';
+      label.textContent = 'Sound OFF';
+      showToast('🔇 Sound Muted');
+    }
+  });
+
+  // Cracker 2-Row Grid Buttons
+  document.querySelectorAll('.cracker-tile-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cKey = btn.dataset.cracker;
+      $('stageSection').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      triggerKidCrackerLighting(cKey);
+    });
+  });
+
+  // Central Sun Diya Click interaction
+  $('centralDiya').addEventListener('click', () => {
+    triggerKidCrackerLighting('sparkler');
+  });
+
+  // Auto-run if preset
+  setTimeout(() => {
+    if (preset) generateGreeting();
+  }, 1000);
+
+})();
+</script>
+</body>
+</html>

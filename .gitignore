@@ -1,0 +1,5 @@
+# Netlify CLI local state and OS/editor files
+.netlify/
+.DS_Store
+Thumbs.db
+.vscode/
