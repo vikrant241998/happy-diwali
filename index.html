@@ -1541,68 +1541,15 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
   }
 
   // ====================================================
-  // 2. AUTHENTIC DIYA CRACKER SOUND
-  // Snappy, crisp cardboard firecracker pop (PATAKKK!)
+  // 2. DIYA CRACKERS (MUTED PER USER REQUEST)
+  // Sparkles near the Diya are peaceful & completely silent
   // ====================================================
   function soundDiyaCracker() {
-    const ctx = getAudio();
-    if (!ctx) return;
-    const dest = getAudioDest();
-    const now = ctx.currentTime;
-
-    // A. Crisp casing snap ("PAT!")
-    const snap = ctx.createBufferSource();
-    snap.buffer = getNoiseBuffer();
-    const sf = ctx.createBiquadFilter();
-    sf.type = 'bandpass';
-    sf.frequency.setValueAtTime(1550 + Math.random() * 750, now);
-    sf.Q.value = 3.6;
-    const sg = ctx.createGain();
-    sg.gain.setValueAtTime(0.95, now);
-    sg.gain.exponentialRampToValueAtTime(0.001, now + 0.04);
-    snap.connect(sf).connect(sg).connect(dest);
-    snap.start(now);
-    snap.stop(now + 0.05);
-
-    // B. Acoustic pressure pop thump
-    const pop = ctx.createBufferSource();
-    pop.buffer = getBrownNoiseBuffer();
-    const pf = ctx.createBiquadFilter();
-    pf.type = 'lowpass';
-    pf.frequency.setValueAtTime(280, now);
-    pf.frequency.exponentialRampToValueAtTime(45, now + 0.09);
-    const pg = ctx.createGain();
-    pg.gain.setValueAtTime(1.0, now);
-    pg.gain.exponentialRampToValueAtTime(0.001, now + 0.09);
-    pop.connect(pf).connect(pg).connect(dest);
-    pop.start(now);
-    pop.stop(now + 0.1);
-
-    // C. Micro sparkler crackle tail
-    for (let i = 0; i < 3; i++) {
-      setTimeout(() => {
-        if (!audioCtx) return;
-        const t = audioCtx.currentTime;
-        const s = audioCtx.createBufferSource();
-        s.buffer = getNoiseBuffer();
-        const flt = audioCtx.createBiquadFilter();
-        flt.type = 'highpass';
-        flt.frequency.value = 3900 + Math.random() * 1400;
-        const g = audioCtx.createGain();
-        g.gain.setValueAtTime(0.38, t);
-        g.gain.exponentialRampToValueAtTime(0.001, t + 0.04);
-        s.connect(flt).connect(g).connect(getAudioDest());
-        s.start(t);
-        s.stop(t + 0.05);
-      }, 30 + i * 40);
-    }
+    // Intentionally muted for ambient Diya crackers
   }
 
   function soundDiyaGrandBurst() {
-    const ctx = getAudio();
-    if (!ctx) return;
-    soundExplosion(1.15, true, true, 0.8);
-    soundDiyaCracker();
+    // Intentionally muted for Diya celebration
   }
 
   // ====================================================
@@ -1814,7 +1761,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     }
   }
 
-  // 11. POP-POP SNAPPER: Continuous Ground Snaps
+  // 11. POP-POP SNAPPER: Continuous Ground Snaps (Cracker Button 10)
   function soundPopSnapper(durationMs = 10000) {
     const start = Date.now();
     const timer = setInterval(() => {
@@ -1822,7 +1769,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
         clearInterval(timer);
         return;
       }
-      soundDiyaCracker();
+      soundExplosion(0.55, false, false, 0.08);
     }, 220);
   }
 
@@ -2443,12 +2390,10 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     const burstColor = colors[Math.floor(Math.random() * colors.length)];
     shockwaves.push(new Shockwave(bx, by, 50 + Math.random() * 30, burstColor));
     spawnBurst(bx, by, 40 + Math.floor(Math.random() * 25), burstColor, 4.2);
-    
-    // Authentic loud cracker sound near the Diya
-    soundDiyaCracker();
+    // Sound is muted for ambient Diya crackers per user request
   }
 
-  // Ambient festive cracker bursts around the Diya
+  // Ambient festive cracker bursts around the Diya (Peaceful & Silent)
   setInterval(() => {
     if (document.visibilityState === 'visible') {
       blastDiyaCracker();
@@ -2470,7 +2415,7 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     if (e.key === 'Enter') generateGreeting();
   });
 
-  // Cracker 2-Row Grid Buttons
+  // Cracker 2-Row Grid Buttons (10 Authentic High-Power Fireworks with Sound)
   document.querySelectorAll('.cracker-tile-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const cKey = btn.dataset.cracker;
@@ -2479,26 +2424,23 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     });
   });
 
-  // Header Left and Right Corner Diyas: Tap to trigger festive sparkles & sound!
+  // Header Left and Right Corner Diyas: Tap to trigger festive sparkles (Silent & Peaceful)
   function triggerHeaderDiyaEffect(el) {
     if (!el) return;
-    getAudio();
     const rect = el.getBoundingClientRect();
     const cx = rect.left + rect.width / 2;
     const cy = rect.top + rect.height / 2;
     shockwaves.push(new Shockwave(cx, cy, 65, '#ffd700'));
     spawnBurst(cx, cy, 45, '#ffd700', 4.2);
-    soundDiyaCracker();
     showToast('✨ Sacred Diya Radiance! 🪔');
   }
 
   $('headerDiyaLeft')?.addEventListener('click', () => triggerHeaderDiyaEffect($('headerDiyaLeft')));
   $('headerDiyaRight')?.addEventListener('click', () => triggerHeaderDiyaEffect($('headerDiyaRight')));
 
-  // Central Sun Diya Click: Blasts Crackers & Fireworks around the Diya with Grand Sound!
+  // Central Sun Diya Click: Blasts golden fireworks around the Diya (Peaceful & Silent)
   $('centralDiya').addEventListener('click', (e) => {
     e.stopPropagation();
-    getAudio();
     const rect = $('centralDiya').getBoundingClientRect();
     const cx = rect.left + rect.width / 2;
     const cy = rect.top + rect.height / 2;
@@ -2507,12 +2449,11 @@ div[class*="netlify-feedback"], div[id*="netlify-feedback"] {
     shockwaves.push(new Shockwave(cx, cy, 110, '#ffd700'));
     shockwaves.push(new Shockwave(cx, cy, 65, '#ffffff'));
     spawnBurst(cx, cy, 95, '#ffd700', 6.5);
-    soundDiyaGrandBurst();
 
     setTimeout(blastDiyaCracker, 160);
     setTimeout(blastDiyaCracker, 340);
     setTimeout(blastDiyaCracker, 520);
-    showToast('✨ Diya Celebration Fireworks! 🪔');
+    showToast('✨ Sacred Diya Radiance! 🪔');
   });
 
   // Auto-run if preset
